@@ -1,0 +1,92 @@
+<div class="card">
+  <div class="top-fieldset">
+    <p-fieldset styleClass="myFieldset">
+      <p-header>Thông tin khách hàng</p-header>
+      <div class="p-fluid p-formgrid p-grid">
+        <div class="p-field p-col-12 p-lg-4">
+          <label>Khách hàng: <span class="erros">*</span></label>
+          <app-employee-selection (clickSearchBtn)="isOpenSearchEmplModal=true"></app-employee-selection>
+        </div>
+        <div class="p-field p-col-12 p-lg-2">
+          <label>Điện thoại</label>
+          <input type="text" pInputText>
+        </div>
+        <div class="p-field p-col-12 p-lg-2">
+          <label>Email</label>
+          <input type="text" pInputText>
+        </div>
+        <div class="p-field p-col-12 p-lg-2">
+          <label>CMND</label>
+          <input type="text" pInputText>
+        </div>
+        <div class="p-field p-col-12 p-lg-2">
+          <label>Mã số thuế</label>
+          <input type="text" pInputText>
+        </div>
+        <div class="p-field p-col-12 p-lg-4">
+          <label>Giới tính</label>
+          <div class="p-fluid p-formgrid p-grid">
+            <div class="p-field-checkbox p-col-12 p-md-4 p-field-checkbox">
+              <p-radioButton name="gender" value="Nam" [(ngModel)]="gender" inputId="nam"></p-radioButton>
+              <label>Nam</label>
+            </div>
+            <div class="p-field-checkbox p-col-12 p-md-4 p-field-checkbox">
+              <p-radioButton name="gender" value="Nữ" [(ngModel)]="gender" inputId="nu"></p-radioButton>
+              <label>Nữ</label>
+            </div>
+          </div>
+        </div>
+        <div class="p-field p-col-12 p-lg-4">
+          <label>Tỉnh/Thành phố: </label>
+          <app-location-selection></app-location-selection>
+        </div>
+        <div class="p-field p-col-12 p-lg-4">
+          <label>Địa chỉ</label>
+          <input type="text" pInputText>
+        </div>
+      </div>
+    </p-fieldset>
+  </div>
+  <div class="bottom-fieldset">
+    <p-fieldset styleClass="myFieldset">
+      <p-header>Thông tin phiếu</p-header>
+      <div class="p-fluid p-formgrid p-grid">
+        <div class="p-field p-col-12 p-lg-4">
+          <label>Mã phiếu:</label>
+          <input type="text" pInputText disabled>
+        </div>
+        <div class="p-field p-col-12 p-lg-4">
+          <label for="startDate">Ngày chi: </label>
+          <p-calendar placeholder="- Từ ngày -" [(ngModel)]="date3" [showIcon]="true" inputId="startDate"></p-calendar>
+        </div>
+        <div class="p-field p-col-12 p-lg-4">
+          <label>CT liên quan</label>
+          <input type="text" pInputText disabled>
+        </div>
+        <div class="p-field p-col-12 p-lg-4">
+          <label>Hình thức chi</label>
+          <p-dropdown [options]="saleList" placeholder="Tất cả" optionLabel="name" [filter]=true [showClear]=true>
+          </p-dropdown>
+        </div>
+        <div class="p-field p-col-12 p-lg-2">
+          <label>Loại tiền</label>
+          <p-dropdown [options]="saleList" placeholder="Tất cả" optionLabel="name" [filter]=true [showClear]=true>
+          </p-dropdown>
+        </div>
+        <div class="p-field p-col-12 p-lg-2">
+          <label style="visibility:hidden">Hiden</label>
+          <p-inputNumber inputId="minmaxfraction" placeholder="0" mode="decimal" [maxFractionDigits]="5"></p-inputNumber>
+        </div>
+        <div class="p-field p-col-12 p-lg-4">
+          <label>Số tiền: </label>
+          <p-inputNumber inputId="minmaxfraction" placeholder="0" mode="decimal" [maxFractionDigits]="5"></p-inputNumber>
+        </div>
+        <div class="p-field p-col-12 p-lg-12">
+          <label>Nội dung</label>
+          <textarea [rows]="5" pInputTextarea></textarea>
+        </div>
+      </div>
+    </p-fieldset>
+  </div>
+</div>
+<app-employee-search-modal [isOpenModal]="isOpenSearchEmplModal" (onCloseModal)="isOpenSearchEmplModal=false"></app-employee-search-modal>

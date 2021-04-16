@@ -1,0 +1,882 @@
+{
+	"info": {
+		"_postman_id": "037fdf2f-bfb3-4906-b953-32e7a9c399a1",
+		"name": "keycloak Public",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getToken- ERP",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"console.log(pm.response);\r",
+							"console.log(pm.response.json());\r",
+							"pm.globals.set(\"cuong_token\", \"Bearer \" +  jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "erp",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "cuongnd9",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "be01b82f-2723-48d7-80c3-91bba959d5a0",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{keycloak}}/auth/realms/SSO_VTLM/protocol/openid-connect/token",
+					"host": [
+						"{{keycloak}}"
+					],
+					"path": [
+						"auth",
+						"realms",
+						"SSO_VTLM",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BÁN HÀNG-ERP",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "{{cuong_token}}"
+					}
+				],
+				"url": {
+					"raw": "{{erp-pub}}/erp/nhaphang/them",
+					"host": [
+						"{{erp-pub}}"
+					],
+					"path": [
+						"erp",
+						"nhaphang",
+						"them"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "VT-family-token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"console.log(pm.response);\r",
+							"console.log(pm.response.json());\r",
+							"pm.globals.set(\"cuong_token\", \"Bearer \" +  jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "vtfamily",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "cuongnd9",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "aea69bed-b20f-495e-9702-e9c2a47d75db",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{keycloak}}/auth/realms/SSO_VTLM/protocol/openid-connect/token",
+					"host": [
+						"{{keycloak}}"
+					],
+					"path": [
+						"auth",
+						"realms",
+						"SSO_VTLM",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vtfamily-getUser",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{cuong_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{family-pub}}/customers",
+					"host": [
+						"{{family-pub}}"
+					],
+					"path": [
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getADminToken",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"console.log(pm.response);\r",
+							"console.log(pm.response.json());\r",
+							"pm.globals.set(\"cuong_token\", \"Bearer \" +  jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "admin-cli",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "cuongnv99",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "1c24b69f-92af-4363-952d-24b1120b85ee",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "code",
+							"value": "4TFm41xCtWfadqzcPvLMT0H3IT0PQE4nSjaop56NAIrj7EVQ25r1MhEJBqqZVAGYawih0MaIgeDjQp8bHtjlzgMe7zct9gYR",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{keycloak}}/auth/realms/master/protocol/openid-connect/token",
+					"host": [
+						"{{keycloak}}"
+					],
+					"path": [
+						"auth",
+						"realms",
+						"master",
+						"protocol",
+						"openid-connect",
+						"token"
+					],
+					"query": [
+						{
+							"key": "client_id",
+							"value": "admin-cli",
+							"disabled": true
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"disabled": true
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"disabled": true
+						},
+						{
+							"key": "client_secret",
+							"value": "be01b82f-2723-48d7-80c3-91bba959d5a0",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET all clients in Reaml",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+						"key": "Authorization",
+						"value": "{{cuong_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{keycloak}}/auth/admin/realms/SSO_VTLM/clients",
+					"host": [
+						"{{keycloak}}"
+					],
+					"path": [
+						"auth",
+						"admin",
+						"realms",
+						"SSO_VTLM",
+						"clients"
+					],
+					"query": [
+						{
+							"key": "first",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "max",
+							"value": "20",
+							"disabled": true
+						},
+						{
+							"key": "search",
+							"value": "true",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET all users in Reaml",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+						"key": "Authorization",
+						"value": "{{cuong_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{keycloak}}/auth/admin/realms/SSO_VTLM/users",
+					"host": [
+						"{{keycloak}}"
+					],
+					"path": [
+						"auth",
+						"admin",
+						"realms",
+						"SSO_VTLM",
+						"users"
+					],
+					"query": [
+						{
+							"key": "first",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "max",
+							"value": "20",
+							"disabled": true
+						},
+						{
+							"key": "search",
+							"value": "true",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET all Roles in Reaml",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+						"key": "Authorization",
+						"value": "{{cuong_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{keycloak}}/auth/admin/realms/SSO_VTLM/roles",
+					"host": [
+						"{{keycloak}}"
+					],
+					"path": [
+						"auth",
+						"admin",
+						"realms",
+						"SSO_VTLM",
+						"roles"
+					],
+					"query": [
+						{
+							"key": "first",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "max",
+							"value": "20",
+							"disabled": true
+						},
+						{
+							"key": "search",
+							"value": "true",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET all Roles Of Client",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{cuong_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{keycloak}}/auth/admin/realms/SSO_VTLM/clients/f6e0ce87-4eae-4f98-9aeb-bb11c30419ed/roles",
+					"host": [
+						"{{keycloak}}"
+					],
+					"path": [
+						"auth",
+						"admin",
+						"realms",
+						"SSO_VTLM",
+						"clients",
+						"f6e0ce87-4eae-4f98-9aeb-bb11c30419ed",
+						"roles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET all Groups in Reaml",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{cuong_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{keycloak}}/auth/admin/realms/SSO_VTLM/groups",
+					"host": [
+						"{{keycloak}}"
+					],
+					"path": [
+						"auth",
+						"admin",
+						"realms",
+						"SSO_VTLM",
+						"groups"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Return object authorization permissions",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{cuong_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{keycloak}}/auth/admin/realms/SSO_VTLM/groups/db5e35b0-82de-42ec-8248-6ea30b05d63e/management/permissions",
+					"host": [
+						"{{keycloak}}"
+					],
+					"path": [
+						"auth",
+						"admin",
+						"realms",
+						"SSO_VTLM",
+						"groups",
+						"db5e35b0-82de-42ec-8248-6ea30b05d63e",
+						"management",
+						"permissions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Get group by ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{cuong_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{keycloak}}/auth/admin/realms/SSO_VTLM/groups/2be8d22c-33b1-4383-b674-077693f23e87",
+					"host": [
+						"{{keycloak}}"
+					],
+					"path": [
+						"auth",
+						"admin",
+						"realms",
+						"SSO_VTLM",
+						"groups",
+						"2be8d22c-33b1-4383-b674-077693f23e87"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Get groups count",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{cuong_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{keycloak}}/auth/admin/realms/SSO_VTLM/groups/count",
+					"host": [
+						"{{keycloak}}"
+					],
+					"path": [
+						"auth",
+						"admin",
+						"realms",
+						"SSO_VTLM",
+						"groups",
+						"count"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Roles By ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{cuong_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{keycloak}}/auth/admin/realms/SSO_VTLM/roles-by-id/e8bd5ce9-7deb-49da-a1bf-c345ff63297f",
+					"host": [
+						"{{keycloak}}"
+					],
+					"path": [
+						"auth",
+						"admin",
+						"realms",
+						"SSO_VTLM",
+						"roles-by-id",
+						"e8bd5ce9-7deb-49da-a1bf-c345ff63297f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET all Roles Of Client Copy",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{cuong_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{keycloak}}/auth/admin/realms/SSO_VTLM/clients/f6e0ce87-4eae-4f98-9aeb-bb11c30419ed/roles",
+					"host": [
+						"{{keycloak}}"
+					],
+					"path": [
+						"auth",
+						"admin",
+						"realms",
+						"SSO_VTLM",
+						"clients",
+						"f6e0ce87-4eae-4f98-9aeb-bb11c30419ed",
+						"roles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add Roles in Client",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{cuong_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Strong231\",\r\n    \"composite\": false,\r\n    \"clientRole\": true,\r\n    \"containerId\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{keycloak}}/auth/admin/realms/SSO_VTLM/clients/f6e0ce87-4eae-4f98-9aeb-bb11c30419ed/roles",
+					"host": [
+						"{{keycloak}}"
+					],
+					"path": [
+						"auth",
+						"admin",
+						"realms",
+						"SSO_VTLM",
+						"clients",
+						"f6e0ce87-4eae-4f98-9aeb-bb11c30419ed",
+						"roles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add Roles in Reaml",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{cuong_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Strong1\",\r\n    \"composite\": false,\r\n    \"clientRole\": true,\r\n    \"containerId\": \"1212\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{keycloak}}/auth/admin/realms/SSO_VTLM/roles",
+					"host": [
+						"{{keycloak}}"
+					],
+					"path": [
+						"auth",
+						"admin",
+						"realms",
+						"SSO_VTLM",
+						"roles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Create user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{cuong_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"username\": \"Strange\",\r\n        \"enabled\": true,\r\n        \"totp\": false,\r\n        \"emailVerified\": true,\r\n        \"firstName\": \"Stephen\",\r\n        \"lastName\": \"Strange\",\r\n        \"email\": \"drstranger@marvel.com\",\r\n        \"disableableCredentialTypes\": [],\r\n        \"requiredActions\": [],\r\n        \"notBefore\": 0,\r\n        \"access\": {\r\n            \"manageGroupMembership\": true,\r\n            \"view\": true,\r\n            \"mapRoles\": true,\r\n            \"impersonate\": true,\r\n            \"manage\": true\r\n        },\r\n        \"realmRoles\": [\t\"Strong1\" ]\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{keycloak}}/auth/admin/realms/SSO_VTLM/users",
+					"host": [
+						"{{keycloak}}"
+					],
+					"path": [
+						"auth",
+						"admin",
+						"realms",
+						"SSO_VTLM",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Create a group",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{cuong_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\": \"anime\",\r\n\t\"path\": \"/anime\",\r\n\t\"subGroups\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{keycloak}}/auth/admin/realms/SSO_VTLM/groups",
+					"host": [
+						"{{keycloak}}"
+					],
+					"path": [
+						"auth",
+						"admin",
+						"realms",
+						"SSO_VTLM",
+						"groups"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Update group",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{cuong_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": \"67722639-5e88-4635-b641-522c2461fef3\",\r\n        \"name\": \"marvelffff\",\r\n        \"path\": \"/marVel\",\r\n        \"subGroups\": []\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{keycloak}}/auth/admin/realms/SSO_VTLM/groups/db5e35b0-82de-42ec-8248-6ea30b05d63e",
+					"host": [
+						"{{keycloak}}"
+					],
+					"path": [
+						"auth",
+						"admin",
+						"realms",
+						"SSO_VTLM",
+						"groups",
+						"db5e35b0-82de-42ec-8248-6ea30b05d63e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Add subgroup",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{cuong_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\": \"movies\",\r\n\t\"path\": \"/movies\",\r\n\t\"subGroups\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{keycloak}}/auth/admin/realms/SSO_VTLM/groups/db5e35b0-82de-42ec-8248-6ea30b05d63e/children",
+					"host": [
+						"{{keycloak}}"
+					],
+					"path": [
+						"auth",
+						"admin",
+						"realms",
+						"SSO_VTLM",
+						"groups",
+						"db5e35b0-82de-42ec-8248-6ea30b05d63e",
+						"children"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DEL Delete group",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{cuong_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{keycloak}}/auth/admin/realms/SSO_VTLM/groups/db5e35b0-82de-42ec-8248-6ea30b05d63e",
+					"host": [
+						"{{keycloak}}"
+					],
+					"path": [
+						"auth",
+						"admin",
+						"realms",
+						"SSO_VTLM",
+						"groups",
+						"db5e35b0-82de-42ec-8248-6ea30b05d63e"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

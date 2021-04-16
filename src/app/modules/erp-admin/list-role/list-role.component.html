@@ -1,0 +1,7 @@
+<div class="card">
+    <p-button label="Thêm" (click)="openDialog = true"></p-button>
+    <app-table-dynamic [scrollHeight]="'500px'" [data]="tableData" class="tbl-dynamic" (routerToDo)="routerToDo($event)" (editDynamicTable)="openEdit($event)" (deleteUser)="deleteUser($event)" (editUser)="editUser($event)"></app-table-dynamic>
+</div>
+<app-add-role [openDialog]="openDialog" (onCloseModal)="openDialog=false" (newDataAdd)="newDataAdd($event)"></app-add-role>
+<app-edit-role [onOpenGroup]="onOpenGroup" (onCloseModal)="onOpenGroup=false" [RoleInfo]="RoleInfo" *ngIf="RoleInfo" (newEditRoleInfo)="newEditRoleInfo($event)"></app-edit-role>
+<app-detail-role [openDetail]="openDetail" (onCloseModal)="openDetail=false" [detailInfo]="detailInfo"></app-detail-role>

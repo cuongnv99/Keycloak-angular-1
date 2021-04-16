@@ -1,0 +1,141 @@
+{
+    "cells": [
+        {
+            "id": 1,
+            "attr": null,
+            "name": "tiredMenu",
+            "type": null,
+            "width": 50,
+            "isFrozen": true
+        },
+        { "id": 2, "attr": null, "name": "checkbox", "type": null, "width": 100, "isFrozen": true, "editable": true },
+        {
+            "id": 3,
+            "attr": "requirementCode",
+            "name": "Mã yêu cầu",
+            "type": "text",
+            "width": 250,
+            "isFrozen": false
+        },
+        {
+            "id": 4,
+            "attr": "requirementType",
+            "name": "Loại yêu cầu",
+            "type": "text",
+            "width": 250,
+            "isFrozen": false
+        },
+        {
+            "id": 5,
+            "attr": "store",
+            "name": "Kho xuất",
+            "type": "text",
+            "width": 250,
+            "isFrozen": false
+        },
+        {
+            "id": 6,
+            "attr": "customerName",
+            "name": "Tên khách hàng",
+            "type": "text",
+            "width": 250,
+            "isFrozen": false
+        },
+        {
+            "id": 7,
+            "attr": "totalPrice",
+            "name": "Tổng tiền",
+            "type": "text",
+            "width": 250,
+            "isFrozen": false
+        },
+        {
+            "id": 8,
+            "attr": "isPayment",
+            "name": "phải thanh toán",
+            "type": "text",
+            "width": 150,
+            "isFrozen": false
+        },
+        {
+            "id": 9,
+            "attr": "totalReceiveMoney",
+            "name": "Số tiền đã thu",
+            "type": "text",
+            "width": 250,
+            "isFrozen": false
+        },
+        {
+            "id": 10,
+            "attr": "debt",
+            "name": "Còn nợ lại",
+            "type": "text",
+            "width": 250,
+            "isFrozen": false
+        },
+        {
+            "id": 11,
+            "attr": "fee",
+            "name": "Phụ phí",
+            "type": "text",
+            "width": 250,
+            "isFrozen": false
+        },
+        {
+            "id": 12,
+            "attr": "customerAddr",
+            "name": "Địa chỉ khách hàng",
+            "type": "text",
+            "width": 250,
+            "isFrozen": false
+        },
+        {
+            "id": 13,
+            "attr": "taxCode",
+            "name": "Mã số thế",
+            "type": "text",
+            "width": 250,
+            "isFrozen": false
+        },
+        {
+            "id": 14,
+            "attr": null,
+            "name": "action",
+            "type": "",
+            "width": 100,
+            "isFrozen": false
+        }
+    ],
+    "datas": [
+        {
+            "id": 0,
+            "requirementCode": "112",
+            "requirementType": "112",
+            "store": "Xuất bán hàng-tại siêu thị",
+            "customerName": "Nguyễn văn A",
+            "totalPrice": "15454678",
+            "isPayment": "1563546541",
+            "totalReceiveMoney": "1565496",
+            "debt": "56496",
+            "fee": "56496",
+            "discountAmount": "5464",
+            "customerAddr": "546148",
+            "taxCode": "5464"
+        },
+        {
+            "id": 1,
+            "requirementCode": "112",
+            "requirementType": "112",
+            "store": "Xuất bán hàng-tại siêu thị",
+            "customerName": "Nguyễn văn A",
+            "totalPrice": "15454678",
+            "isPayment": "1563546541",
+            "totalReceiveMoney": "1565496",
+            "debt": "56496",
+            "fee": "56496",
+            "discountAmount": "5464",
+            "customerAddr": "546148",
+            "taxCode": "5464"
+        }
+    ]
+}

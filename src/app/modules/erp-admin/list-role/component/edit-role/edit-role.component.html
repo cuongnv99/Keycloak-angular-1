@@ -1,0 +1,22 @@
+<p-dialog header="Thêm nhóm" [(visible)]="onOpenGroup" (onHide)="onCloseModal.emit()">
+    <div class="p-fluid p-formgrid p-grid" [formGroup]="eventChaneForm">
+        <div class="p-field p-col-6">
+            <label>Name</label>
+            <input type="text" pInputText formControlName="name" [(ngModel)]="RoleInfo.name">
+        </div>
+        <div class="p-field p-col-6">
+            <label>Description</label>
+            <input type="text" pInputText formControlName="description" [(ngModel)]="RoleInfo.description">
+        </div>
+        <div class="p-field p-col-6">
+            <label>Composite</label>
+            <p-inputSwitch formControlName="composite" [(ngModel)]="RoleInfo.composite"></p-inputSwitch>
+        </div>
+        <div class="p-field p-col-6">
+
+        </div>
+        <div style="margin-left:10px">
+            <p-button label="Lưu" (click)="onEditRole()"></p-button>
+        </div>
+    </div>
+</p-dialog>

@@ -1,0 +1,35 @@
+<p-dialog header="Sửa người dùng" [(visible)]="openDialogEdit" (onHide)="onCloseModal.emit()">
+    <div class="p-fluid p-formgrid p-grid" [formGroup]="frmGroup">
+        <div class="p-field p-col-6">
+            <label>Username</label>
+            <input type="text" pInputText formControlName="username" [(ngModel)]="userInfo.username">
+        </div>
+        <div class="p-field p-col-6">
+            <label>Email</label>
+            <input type="text" pInputText formControlName="email" [(ngModel)]="userInfo.email">
+        </div>
+        <div class="p-field p-col-6">
+            <label>First Name</label>
+            <input type="text" pInputText formControlName="firstName" [(ngModel)]="userInfo.firstName">
+        </div>
+        <div class="p-field p-col-6">
+            <label>Last Name</label>
+            <input type="text" pInputText formControlName="lastName" [(ngModel)]="userInfo.lastName">
+        </div>
+        <div class="p-field p-col-6">
+            <label>Required User Actions</label>
+            <input type="text" pInputText>
+        </div>
+        <div class="p-field p-col-3" style="padding-top: 20px;">
+            <label style="margin-right: 5px;">User Enabled</label>
+            <p-inputSwitch formControlName="enabled" [(ngModel)]="userInfo.enabled"></p-inputSwitch>
+        </div>
+        <div class="p-field p-col-3" style="padding-top: 20px;">
+            <label style="margin-right: 5px;">Email Verifled</label>
+            <p-inputSwitch formControlName="emailVerified" [(ngModel)]="userInfo.emailVerified"></p-inputSwitch>
+        </div>
+        <div style="margin-left:10px">
+            <p-button label="Lưu" (click)="onEditUser()"></p-button>
+        </div>
+    </div>
+</p-dialog>

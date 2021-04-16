@@ -1,0 +1,34 @@
+<div class="p-fluid">
+  <div class="p-field p-grid">
+    <label class="p-col-2 p-mb-1 p-md-1 p-mb-md-0">Số điện thoại: </label>
+    <div class="p-col-3 p-md-3">
+      <p-inputMask mask="(+99) 999-999-999" placeholder="(+84) 976-387-968"></p-inputMask>
+    </div>
+  </div>
+</div>
+<div class="p-grid p-fluid buy-card-fieldset">
+  <div class="p-field p-col-12 p-lg-6">
+    <p-fieldset legend="Nhà mạng">
+      <div *ngFor="let network of network" class="p-field-checkbox">
+        <p-radioButton [inputId]="network.key" name="category" [value]="network" [(ngModel)]="selectedNetwork"></p-radioButton>
+        <label [for]="network.key">{{network.name}}</label>
+      </div>
+    </p-fieldset>
+  </div>
+  <div class="p-field p-col-12 p-lg-6">
+    <p-fieldset legend="Mệnh giá">
+      <div *ngFor="let denominations of denominations" class="p-field-checkbox">
+        <p-radioButton [inputId]="denominations.key" name="category" [value]="denominations" [(ngModel)]="selectedDenominations" [disabled]="denominations.key === '10000000'"></p-radioButton>
+        <label [for]="denominations.key">{{denominations.name}}</label>
+      </div>
+    </p-fieldset>
+  </div>
+</div>
+<div class="p-d-flex p-jc-end">
+  <div class="btn-box">
+    <p-button label="Thanh toán" icon="pi pi-shopping-cart" styleClass="p-button-secondary"></p-button>
+  </div>
+</div>
+
+
+

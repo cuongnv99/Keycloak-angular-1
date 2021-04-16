@@ -1,0 +1,65 @@
+<div class="p-grid">
+    <div class="p-col-12">
+        <p-fieldset>
+            <ng-template pTemplate="header">Chi tiền</ng-template>
+            <div class="p-grid" >
+                <div class="p-col-2"></div>
+                <div class="p-col-8">
+                    <div class="p-fluid p-formgrid p-grid">
+                        <div class="p-field p-col-12 p-lg-3">
+                            <label>Ngoại tệ</label>
+                            <p-inputNumber inputId="minmaxfraction" placeholder="0" mode="decimal" [maxFractionDigits]="5"></p-inputNumber>
+                        </div>
+                        <div class="p-field p-col-12 p-lg-3">
+                            <label>Quy đổi</label>
+                            <p-inputNumber inputId="minmaxfraction" placeholder="0" mode="decimal" [maxFractionDigits]="5"></p-inputNumber>
+                        </div>
+                        <div class="p-field p-col-12 p-lg-3"></div>
+                        <div class="p-field p-col-12 p-lg-3">
+                            <label>Tiền mặt VNĐ</label>
+                            <p-inputNumber inputId="minmaxfraction" placeholder="0" mode="decimal" [maxFractionDigits]="5"></p-inputNumber>
+                        </div>
+                        <div class="p-field p-col-12 p-lg-3">
+                            <label>Loại thẻ</label>
+                            <p-dropdown [options]='list'></p-dropdown>
+                        </div>
+                        <div class="p-field p-col-12 p-lg-3">
+                            <label>Tiền thẻ</label>
+                            <p-inputNumber inputId="minmaxfraction" placeholder="0" mode="decimal" [maxFractionDigits]="5"></p-inputNumber>
+                        </div>
+                        <div class="p-field p-col-12 p-lg-3">
+                            <label>Số cà thẻ</label>
+                            <p-inputNumber inputId="minmaxfraction" placeholder="0" mode="decimal" [maxFractionDigits]="5"></p-inputNumber>
+                        </div>
+                        <div class="p-field p-col-12 p-lg-3">
+                            <label>Tiền cà thẻ</label>
+                            <p-inputNumber inputId="minmaxfraction" placeholder="0" mode="decimal" [maxFractionDigits]="5"></p-inputNumber>
+                        </div>
+                        <div class="p-field p-col-12 p-lg-9"></div>
+                        <div class="p-field p-col-12 p-lg-3">
+                            <label>Còn nợ lại</label>
+                            <p-inputNumber inputId="minmaxfraction" placeholder="0" mode="decimal" [maxFractionDigits]="5"></p-inputNumber>
+                        </div>
+                        <div class="p-field p-col-12 p-lg-9"></div>
+                        <div class="p-field p-col-12 p-lg-3">
+                            <label>Tiền thừa</label>
+                            <p-inputNumber inputId="minmaxfraction" placeholder="0" mode="decimal" [maxFractionDigits]="5"></p-inputNumber>
+                        </div>
+                        <div class=" p-col-12 p-lg-6"></div>
+                        <div class=" p-col-12 p-lg-3" style="justify-content: flex-end;padding-top: 5px;">
+                            <label for="Checkbox1" style="margin-right: 5px;">Checkbox1</label>
+                            <p-checkbox inputId="Checkbox1"></p-checkbox>
+                        </div>
+                        <div class="p-field p-col-12 p-lg-3">
+                            <div class=" p-grid " style="margin-top: 0; justify-content: space-around;">
+                                <p-button label="Cập nhật" icon="pi pi-user" styleClass="p-button-secondary"></p-button>
+                                <p-button label="Đóng lại" icon="pi pi-save" styleClass="p-button-secondary"></p-button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-col-2"></div>
+            </div>
+        </p-fieldset>
+    </div>
+</div>

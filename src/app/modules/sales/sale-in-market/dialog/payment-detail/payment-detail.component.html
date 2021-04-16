@@ -1,0 +1,44 @@
+
+<p-dialog header="Thông tin thanh toán" [(visible)]="paymentDialog" (onHide)="onCloseModal.emit()" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000">
+
+    <div class="p-fluid p-grid p-formgrid" [formGroup]="PaymentForm">
+        
+        <div class="p-field p-col-12 p-lg-4">
+            <label>Phải thanh toán</label>
+            <p-inputNumber inputId="minmaxfraction" formControlName="test1" placeholder="0" mode="decimal" [maxFractionDigits]="5"></p-inputNumber>
+        </div>
+        <div class="p-field p-col-12 p-lg-4">
+            <label>Tiền mặt VNĐ</label>
+            <p-inputNumber inputId="minmaxfraction" formControlName="test2" placeholder="0" mode="decimal" [maxFractionDigits]="5"></p-inputNumber>
+        </div>
+        <div class="p-field p-col-12 p-lg-4">
+            <label>Tiền qua thẻ</label>
+            <p-inputNumber inputId="minmaxfraction" formControlName="test3" placeholder="0" mode="decimal" [maxFractionDigits]="5"></p-inputNumber>
+        </div>
+        <div class="p-field p-col-12 p-lg-4">
+            <label>Tiền thanh toán</label>
+            <p-inputNumber inputId="minmaxfraction" formControlName="test4" placeholder="0" mode="decimal" [maxFractionDigits]="5"></p-inputNumber>
+        </div>
+        <div class="p-field p-col-12 p-lg-4">
+            <label>Còn nợ lại</label>
+            <p-inputNumber inputId="minmaxfraction" formControlName="test5" placeholder="0" mode="decimal" [maxFractionDigits]="5"></p-inputNumber>
+        </div>
+        <div class="p-field p-col-12 p-lg-4">
+            <label>Tiền thừa</label>
+            <p-inputNumber inputId="minmaxfraction" formControlName="test6" placeholder="0" mode="decimal" [maxFractionDigits]="5"></p-inputNumber>
+        </div>
+    </div>
+    <div class="p-field p-col-12 p-lg-12" style="text-align: end;">
+        <button pButton type="button" icon="pi pi-plus" iconPos="left" style="margin-right: 15px;"></button>
+        <button pButton type="button" icon="pi pi-minus" iconPos="left"></button>
+    </div>
+    <div class="p-field p-col-12 p-lg-12" style="text-align: end;">
+        <app-table-dynamic [data]="tablePaymentData"></app-table-dynamic>
+    </div>
+
+    
+    <ng-template pTemplate="footer">
+        <p-button icon="pi pi-check" (click)="paymentDialog=false" label="Đồng ý" styleClass="p-button-text"></p-button>
+        <p-button icon="pi pi-times" (click)="paymentDialog=false" label="Bỏ qua"></p-button>
+    </ng-template>
+</p-dialog>

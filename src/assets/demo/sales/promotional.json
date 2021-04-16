@@ -1,0 +1,20 @@
+{
+    "cells": [
+        { "id": 2, "attr": "", "name": "", "type": "", "width": 0, "isFrozen": true },
+        { "id": 4, "attr": null, "name": "checkbox", "type": null, "width": 50, "isFrozen": false },
+        { "id": 6, "attr": "productName", "name": "Sản phẩm", "type": "text", "width": 100, "isFrozen": false },
+        { "id": 7, "attr": "soluong", "name": "Số lượng", "type": "text", "width": 100, "isFrozen": false },
+        { "id": 8, "attr": "productCombo", "name": "Bộ sản phẩm", "type": "checkbox", "width": 100, "isFrozen": false },
+        { "id": 9, "attr": "soluongton", "name": "Số lượng tồn", "type": "text", "width": 100, "isFrozen": false },
+        { "id": 9, "attr": "price", "name": "Giá khuyến mãi", "type": "text", "width": 150, "isFrozen": false }
+    ],
+    "datas": [{
+            "id": 1, 
+            "productName": "Túi quà tặng",
+            "soluong": "1",
+            "productCombo": 1,
+            "soluongton": "99",
+            "price":"200.000"
+        }
+    ]
+}

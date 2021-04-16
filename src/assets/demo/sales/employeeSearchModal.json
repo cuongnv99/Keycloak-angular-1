@@ -1,0 +1,33 @@
+{
+    "cells": [
+        { "id": 2, "attr": "", "name": "", "type": "", "width": 0, "isFrozen": true },
+        { "id": 5, "attr": "employeeCode", "name": "Mã NV", "type": "text", "width": 100, "isFrozen": false },
+        { "id": 6, "attr": "employeeName", "name": "Tên NV", "type": "text", "width": 200, "isFrozen": false },
+        { "id": 7, "attr": "gender", "name": "Nữ", "type": "checkbox", "width": 50, "isFrozen": false },
+        { "id": 8, "attr": "birthday", "name": "Ngày sinh", "type": "text", "width": 100, "isFrozen": false },
+        { "id": 9, "attr": "email", "name": "Email", "type": "text", "width": 150, "isFrozen": false },
+        { "id": 9, "attr": "address", "name": "Địa chỉ", "type": "text", "width": 150, "isFrozen": false },
+        { "id": 9, "attr": "phone", "name": "Điện thoại", "type": "text", "width": 150, "isFrozen": false }
+    ],
+    "datas": [{
+            "id": 1, 
+            "employeeCode": "123456",
+            "employeeName": "Nguyễn Minh Tiến",
+            "gender": 0,
+            "birthday": "2/2/1996",
+            "email": "tientien@gmail.com",
+            "address": "Dương khuê Hà Nội",
+            "phone":"0345121079"
+        },
+        {
+            "id": 2,
+            "employeeCode": "123456",
+            "employeeName": "Nguyễn Minh Tiến",
+            "gender": 0,
+            "birthday": "2/2/1996",
+            "email": "tientien@gmail.com",
+            "address": "Dương khuê Hà Nội",
+            "phone":"0345121079"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+<p-dialog header="Thông tin phí thu" [(visible)]="paymentDialog" (onHide)="onCloseModal.emit()" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000">
+    
+    <div class="p-field p-col-12 p-lg-12" style="text-align: end;">
+        <app-table-dynamic [data]="phiThuData"></app-table-dynamic>
+    </div>
+
+    <div class="p-fluid p-grid p-formgrid" >
+        
+        <div class="p-field p-col-12 p-lg-8"></div>
+        <div class="p-field p-col-12 p-lg-4">
+            <label>Tổng phí thu</label>
+            <p-inputNumber inputId="minmaxfraction" placeholder="0" mode="decimal" 
+                [maxFractionDigits]="5"  disabled="true"></p-inputNumber>
+        </div>
+    </div>
+
+    
+    <ng-template pTemplate="footer">
+        <p-button icon="pi pi-check" (click)="paymentDialog=false" label="Đồng ý" styleClass="p-button-text"></p-button>
+        <p-button icon="pi pi-times" (click)="paymentDialog=false" label="Bỏ qua"></p-button>
+    </ng-template>
+</p-dialog>

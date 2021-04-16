@@ -1,0 +1,143 @@
+<p-dialog header="Tìm kiếm khách hàng" [(visible)]="isOpenModal" (onHide)="onCloseModal.emit()" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
+    <div body class="modal-content">
+        <p-fieldset legend="Thông tin Viettel ERP" styleClass="myFieldset">
+            <div class="p-fluid p-formgrid p-grid" [formGroup]="customerInfoFrm">
+                <div class="p-field p-col-12 p-md-8">
+                    <label>Khách hàng</label>
+                    <div class="p-inputgroup">
+                        <input id="employeeId" type="text" pInputText formControlName="customerId">
+                        <input id="employeeName" type="text" pInputText formControlName="customerName" disabled>
+                        <button type="button" pButton pRipple icon="pi pi-search" (click)="openSearchEmployeeModal.emit()" styleClass="p-button-warn"></button>
+                    </div>
+                </div>
+                <div class="p-field p-col-12 p-md-4">
+                    <label>Giới tính</label>
+                    <div class="p-fluid p-formgrid p-grid">
+                        <div class="p-field-checkbox p-col-12 p-md-4 p-field-checkbox">
+                            <p-radioButton name="gender" value="Nam" [(ngModel)]="gender" formControlName="gender" inputId="nam"></p-radioButton>
+                            <label>Nam</label>
+                        </div>
+                        <div class="p-field-checkbox p-col-12 p-md-4 p-field-checkbox">
+                            <p-radioButton name="gender" value="Nữ" [(ngModel)]="gender" formControlName="gender" inputId="nu"></p-radioButton>
+                            <label>Nữ</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-field p-col-12 p-md-4">
+                    <label>Giấy tờ pháp lý</label>
+                    <input trim="blur" pInputText type="text" formControlName="lawPaper">
+                </div>
+                <div class="p-field p-col-12 p-md-4">
+                    <label>Số điện thoại</label>
+                    <input trim="blur" pInputText type="text" formControlName="phoneNumber">
+                </div>
+                <div class="p-field p-col-12 p-md-4">
+                    <label>Ngày sinh</label>
+                    <p-calendar class="p-col" formControlName="birthDate" [showIcon]="true" [yearNavigator]="true" yearRange="2000:2050" [monthNavigator]="true" dateFormat="dd/mm/yy"></p-calendar>
+                </div>
+                <div class="p-field p-col-12 p-md-4">
+                    <label>Email</label>
+                    <input trim="blur" pInputText type="text" formControlName="email">
+                </div>
+                <div class="p-field p-col-12 p-md-4">
+                    <label>Mã số thuế</label>
+                    <input trim="blur" pInputText type="text" formControlName="taxCode">
+                </div>
+                <div class="p-field p-col-12 p-md-4">
+                    <label>CT Ngân Hàng</label>
+                    <input trim="blur" pInputText type="text" formControlName="ctBank">
+                </div>
+                <div class="p-field p-col-12 p-md-4">
+                    <label>Tỉnh/TP</label>
+                    <ng-select [searchFn]="" [items]="" [placeholder]="" formControlName="province">
+                        <ng-template ng-label-tmp let-item="item">
+                            <span>{{item.locationCode}} - {{item.locationName}}</span>
+                        </ng-template>
+                        <ng-template ng-option-tmp let-item="item" let-index="index">
+                            <span title="{{item.locationCode}} - {{item.locationName}}">{{item.locationCode}} - {{item.locationName}}</span>
+                        </ng-template>
+                    </ng-select>
+                </div>
+                <div class="p-field p-col-12 p-md-4">
+                    <label>Quận/Huyện</label>
+                    <ng-select [searchFn]="" [items]="" [placeholder]="" formControlName="district">
+                        <ng-template ng-label-tmp let-item="item">
+                            <span>{{item.locationCode}} - {{item.locationName}}</span>
+                        </ng-template>
+                        <ng-template ng-option-tmp let-item="item" let-index="index">
+                            <span title="{{item.locationCode}} - {{item.locationName}}">{{item.locationCode}} - {{item.locationName}}</span>
+                        </ng-template>
+                    </ng-select>
+                </div>
+                <div class="p-field p-col-12 p-md-4">
+                    <label>Phường/Xã</label>
+                    <ng-select [searchFn]="" [items]="" [placeholder]="" formControlName="commune">
+                        <ng-template ng-label-tmp let-item="item">
+                            <span>{{item.locationCode}} - {{item.locationName}}</span>
+                        </ng-template>
+                        <ng-template ng-option-tmp let-item="item" let-index="index">
+                            <span title="{{item.locationCode}} - {{item.locationName}}">{{item.locationCode}} - {{item.locationName}}</span>
+                        </ng-template>
+                    </ng-select>
+                </div>
+                <div class="p-field p-col-12 p-md-12">
+                    <label>ĐC liên hệ</label>
+                    <input trim="blur" pInputText type="text" formControlName="addressContact">
+                </div>
+                <div class="p-field p-col-12 p-md-12">
+                    <label>ĐC hóa đơn</label>
+                    <input trim="blur" pInputText type="text" formControlName="addressBill">
+                </div>
+                <div class="p-field p-col-12 p-md-12">
+                    <label>Địa chỉ giao hàng</label>
+                    <input trim="blur" pInputText type="text" formControlName="placeDeliver">
+                </div>
+                <div class="p-field p-col-12 p-md-4">
+                    <label>Người nhận</label>
+                    <input trim="blur" pInputText type="text" formControlName="receiver">
+                </div>
+                <div class="p-field p-col-12 p-md-4">
+                    <label>Số điện thoại người nhận</label>
+                    <input trim="blur" pInputText type="text" formControlName="receiverPhone">
+                </div>
+                <div class="p-field p-col-12 p-md-4">
+                    <label>Email người nhận</label>
+                    <input trim="blur" pInputText type="text" formControlName="revicerEmail">
+                </div>
+                <div class="p-field p-col-12 p-md-4">
+                    <label>Chức vụ</label>
+                    <input trim="blur" pInputText type="text" formControlName="position">
+                </div>
+                <div class="p-field p-col-12 p-md-4">
+                    <label>Tên tổ chức</label>
+                    <input trim="blur" pInputText type="text" formControlName="organizationName">
+                </div>
+                <div class="p-field p-col-12 p-md-4">
+                    <div class="p-field-checkbox p-field-checkbox p-file-no-lable">
+                        <p-checkbox name="" [binary]="true" [value]="true"></p-checkbox>
+                        <label class="p-mr-3">Khách hàng doanh nghiệp</label>
+                    </div>
+                </div>
+                <div class="p-field p-col-12 p-md-4">
+                    <label>Người mua</label>
+                    <input trim="blur" pInputText type="text" formControlName="buyer">
+                </div>
+                <div class="p-field p-col-12 p-md-4">
+                    <label>Ngân hàng</label>
+                    <ng-select [searchFn]="" [items]="" [placeholder]="" formControlName="bank">
+                        <ng-template ng-label-tmp let-item="item">
+                            <span>{{item.locationCode}} - {{item.locationName}}</span>
+                        </ng-template>
+                        <ng-template ng-option-tmp let-item="item" let-index="index">
+                            <span title="{{item.locationCode}} - {{item.locationName}}">{{item.locationCode}} - {{item.locationName}}</span>
+                        </ng-template>
+                    </ng-select>
+                </div>
+                <div class="p-field p-col-12 p-md-4">
+                    <label>Số tài khoản ngân hàng</label>
+                    <input trim="blur" pInputText type="text" formControlName="bankCode">
+                </div>
+            </div>
+        </p-fieldset>
+    </div>
+</p-dialog>

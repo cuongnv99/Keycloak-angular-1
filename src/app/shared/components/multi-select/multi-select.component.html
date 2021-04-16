@@ -1,0 +1,29 @@
+<div class="p-inputgroup">
+    <ng-select #fileInput [ngClass]="searchable?'custom':''" [(ngModel)]="bindingData" [items]="datas" (keypress)="blockSpecialChars($event)" [searchFn]="customSearchStore" bindLabel="storeName" [multiple]="true" [closeOnSelect]="false" (click)="onChangeValue()"
+        placeholder="- Tất cả -" [ngStyle]="{width: '100%'}">
+        <ng-template *ngIf="datas != null && datas.length > 0" ng-header-tmp>
+            <div class="checkbox-container" (click)="selectAll()">
+                <label>- Chọn tất cả -</label>
+                <input type="checkbox" [checked]="bindingData != null && datas.length == bindingData.length">
+                <span class="check-mark"></span>
+            </div>
+        </ng-template>
+        <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
+            <div class="checkbox-container" title="{{item.code}} - {{item.value}}">
+                {{item.code}} - {{item.value}}
+                <input type="checkbox" id="item-{{index}}" [ngModel]="item$.selected" [ngModelOptions]="{standalone: true}">
+                <span class="check-mark"></span>
+            </div>
+        </ng-template>
+        <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
+            <div class="custom-ng-value" style="width: 74px;" *ngFor="let item of items | slice:0:2" title="{{item.code}} - {{item.value}}">
+                <span class="ng-value-icon right" (click)="clear(item);" aria-hidden="true">×</span>
+                <span class="ng-value-label">{{item.code}} {{item.value}}</span>
+            </div>
+            <div class="ng-value custom-more" *ngIf="items.length > 2">
+                <span class="ng-value-label">+{{items.length - 2}}</span>
+            </div>
+        </ng-template>
+    </ng-select>
+    <button *ngIf="searchable" pButton pRipple type="button" icon='pi pi-search' (click)="onSearch()"></button>
+</div>

@@ -1,0 +1,22 @@
+:host ::ng-deep .p-checkbox-custom {
+    .p-checkbox-box {
+        width: 18px;
+        height: 18px;
+    }
+    margin-left: 0;
+    label {
+        margin-top: 1px;
+    }
+}
+
+.p-fluid .p-button {
+    width: fit-content;
+}
+
+.flex-lable {
+    margin: 7px 10px 0px 0px;
+}
+
+.input-number {
+    width: 120px;
+}

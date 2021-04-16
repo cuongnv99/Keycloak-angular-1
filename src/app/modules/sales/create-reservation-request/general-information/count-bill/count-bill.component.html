@@ -1,0 +1,81 @@
+<div class="container count-bill">
+  <div class="p-grid">
+    <div class="p-col-12">
+      <div class="p-grid">
+        <div class="p-col-4">
+          <div class="p-fluid p-formgrid p-grid">
+            <div class="p-field p-col-12 p-lg-12">
+              <div class=" p-grid " style="margin-top: 0;">
+                <div class="p-col-4 p-lg-4">
+                  <div class="border-lable">
+                    <label>Tiền cọc</label>
+                  </div>
+                </div>
+                <div class="p-col-8 p-lg-8">
+                  <p-inputNumber inputId="minmaxfraction" formControlName="redundantCost" placeholder="0" mode="decimal" [maxFractionDigits]="5"></p-inputNumber>
+                </div>
+              </div>
+            </div>
+            <div class="p-field p-col-12 p-lg-12">
+              <div class=" p-grid " style="margin-top: 0;">
+                <div class="p-col-4 p-lg-4">
+                  <div class="border-lable">
+                    <label>Còn nợ</label>
+                  </div>
+                </div>
+                <div class="p-col-8 p-lg-8">
+                  <p-inputNumber inputId="minmaxfraction" formControlName="redundantCost" placeholder="0" mode="decimal" [maxFractionDigits]="5"></p-inputNumber>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-col-4">
+          <div class="p-fluid p-formgrid p-grid">
+            <div class="p-field p-col-12 p-lg-12">
+              <div class=" p-grid " style="margin-top: 0;">
+                <div class="p-col-4 p-lg-4">
+                  <div class="border-lable">
+                    <label>Hình thức TT</label>
+                  </div>
+                </div>
+                <div class="p-col-8 p-lg-8">
+                  <p-dropdown [options]="listPayments" optionLabel="name" [showClear]=true></p-dropdown>
+                </div>
+              </div>
+            </div>
+            <div class="p-field p-col-12 p-lg-12">
+              <div class=" p-grid " style="margin-top: 0;">
+                <div class="p-col-4 p-lg-4">
+                  <div class="border-lable">
+                    <label>Tiền thừa</label>
+                  </div>
+                </div>
+                <div class="p-col-8 p-lg-8">
+                  <p-inputNumber inputId="minmaxfraction" formControlName="redundantCost" placeholder="0" mode="decimal" [maxFractionDigits]="5"></p-inputNumber>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="p-grid p-jc-end">
+  <div class="p-col-1">
+    <div class="btn-box">
+      <p-button label="Hủy" icon="pi pi-ban" styleClass="p-button-secondary"></p-button>
+    </div>
+  </div>
+  <div class="p-col-1">
+    <div class="btn-box">
+      <p-button label="Cập nhật" icon="pi pi-save" styleClass="p-button-secondary"></p-button>
+    </div>
+  </div>
+  <div class="p-col-1">
+    <div class="btn-box">
+      <p-button label="Bỏ qua" icon="pi pi-undo" styleClass="p-button-secondary"></p-button>
+    </div>
+  </div>
+</div>

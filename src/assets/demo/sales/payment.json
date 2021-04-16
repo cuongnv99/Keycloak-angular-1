@@ -1,0 +1,20 @@
+{
+    "cells": [
+        { "id": 2, "attr": "", "name": "", "type": "", "width": 0, "isFrozen": true },
+        { "id": 3, "attr": "checkbox", "name": "checkbox", "type": "", "width": 50, "isFrozen": false },
+        { "id": 5, "attr": "pay", "name": "Hình thức thanh toán", "type": "text", "width": 100, "isFrozen": false },
+        { "id": 6, "attr": "typeCard", "name": "Loại thẻ", "type": "text", "width": 200, "isFrozen": false },
+        { "id": 7, "attr": "hd", "name": "Số HĐ cả thẻ", "type": "text", "width": 100, "isFrozen": false },
+        { "id": 8, "attr": "price", "name": "Số tiền", "type": "text", "width": 100, "isFrozen": false }
+    ],
+    "datas": [{
+            "id": 1, 
+            
+            "pay": "",
+            "typeCard": "",
+            "hd": "HD1234",
+            "price": "1,000,000"
+        }
+        
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "cells": [
+        { "id": 2, "attr": "", "name": "", "type": "", "width": 0, "isFrozen": true },
+        { "id": 5, "attr": "employeeCode", "name": "Mã KH", "type": "text", "width": 100, "isFrozen": false },
+        { "id": 6, "attr": "employeeName", "name": "Tên KH", "type": "text", "width": 150, "isFrozen": false },
+        { "id": 7, "attr": "address", "name": "Địa chỉ", "type": "text", "width": 100, "isFrozen": false },
+        { "id": 8, "attr": "mst", "name": "Mã số thuế", "type": "text", "width": 100, "isFrozen": false },
+        { "id": 9, "attr": "phone", "name": "Điện thoại", "type": "text", "width": 80, "isFrozen": false }
+    ],
+    "datas": [{
+            "id": 1, 
+            "employeeCode": "123456",
+            "employeeName": "Nguyễn Minh Tiến",
+            "address": "18 Dương Khuê",
+            "mst": "1241541525",
+            "phone": "0345121079"
+        }
+    ]
+}

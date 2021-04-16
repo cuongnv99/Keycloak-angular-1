@@ -1,0 +1,87 @@
+<div class="card">
+  <div class="p-fluid p-formgrid p-grid">
+    <div class="p-field p-col-12 p-md-4">
+      <label for="couponCode">Mã coupon: </label>
+      <input id="couponCode" type="text" pInputText>
+    </div>
+    <div class="p-field p-col-fixed">
+      <label style="visibility:hidden">Hiden</label>
+      <p-button label="Kiểm tra" icon="pi pi-check" styleClass="p-button-secondary"></p-button>
+    </div>
+    <div class="p-field p-col-fixed">
+      <label style="visibility:hidden">Hiden</label>
+      <p-button label="Chi tiết" icon="pi pi-file-o" styleClass="p-button-secondary"></p-button>
+    </div>
+  </div>
+  <div class="p-grid p-fluid">
+    <div class="p-field p-col-12 p-lg-12 p-jc-end">
+      <div class="p-field-checkbox">
+        <p-checkbox binary="true" inputId="applied" [disabled]="true"></p-checkbox>
+        <label for="applied">Đã áp dụng</label>
+      </div>
+    </div>
+    <div class="p-field p-col-12 p-lg-12">
+      <div class="p-grid p-fluid">
+        <div class="p-field p-col-12 p-lg-4">
+          <label for="appliedDate">Ngày áp dụng: </label>
+          <p-calendar placeholder="- Từ ngày -" [(ngModel)]="date3" [showIcon]="true" inputId="appliedDate"
+                      [disabled]="true"></p-calendar>
+        </div>
+        <div class="p-field p-col-12 p-lg-4">
+          <label for="orderCode">Mã đơn hàng áp dụng: </label>
+          <input id="orderCode" type="text" pInputText disabled>
+        </div>
+      </div>
+    </div>
+    <div class="p-field p-col-12 p-lg-12">
+      <div class="p-grid p-fluid">
+        <div class="p-field p-col-12 p-lg-4">
+          <label for="product">Sản phẩm/Nhóm SP: </label>
+          <input id="product" type="text" pInputText disabled>
+        </div>
+        <div class="p-field p-col-12 p-lg-4">
+          <label for="saleType">Loại khuyến mãi: </label>
+          <input id="saleType" type="text" pInputText disabled>
+        </div>
+        <div class="p-field p-col-12 p-lg-4">
+          <label for="value">Giá trị: </label>
+          <input id="value" type="text" pInputText disabled>
+        </div>
+      </div>
+    </div>
+    <div class="p-field p-col-12 p-lg-12">
+      <div class="p-grid p-fluid">
+        <div class="p-field p-col-12 p-lg-4">
+          <label for="minMoney">Số tiền tối thiểu áp dụng: </label>
+          <input id="minMoney" type="text" pInputText disabled>
+        </div>
+        <div class="p-field p-col-12 p-lg-4">
+          <label for="phoneNumber">SĐT khách hàng: </label>
+          <input id="phoneNumber" type="text" pInputText disabled>
+        </div>
+        <div class="p-field p-col-12 p-lg-4">
+          <label for="idCard">CMND Khách hàng: </label>
+          <input id="idCard" type="text" pInputText disabled>
+        </div>
+      </div>
+    </div>
+    <div class="p-field p-col-12 p-lg-12">
+      <div class="p-grid p-fluid">
+        <div class="p-field p-col-12 p-lg-4">
+          <label for="startDate">Thời gian bắt đầu áp dụng: </label>
+          <p-calendar placeholder="- Từ ngày -" [(ngModel)]="date3" [showIcon]="true" inputId="startDate"
+                      [disabled]="true"></p-calendar>
+        </div>
+        <div class="p-field p-col-12 p-lg-4">
+          <label for="endDate">Thời gian kết thúc: </label>
+          <p-calendar placeholder="- Từ ngày -" [(ngModel)]="date3" [showIcon]="true" inputId="endDate"
+                      [disabled]="true"></p-calendar>
+        </div>
+        <div class="p-field p-col-12 p-lg-4">
+          <label for="idCard">Kết quả tin nhắn trả về: </label>
+          <textarea [rows]="5" pInputTextarea></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

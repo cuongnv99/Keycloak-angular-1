@@ -1,0 +1,77 @@
+{
+    "cells": [
+        { "id": 1, "attr": null, "name": "tiredMenu", "type": null, "width": 50, "isFrozen": true },
+        { "id": 3, "attr": "index", "name": "STT", "type": "checkbox", "width": 50, "isFrozen": true },
+        { "id": 4, "attr": "productCode", "name": "Mã đơn hàng", "type": "text", "width": 250, "isFrozen": false },
+        { "id": 5, "attr": "exportType", "name": "Loại đơn hàng", "type": "text", "width": 250, "isFrozen": false },
+        { "id": 6, "attr": "date", "name": "Ngày đặt hàng", "type": "date", "width": 250, "isFrozen": false },
+        { "id": 7, "attr": "branch", "name": "Chi nhánh", "type": "text", "width": 250, "isFrozen": false },
+        { "id": 10, "attr": "price", "name": "Tổng tiền", "type": "number", "width": 250, "isFrozen": false },
+        { "id": 11, "attr": "paid", "name": "Đã thanh toán", "type": "number", "width": 250, "isFrozen": false },
+        { "id": 12, "attr": "debt", "name": "Còn nợ", "type": "number", "width": 250, "isFrozen": false },
+        { "id": 13, "attr": "collect", "name": "Đã thu tiền tiền", "type": "checkbox", "width": 250, "isFrozen": false },
+        { "id": 14, "attr": "delivered", "name": "Đã giao hàng", "type": "checkbox", "width": 250, "isFrozen": false },
+        { "id": 15, "attr": null, "name": "action", "type": "", "width": 100, "isFrozen": false }
+    ],
+    "datas": [{
+            "id": 1,
+            "index": "1",
+            "productCode": "10100100000061",
+            "exportType": "bán hàng-tại siêu thị",
+            "date": "13/7/2021",
+            "branch": "HNI78",
+            "price": "2.990.909",
+            "paid": "2.990.909",
+            "collect": 1,
+            "delivered": 1
+        },
+        {
+            "id": 2,
+            "index": "2",
+            "productCode": "10100100000061",
+            "exportType": "bán hàng-tại siêu thị",
+            "date": "13/7/2021",
+            "branch": "HNI78",
+            "price": "2.990.909",
+            "paid": "2.990.909",
+            "collect": 1,
+            "delivered": 1
+        },
+        {
+            "id": 4,
+            "index": "4",
+            "productCode": "10100100000061",
+            "exportType": "bán hàng-tại siêu thị",
+            "date": "13/7/2021",
+            "branch": "HNI78",
+            "price": "2.990.909",
+            "paid": "2.990.909",
+            "collect": 1,
+            "delivered": 1
+        },
+        {
+            "id": 5,
+            "index": "5",
+            "productCode": "10100100000061",
+            "exportType": "bán hàng-tại siêu thị",
+            "date": "13/7/2021",
+            "branch": "HNI78",
+            "price": "2.990.909",
+            "paid": "2.990.909",
+            "collect": 1,
+            "delivered": 1
+        },
+        {
+            "id": 6,
+            "index": "6",
+            "productCode": "10100100000061",
+            "exportType": "bán hàng-tại siêu thị",
+            "date": "13/7/2021",
+            "branch": "HNI78",
+            "price": "2.990.909",
+            "paid": "2.990.909",
+            "collect": 1,
+            "delivered": 1
+        }
+    ]
+}

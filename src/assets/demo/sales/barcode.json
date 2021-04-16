@@ -1,0 +1,27 @@
+{
+    "cells": [
+        { "id": 2, "attr": "", "name": "", "type": "", "width": 0, "isFrozen": true },
+        { "id": 5, "attr": "productCode", "name": "Mã sản phẩm", "type": "text", "width": 100, "isFrozen": false },
+        { "id": 6, "attr": "productName", "name": "Tên sản phẩm", "type": "text", "width": 200, "isFrozen": false },
+        { "id": 7, "attr": "type", "name": "Nhóm hàng", "type": "text", "width": 100, "isFrozen": false },
+        { "id": 8, "attr": "employee", "name": "Nhà sản xuất", "type": "text", "width": 100, "isFrozen": false },
+        { "id": 9, "attr": "IEMI", "name": "Yêu cầu IEMI", "type": "checkbox", "width": 50, "isFrozen": false }
+    ],
+    "datas": [{
+            "id": 1, 
+            "productCode": "10100100000061",
+            "productName": "Bộ sản phẩm ĐTDĐ Oppo",
+            "type": "Điện thoại",
+            "employee": "Apple",
+            "IEMI": 1
+        },
+        {
+            "id": 2,
+            "productCode": "10100100000061",
+            "productName": "Bộ sản phẩm ĐTDĐ Oppo",
+            "type": "Điện thoại",
+            "employee": "Apple",
+            "IEMI": 1
+        }
+    ]
+}

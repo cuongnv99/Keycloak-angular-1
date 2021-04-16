@@ -1,0 +1,159 @@
+<div class="card">
+    <div class="p-grid">
+        <div class="p-col-6">
+            <span class="font-sale-market">Tạo hóa đơn bánh hàng dịch vụ HĐ điện tử</span>
+        </div>
+        <div class="p-col-6">
+            <p-breadcrumb [model]="" [home]=""></p-breadcrumb>
+        </div>
+    </div>
+    <div class="p-fluid p-formgrid p-grid">
+        <div class="p-field p-col-12 p-md-4">
+            <label>Chi nhánh:</label>
+            <input type="text" pInputText/>
+        </div>
+        <div class="p-field p-col-12 p-md-4">
+            <label>Nhân hàng CN:</label>
+            <input type="text" pInputText/>
+        </div>
+        <div class="p-field p-col-12 p-md-2">
+            <label>Loại nghiệp vụ</label>
+            <input type="text" pInputText/>
+        </div>
+        <div class="p-field p-col-12 p-md-2">
+            <label>Mã số thuế CN:</label>
+            <input type="text" pInputText/>
+        </div>
+        <div class="p-field p-col-12 p-md-2">
+            <label>Số tài khoản CN:</label>
+            <input type="text" pInputText/>
+        </div>
+        <div class="p-field p-col-12 p-md-2">
+            <label>Ngày tạo:</label>
+            <input type="text" pInputText/>
+        </div>
+        <div class="p-field p-col-12 p-md-4">
+            <label>Địa chỉ CN:</label>
+            <input type="text" pInputText/>
+        </div>
+        <div class="p-field p-col-12 p-md-2">
+            <label>Số tài khoản CN:</label>
+            <input type="text" pInputText/>
+        </div>
+        <div class="p-field p-col-12 p-md-2">
+            <label>Mã hóa đơn:</label>
+            <input type="text" pInputText/>
+        </div>
+        <div class="p-field p-col-12 p-md-4">
+            <label>Từ khóa</label>
+            <input type="text" pInputText/>
+        </div>
+        <div class="p-field-checkbox p-col-12 p-md-2">
+            <p-checkbox name=""></p-checkbox>
+            <label for="la">Không lấy hóa đơn</label>
+        </div>
+        <div class="p-field-checkbox p-col-12 p-md-2">
+            <p-checkbox name=""></p-checkbox>
+            <label for="la">Người mua không cung cấp tên</label>
+        </div>
+        <div class="p-field p-col-12 p-md-4">
+            <label>Mẫu số:</label>
+            <input type="text" pInputText/>
+        </div>
+    </div>
+    <div class="p-grid">
+        <div class="p-col-12 p-lg-8">
+            <div class="p-fluid p-formgrid p-grid ">
+                <div class="p-field p-col-12 p-lg-3">
+                    <label class="g-label" (click)="openCustomerInfoModal=true">Khách hàng:</label>
+                    <input type="text" pInputText>
+                </div>
+                <div class="p-field p-col-12 p-md-3">
+                    <label>Đơn vị KH:</label>
+                    <input type="text" pInputText/>
+                </div>
+                <div class="p-field p-col-12 p-md-3">
+                    <label>Ký hiệu:</label>
+                    <input type="text" pInputText/>
+                </div>
+                <div class="p-field p-col-12 p-md-3">
+                    <label>Số hóa đơn:</label>
+                    <input type="text" pInputText/>
+                </div>
+                <div class="p-field p-col-12 p-md-3">
+                    <label>Mã số thuế KH:</label>
+                    <input type="text" pInputText/>
+                </div>
+                <div class="p-field p-col-12 p-md-3">
+                    <label>Điện thoại KH:</label>
+                    <input type="text" pInputText/>
+                </div>
+                <div class="p-field p-col-12 p-md-3">
+                    <label>Ngày hóa đơn:</label>
+                    <input type="text" pInputText/>
+                </div>
+                <div class="p-field p-col-12 p-md-3">
+                    <label>Ngân hàng KH:</label>
+                    <ng-select [items]="">
+                    </ng-select>
+                </div>
+                <div class="p-field p-col-12 p-md-3">
+                    <label>Số tài khoản KH:</label>
+                    <input type="text" pInputText/>
+                </div>
+                <div class="p-field p-col-12 p-md-3">
+                    <label>Địa chỉ KH:</label>
+                    <input type="text" pInputText/>
+                </div>
+                <div class="p-field p-col-12 p-md-3">
+                    <label>Nhân viên bán hàng:</label>
+                    <app-employee-selection (clickSearchBtn)="openEmployeeSearchModal=true"></app-employee-selection>
+                </div>
+                <div class="p-field p-col-12 p-md-3">
+                    <label>Người mua:</label>
+                    <input type="text" pInputText/>
+                </div>
+                <div class="p-field p-col-12 p-md-3">
+                    <label>Email:</label>
+                    <input type="text" pInputText/>
+                </div>
+                <div class="p-field p-col-12 p-md-3">
+                    <label>Hình thức thanh toán:</label>
+                    <ng-select [items]="">
+                    </ng-select>
+                </div>
+                <div class="p-field p-col-12 p-md-3">
+                    <label>Hạn thanh toán:</label>
+                    <input type="text" pInputText/>
+                </div>
+                <div class="p-field p-col-12 p-md-3">
+                    <label>Barcode:</label>
+                    <div class="p-inputgroup">
+                        <input type="text" pInputText placeholder="Keyword">
+                        <button type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-warn" (click)="openBarcodeModal=true"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-lg-4">
+            <div class="p-field">
+                <label>Nội dung:</label>
+                <textarea [rows]="13" [cols]="80" pInputTextarea></textarea>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <app-table-dynamic [data]="tableData" [scrollHeight]="'500px'"></app-table-dynamic>
+    </div>
+    <div class="p-mt-4 p-d-flex p-jc-center">
+        <label class="flex-lable">Tổng cộng:</label>
+        <input class="input-number p-mr-6" type="text" value="" pInputText>
+        <input class="input-number p-mr-3" type="text" value="" pInputText>
+        <input class="input-number p-mr-3" type="text" value="" pInputText>
+        <input class="input-number" type="text" value="" pInputText>
+    </div>
+</div>
+<app-employee-search-modal [isOpenModal]="openEmployeeSearchModal" (onCloseModal)="openEmployeeSearchModal=false"></app-employee-search-modal>
+<app-barcode-modal [isOpenModal]="openBarcodeModal" (onCloseModal)="openBarcodeModal=false"></app-barcode-modal>
+<app-customer-info-view-modal [isOpenModal]="openCustomerInfoModal" (onCloseModal)="openCustomerInfoModal=false"></app-customer-info-view-modal>

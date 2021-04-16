@@ -1,0 +1,32 @@
+p-table tr th,
+p-table tr td {
+    text-align: center;
+    line-height: 20px;
+    height: 46px;
+}
+
+:host ::ng-deep .menucus {
+    transform: translate(-270px, -58px);
+}
+
+.p-button.p-button-icon-only.p-button-text {
+    height: 30px;
+    position: absolute;
+    transform: translate(-32px, -15px);
+}
+
+.p-button.p-button-icon-only.p-button-success {
+    height: 30px;
+    position: absolute;
+    transform: translate(-46px, -15px);
+}
+
+.p-button.p-button-icon-only.p-button-danger {
+    height: 30px;
+    position: absolute;
+    transform: translate(-10px, -15px);
+}
+
+:host ::ng-deep .mytable>.p-datatable-scrollable-wrapper>.p-datatable-unfrozen-view {
+    position: relative;
+}

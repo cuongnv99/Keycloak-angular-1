@@ -1,0 +1,11 @@
+<div class="p-field p-col-12 p-md-3">
+    <label>Chi nhánh</label>
+    <ng-select [title]="tooltipValue" (change)="selectedBranch($event)" (keypress)="blockSpecialChars($event)" [searchFn]="customSearchBrach" [items]="branchDatas" placeholder="Chọn chi nhánh">
+        <ng-template ng-label-tmp let-item="item">
+            <span>{{item.branchId}} - {{item.branchName}}</span>
+        </ng-template>
+        <ng-template ng-option-tmp let-item="item" let-index="index">
+            <span title="{{item.branchId}} - {{item.branchName}}">{{item.branchId}} - {{item.branchName}}</span>
+        </ng-template>
+    </ng-select>
+</div>

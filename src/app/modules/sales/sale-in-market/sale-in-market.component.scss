@@ -1,0 +1,62 @@
+.sale-in-market{
+    .container{
+        padding: 1rem ;
+    }
+    .fix-button{
+        text-align: start;
+        // padding-left: 6.5px;
+        color: #fff;
+        // border: 1px solid #d0d6db;
+        text-decoration: underline;
+    }
+    .p-button.p-button-outlined:enabled:active{
+        color: #1976d2;
+        background-color: #ffff;
+    }
+    .p-button.p-button-outlined:enabled:hover{
+        color: #1976d2;
+        background-color: #ffff;
+    }
+    .border-lable{
+        height: 100%;
+        font-size: 1rem;
+        color: #495057;
+        // background: #ffffff;
+        padding: 0.5rem 0.5rem;
+        // border: 1px solid #ced4da;
+        transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        // border-radius: 4px;
+    }
+    .font-sale-market{
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    .tbl-dynamic{
+        ::ng-deep p-table{
+            .p-datatable{
+                border: 2px solid #bdbcbc;
+
+                .p-datatable-thead > tr > th{
+                    background-color: #ee0033;
+                    color: #FFFFFF;
+                }
+
+                .p-datatable-tbody{
+                    font-size: 15px;
+                }
+                
+            }
+
+        }
+    }
+}
+.p-datatable-thead > tr > th{
+    background-color: #ee0033 !important;
+    color: #FFFFFF !important;
+}
+.p-datatable-tbody{
+    font-size: 15px;
+}

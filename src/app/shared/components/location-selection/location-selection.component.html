@@ -1,0 +1,14 @@
+<!-- <label>{{label}}</label>
+<ng-select [title]="tooltipValue" (change)="selectedLocation($event)" [searchFn]="customSearchLocation"
+    [items]="locationDatas" [placeholder]="plholder">
+    <ng-template ng-label-tmp let-item="item">
+        <span>{{item.locationCode}} - {{item.locationName}}</span>
+    </ng-template>
+    <ng-template ng-option-tmp let-item="item" let-index="index">
+        <span title="{{item.locationCode}} - {{item.locationName}}">{{item.locationCode}} - {{item.locationName}}</span>
+    </ng-template>
+</ng-select> -->
+
+<!-- fix tạm chưa custome -->
+<p-dropdown [options]="test" placeholder="Tất cả" optionLabel="name" [filter]=true [showClear]=true>
+</p-dropdown>

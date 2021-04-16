@@ -1,0 +1,19 @@
+{
+    "cells": [
+        { "id": 2, "attr": "", "name": "", "type": "", "width": 0, "isFrozen": true },
+        { "id": 5, "attr": "checkbox", "name": "checkbox", "type": "", "width": 50, "isFrozen": false },
+        { "id": 6, "attr": "Name", "name": "Loại phí", "type": "text", "width": 150, "isFrozen": false },
+        { "id": 7, "attr": "type", "name": "Theo tỷ lệ", "type": "checkbox", "width": 50, "isFrozen": false },
+        { "id": 8, "attr": "giatri", "name": "Giá trị", "type": "text", "width": 100, "isFrozen": false },
+        { "id": 9, "attr": "mucphi", "name": "Mức phí", "type": "text", "width": 50, "isFrozen": false }
+    ],
+    "datas": [{
+            "id": 1, 
+            "Name": "Phí GTGT khác",
+            "type": 1,
+            "giatri": "1.000.000",
+            "mucphi": "1.000.000"
+
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+<div class="p-grid"  [formGroup]="CareForm">
+    <div class="p-col-12">
+        <p-fieldset>
+            <ng-template pTemplate="header">Thông tin phiếu yêu cầu</ng-template>
+            <div class="p-fluid p-formgrid p-grid">
+                <div class="p-field p-col-12 p-lg-3">
+                    <label>Ngày</label>
+                    <p-calendar [showIcon]="true" inputId="icon" selectionMode="range" dateFormat="dd/mm/yy"
+                        [monthNavigator]="true" formControlName="date">
+                    </p-calendar>
+                </div>
+                <div class="p-field p-col-12 p-lg-3">
+                    <label>Nhân viên yêu cầu</label>
+                    <input type="text" pInputText formControlName="employee">
+                </div>
+                <div class="p-field p-col-12 p-lg-3">
+                    <label>Kho</label>
+                    <input type="text" pInputText formControlName="warehouse">
+                </div>
+                <div class="p-field p-col-12 p-lg-9">
+                    <label>Ghi chú</label>
+                    <textarea [rows]="4" [cols]="30" style="height: 90%;" pInputTextarea formControlName="Note"></textarea>
+                </div>
+            </div>
+        </p-fieldset>
+    </div>
+    <div class="p-col-12">
+        <div class="p-fluid p-formgrid p-grid p-jc-center">
+            <div class="p-field p-col-12 p-lg-3">
+                <label>IMEI</label>
+                <input type="text" pInputText placeholder="--Nhập IMEI yêu cầu huỷ Care+--" formControlName="IMEI">
+            </div>
+            <div class="p-field p-col-12 p-lg-3">
+                <label>Sản phẩm</label>
+                <input type="text" pInputText formControlName="product">
+            </div>
+        </div>
+    </div>
+</div>

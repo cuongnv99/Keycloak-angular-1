@@ -1,0 +1,61 @@
+<div class="card">
+  <div class="p-grid">
+    <div class="p-col-6">
+      <span style="font-weight: bold;font-size: 1.5rem;">Thông tin tìm kiếm</span>
+    </div>
+    <div class="p-col-6">
+      <p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+    </div>
+  </div>
+  <div class="p-grid p-fluid">
+    <div class="p-field p-col-12 p-lg-4">
+      <div class="p-grid p-fluid">
+        <div class="p-field p-col-12 p-lg-6">
+          <label for="icon">Ngày yêu cầu</label>
+          <p-calendar placeholder="- Từ ngày -" [(ngModel)]="date3" [showIcon]="true" inputId="icon"></p-calendar>
+        </div>
+        <div class="p-field p-col-12 p-lg-6">
+          <label style="visibility:hidden">Hiden</label>
+          <p-calendar placeholder="- Đến ngày -" [(ngModel)]="date3" [showIcon]="true" inputId="icon"></p-calendar>
+        </div>
+      </div>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+      <label>Loại Y/C đổi trả:</label>
+      <p-multiSelect [options]="type" [(ngModel)]="selectedType" optionLabel="name" optionValue="code"></p-multiSelect>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+      <label>Kho nhập:</label>
+      <p-multiSelect [options]="type" [(ngModel)]="selectedType" optionLabel="name" optionValue="code"></p-multiSelect>
+    </div>
+  </div>
+  <div class="p-grid p-fluid">
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Chuỗi tìm:</label>
+      <input type="text" pInputText>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+      <label>Tìm theo:</label>
+      <p-dropdown [options]="branch" placeholder="-- Chọn ngành hàng --" optionLabel="name" [filter]=true [showClear]=true>
+      </p-dropdown>
+    </div>
+    <div class="p-field p-col-12 p-lg-3 p-d-flex p-ai-end">
+      <div class="p-field-checkbox p-field-checkbox p-mr-6">
+        <p-checkbox name="" [binary]="true" [value]="true"></p-checkbox>
+        <label class="p-ml-2">Đã hủy</label>
+      </div>
+    </div>
+  </div>
+  <div class="p-grid p-jc-end">
+    <div class="p-col-fixed">
+      <div class="btn-box">
+        <p-button label="Tìm kiếm" icon="pi pi-search" styleClass="p-button-secondary"></p-button>
+      </div>
+    </div>
+    <div class="p-col-fixed">
+      <div class="btn-box">
+        <p-button label="Xuất excel" icon="pi pi-download" styleClass="p-button-secondary"></p-button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,153 @@
+{
+    "cells": [    
+        { "id": 0, "attr": "", "name": "", "type": "text", "width": 0, "isFrozen": true },
+        { "id": 1, "attr": "market", "name": "Tên cửa hàng", "type": "text", "width": 150, "isFrozen": false },
+        { "id": 2, "attr": "productCodeCare", "name": "Mã sản phẩm Care+", "type": "text", "width": 250, "isFrozen": false },
+        { "id": 3, "attr": "productNameCare", "name": "Tên sản phẩm Care+", "type": "text", "width": 250, "isFrozen": false },
+        { "id": 4, "attr": "date", "name": "Ngày hiệu lực", "type": "text", "width": 150, "isFrozen": false },
+        { "id": 5, "attr": "dateEnd", "name": "Ngày hết hiệu lực", "type": "text", "width": 150, "isFrozen": false },
+        { "id": 6, "attr": "insuranceType", "name": "Loại bảo hiểm", "type": "text", "width": 250, "isFrozen": false },
+        { "id": 7, "attr": "warranty", "name": "Số tháng bảo hành", "type": "text", "width": 150, "isFrozen": false }
+       
+    ],
+    "datas": [{
+            "id": 1,
+            "market": "Siêu thị 1",
+            "productCodeCare": "10100100000061",
+            "productNameCare": "Bộ sản phẩm ĐTDĐ Oppo",
+            "date": "1/1/2021",
+            "dateEnd": "2/2/2021",
+            "insuranceType": "Bảo hiểm điện thoại",
+            "warranty": "1 tháng"
+        },
+        {
+            "id": 2,
+            "market": "Siêu thị 2",
+            "productCodeCare": "10100100000061",
+            "productNameCare": "Bộ sản phẩm ĐTDĐ Oppo",
+            "date": "1/1/2021",
+            "dateEnd": "2/2/2021",
+            "insuranceType": "Bảo hiểm điện thoại",
+            "warranty": "1 tháng"
+        },
+        {
+            "id": 3,
+            "market": "Siêu thị 3",
+            "productCodeCare": "10100100000061",
+            "productNameCare": "Bộ sản phẩm ĐTDĐ Oppo",
+            "date": "1/1/2021",
+            "dateEnd": "2/2/2021",
+            "insuranceType": "Bảo hiểm điện thoại",
+            "warranty": "1 tháng"
+        },
+        {
+            "market": "Siêu thị 4",
+            "productCodeCare": "10100100000061",
+            "productNameCare": "Bộ sản phẩm ĐTDĐ Oppo",
+            "date": "1/1/2021",
+            "dateEnd": "2/2/2021",
+            "insuranceType": "Bảo hiểm điện thoại",
+            "warranty": "1 tháng"
+        },
+        {
+            "id": 5,
+            "market": "Siêu thị 5",
+            "productCodeCare": "10100100000061",
+            "productNameCare": "Bộ sản phẩm ĐTDĐ Oppo",
+            "date": "1/1/2021",
+            "dateEnd": "2/2/2021",
+            "insuranceType": "Bảo hiểm điện thoại",
+            "warranty": "1 tháng"
+        },
+        {
+            "id": 6,
+            "market": "Siêu thị 6",
+            "productCodeCare": "10100100000061",
+            "productNameCare": "Bộ sản phẩm ĐTDĐ Oppo",
+            "date": "1/1/2021",
+            "dateEnd": "2/2/2021",
+            "insuranceType": "Bảo hiểm điện thoại",
+            "warranty": "1 tháng"
+        },
+        {
+            "id": 7,
+            "market": "Siêu thị 7",
+            "productCodeCare": "10100100000061",
+            "productNameCare": "Bộ sản phẩm ĐTDĐ Oppo",
+            "date": "1/1/2021",
+            "dateEnd": "2/2/2021",
+            "insuranceType": "Bảo hiểm điện thoại",
+            "warranty": "1 tháng"
+        },
+        {
+            "id": 8,
+            "market": "Siêu thị 8",
+            "productCodeCare": "10100100000061",
+            "productNameCare": "Bộ sản phẩm ĐTDĐ Oppo",
+            "date": "1/1/2021",
+            "dateEnd": "2/2/2021",
+            "insuranceType": "Bảo hiểm điện thoại",
+            "warranty": "1 tháng"
+        },
+        {
+            "id": 9,
+            "market": "Siêu thị 9",
+            "productCodeCare": "10100100000061",
+            "productNameCare": "Bộ sản phẩm ĐTDĐ Oppo",
+            "date": "1/1/2021",
+            "dateEnd": "2/2/2021",
+            "insuranceType": "Bảo hiểm điện thoại",
+            "warranty": "1 tháng"
+        },
+        {
+            "id": 10,
+            "market": "Siêu thị 10",
+            "productCodeCare": "10100100000061",
+            "productNameCare": "Bộ sản phẩm ĐTDĐ Oppo",
+            "date": "1/1/2021",
+            "dateEnd": "2/2/2021",
+            "insuranceType": "Bảo hiểm điện thoại",
+            "warranty": "1 tháng"
+        },
+        {
+            "id": 11,
+            "market": "Siêu thị 11",
+            "productCodeCare": "10100100000061",
+            "productNameCare": "Bộ sản phẩm ĐTDĐ Oppo",
+            "date": "1/1/2021",
+            "dateEnd": "2/2/2021",
+            "insuranceType": "Bảo hiểm điện thoại",
+            "warranty": "1 tháng"
+        },
+        {
+            "id": 12,
+            "market": "Siêu thị 12",
+            "productCodeCare": "10100100000061",
+            "productNameCare": "Bộ sản phẩm ĐTDĐ Oppo",
+            "date": "1/1/2021",
+            "dateEnd": "2/2/2021",
+            "insuranceType": "Bảo hiểm điện thoại",
+            "warranty": "1 tháng"
+        },
+        {
+            "id": 13,
+            "market": "Siêu thị 13",
+            "productCodeCare": "10100100000061",
+            "productNameCare": "Bộ sản phẩm ĐTDĐ Oppo",
+            "date": "1/1/2021",
+            "dateEnd": "2/2/2021",
+            "insuranceType": "Bảo hiểm điện thoại",
+            "warranty": "1 tháng"
+        },
+        {
+            "id": 14,
+            "market": "Siêu thị 14",
+            "productCodeCare": "10100100000061",
+            "productNameCare": "Bộ sản phẩm ĐTDĐ Oppo",
+            "date": "1/1/2021",
+            "dateEnd": "2/2/2021",
+            "insuranceType": "Bảo hiểm điện thoại",
+            "warranty": "1 tháng"
+        }
+    ]
+}

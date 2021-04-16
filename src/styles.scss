@@ -1,0 +1,551 @@
+$gutter: 1rem; //for primeflex grid system
+@import "~src/assets/color";
+@import "../node_modules/primeng/resources/primeng.min.css";
+@import "../node_modules/primeflex/primeflex.scss";
+@import "../node_modules/primeicons/primeicons.css";
+@import "../node_modules/prismjs/themes/prism-coy.css";
+@import "../node_modules/@fullcalendar/core/main.min.css";
+@import "../node_modules/@fullcalendar/daygrid/main.min.css";
+@import "../node_modules/@fullcalendar/timegrid/main.min.css";
+@import "assets/demo/flags/flags.css";
+@import "src/assets/layout/css/layout-light.scss";
+@import "src/assets/theme/teal/theme-light.scss";
+@import "~@ng-select/ng-select/themes/default.theme.css";
+@import "~src/assets/default.theme";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+.fas {
+  color: $color-icon-1;
+}
+
+.p-button {
+  &:disabled {
+    background-color: rgb(39 37 37 / 40%);
+    cursor: not-allowed;
+    border: none;
+    color: black;
+  }
+}
+
+.text-danger {
+  color: red;
+  margin-left: 0.25rem;
+}
+
+label.required::after {
+  content: "*";
+  margin-left: 3px;
+  color: red;
+}
+
+p-dropdown {
+  .p-dropdown .p-dropdown-panel {
+    width: 100%;
+    .p-dropdown-items .p-dropdown-item {
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+p-table {
+  tr th {
+    text-align: center !important;
+  }
+}
+
+@media screen and (max-width: 40rem) {
+  p-table {
+    .p-datatable {
+      &.p-datatable-responsive-demo {
+        .p-datatable-thead > tr > th,
+        .p-datatable-tfoot > tr > td {
+          display: none !important;
+        }
+        .p-datatable-tbody > tr > td {
+          text-align: left;
+          display: block;
+          width: 100% !important;
+          float: left;
+          clear: left;
+          border: 0 none;
+          .p-column-title {
+            padding: 0.4rem;
+            min-width: 30%;
+            display: inline-block;
+            margin: -0.4em 1em -0.4em -0.4rem;
+            font-weight: bold;
+            color: black;
+          }
+          &:last-child {
+            border-bottom: 1px solid var(--surface-d);
+          }
+        }
+      }
+    }
+  }
+  .sidebar-width {
+    width: 100% !important;
+  }
+}
+
+@media screen and (min-width: 40rem) {
+  .sidebar-width {
+    width: 75% !important;
+  }
+}
+
+p-table {
+  .p-datatable-responsive-demo .p-datatable-tbody > tr > td .p-column-title {
+    display: none;
+  }
+}
+
+p-dialog {
+  .p-dialog {
+    .p-dialog-header {
+      padding: 1rem;
+      background-color: $color-primary-1;
+      color: white;
+      .p-dialog-header-icon:last-child {
+        color: white;
+      }
+    }
+    .p-dialog-content {
+      padding-top: 1rem;
+    }
+  }
+}
+
+input[type="checkbox"]:not(:checked) ~ .check-mark.no-full {
+  background-color: $color-primary-1;
+  border: none;
+}
+
+.p-autocomplete .p-autocomplete-panel {
+  width: 100%;
+  .p-autocomplete-items .p-autocomplete-item {
+    text-overflow: ellipsis;
+  }
+}
+
+.fit-content {
+  width: fit-content;
+}
+
+.modal {
+  .modal-left {
+    position: relative;
+    margin: auto;
+    max-width: 80%;
+    min-width: 400px;
+    width: 1000px;
+    height: 100%;
+    transform: translate3d(0%, 0, 0);
+    &.w-70 {
+      width: 70%;
+    }
+    &.w-30 {
+      width: 30%;
+    }
+    .modal-content {
+      height: 100%;
+      width: 100%;
+      border-radius: 0px;
+      // overflow-y: auto;
+    }
+  }
+}
+
+.modal {
+  &.fade {
+    .modal-left {
+      right: -320px;
+      transition: opacity 0.3s linear, right 0.3s ease-out;
+    }
+  }
+}
+
+.modal {
+  &.fade {
+    &.show {
+      .modal-left {
+        right: 0;
+      }
+    }
+  }
+}
+
+.modal {
+  z-index: 999 !important;
+}
+
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 0;
+  line-height: 18px;
+  cursor: pointer;
+  user-select: none;
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    top: 0;
+    left: 0;
+  }
+  input[type="checkbox"]:disabled:checked ~ .check-mark,
+  input[type="checkbox"]:disabled:not(:checked) ~ .check-mark {
+    opacity: 0.5;
+  }
+  input[type="checkbox"]:checked ~ .check-mark,
+  input[type="checkbox"]:not(:checked) ~ .check-mark.no-full {
+    background-color: $color-primary-1;
+    border: none;
+  }
+  input[type="checkbox"]:checked ~ .check-mark:after {
+    font-family: "PrimeIcons" !important;
+    content: "\e909";
+    color: #fff;
+    font-size: 12px;
+    line-height: 0.8;
+    opacity: 1;
+    transform: scale(1);
+  }
+  input[type="checkbox"]:not(:checked) ~ .no-full.check-mark:after {
+    font-family: "PrimeIcons" !important;
+    content: "\e90f";
+    left: 4.3px;
+    top: 6px;
+    width: 0;
+    height: 0;
+    color: #fff;
+    font-size: 12px;
+    line-height: 0.8;
+    opacity: 1;
+    transform: scale(1);
+  }
+  .check-mark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    background-color: #fff;
+    border: 2px solid $color-primary-1;
+    box-sizing: border-box;
+    border-radius: 4px;
+    &:after {
+      left: 3px;
+      top: 5px;
+      opacity: 0;
+      transform: scale(0);
+      transition: transform 0.2s;
+      content: "";
+      position: absolute;
+    }
+  }
+}
+
+.p-paginator .p-paginator-first,
+.p-paginator .p-paginator-prev,
+.p-paginator .p-paginator-next,
+.p-paginator .p-paginator-last {
+  color: $color-primary-1 !important;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page {
+  border: 1px solid $color-primary-1 !important;
+  background-color: #fff !important;
+  color: $color-primary-1 !important;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+  border: 1px solid $color-primary-1 !important;
+  color: #fff !important;
+  background-color: $color-primary-1 !important;
+}
+
+.p-datatable .p-datatable-tbody > tr {
+  outline: unset;
+}
+
+.ng-select .ng-select-container {
+  min-height: 30px;
+}
+
+.ng-select.ng-select-single .ng-select-container {
+  height: 31px;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #b4b4b4;
+  opacity: 1;
+  /* Firefox */
+}
+
+.ng-select.ng-select-disabled > .ng-select-container {
+  color: #969696;
+  background: #f1f1f1;
+}
+
+.ng-select.ng-select-multiple
+  .ng-select-container
+  .ng-value-container
+  .ng-value {
+  background-color: $color-primary-2;
+}
+
+.confirm-warning {
+  .p-dialog-content {
+    i {
+      color: #fbc02d;
+    }
+  }
+  .p-confirm-dialog-message {
+    .txt-warning {
+      color: #fbc02d;
+    }
+  }
+}
+
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected,
+.ng-dropdown-panel
+  .ng-dropdown-panel-items
+  .ng-option.ng-option-selected.ng-option-marked {
+  color: #333;
+  background-color: #e0f2f1;
+}
+
+// CSS FOR MODAL
+.row-title-modal {
+  justify-content: space-between;
+  display: flex;
+  margin-right: 30px;
+  align-items: flex-end;
+  padding-top: 1px;
+  i {
+    cursor: pointer;
+  }
+}
+
+// Custom scrollbar
+::-webkit-scrollbar {
+  width: 9px;
+  background-color: #fff;
+  height: 9px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #e2e2e2;
+  border-radius: 10px;
+  border: 6px solid transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #babac0;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+
+::-webkit-scrollbar-track:hover {
+  background-color: #f4f4f4;
+}
+
+// Input number
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  text-align: right;
+}
+
+// Style for <select>
+select {
+  padding: 5px;
+  border-radius: 3px;
+  outline: none;
+  border: 1px solid #d5d7d9;
+  //height: 35px;
+  box-sizing: border-box;
+  color: $color-neutral-1;
+  &:focus {
+    border-color: #272b2e;
+  }
+  &:disabled {
+    border-color: $color-neutral-3;
+  }
+}
+
+.active {
+  color: $color-primary-1;
+  cursor: pointer;
+}
+
+input {
+  display: block;
+  text-overflow: ellipsis;
+}
+
+// Align text
+@media screen and (min-width: 768px) {
+  .text-right {
+    text-align: right !important;
+  }
+  .text-center {
+    text-align: center !important;
+  }
+  .text-left {
+    text-align: left !important;
+  }
+}
+
+//hungtd27 add css sidebar
+// .p-panelmenu .p-panelmenu-header > a {
+//   font-size: 22px;
+// }
+
+.p-panelmenu .p-panelmenu-header > a {
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffff;
+  border: none !important;
+  color: #000;
+}
+// .p-panelmenu .p-panelmenu-header > a:active,
+// .p-panelmenu .p-panelmenu-header > a:focus{
+//   background-color: red  !important;
+// }
+
+.p-panelmenu .p-menuitem-text {
+  line-height: 1;
+  font-size: 13px;
+  border: none !important;
+}
+
+.p-panelmenu .p-panelmenu-content {
+  border: none !important;
+}
+
+.p-panelmenu .p-panelmenu-header.p-highlight:not(.p-disabled) > a:active {
+  border-color: #dee2e6;
+  background: #e9ecef;
+  color: #495057;
+}
+
+// Note z-index
+
+/*
+  Dropdown: z-index: 1050;
+  app-topbar: z-index: 1100;
+  p-sidebar: z-index: 1200;
+  p-component-overlay: z-index: 2200;
+  ->>> các tooltip trên p-sidebar: z-index > 2200
+  toast-message: z-index: 5000
+  loading: z-index: 100000
+ */
+
+// Tien
+.p-fluid .p-inputnumber .p-inputnumber-input {
+  text-align: end !important;
+}
+
+.input-color {
+  color: red !important;
+}
+
+.p-height {
+  height: 3rem !important;
+}
+
+.p-field {
+  margin-bottom: 0.5rem;
+}
+
+html,
+body {
+  line-height: 1.2;
+}
+
+// tien css button
+
+//  css button
+.p-button {
+  background-color: rgb(238 0 51) !important;
+  color: #fff;
+  border-color: rgb(238 0 51) !important;
+}
+//css dialog
+.p-dialog .p-dialog-header {
+  background-color: #ee0033 !important;
+  color: #ffffff !important;
+}
+//css checkbox
+.p-checkbox .p-checkbox-box {
+  background-color: #ffffff;
+}
+.p-checkbox .p-checkbox-box:not(.p-disabled):hover {
+  border-color: #ee0033 !important;
+  // background: none !important;
+}
+.p-highlight:hover {
+  background: #ee0033;
+}
+.p-checkbox .p-checkbox-box.p-highlight {
+  border-color: #ee0033;
+  background: #ee0033;
+}
+// css button
+.p-button-label,
+.p-button {
+  color: #ffff !important;
+}
+
+input:disabled {
+    background: rgb(118 118 118 / 12%);
+}
+.erros{
+  color: #ee0033;
+}
+.p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link:active,
+.p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link:focus{
+  background-color:#a1a5a9 !important;
+}
+.p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link:focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: inset 0 0 0 0.15rem #a1a5a9;
+}
+.p-inputnumber-input {
+  text-align: end ;
+}
+// css breadcrumb
+.p-breadcrumb{
+  border: none !important;
+}
+.p-breadcrumb ul{
+  justify-content: flex-end !important;
+}
+.font-sale-market{
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.card {
+  min-height: 100%;
+}
+
+.p-fieldset .p-fieldset-legend {
+  border: none;
+  padding: 0px 5px;
+  background: none;
+}

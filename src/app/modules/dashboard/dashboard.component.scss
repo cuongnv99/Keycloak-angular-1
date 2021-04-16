@@ -1,0 +1,39 @@
+.container-login {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 60px;
+    padding-top: 76px;
+}
+
+.form-login {
+    position: relative;
+    width: 500px;
+    height: 290px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    float: left;
+}
+
+.p-float {
+    float: right;
+}
+
+.dasboard {
+     ::ng-deep {
+        .p-button {
+            // width: 60% !important;
+            padding: 20px;
+            border-radius: 10%;
+            margin-left: 6px;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+  "cells": [
+    { "id": 2, "attr": "", "name": "", "type": "", "width": 0, "isFrozen": true },
+    { "id": 5, "attr": "type", "name": "Loại giảm giá", "type": "text", "width": 150, "isFrozen": false },
+    { "id": 6, "attr": "giatri", "name": "Giá trị", "type": "text", "width": 50, "isFrozen": false },
+    { "id": 7, "attr": "TTyc", "name": "TT yêu cầu", "type": "text", "width": 150, "isFrozen": false },
+    { "id": 8, "attr": "TTg", "name": "TT giảm giá", "type": "text", "width": 150, "isFrozen": false }
+  ],
+  "datas": [{
+    "id": 1,
+    "type": "Theo số tiền",
+    "giatri": "100,000",
+    "TTyc": "",
+    "TTg": "100,000"
+  }
+  ]
+}

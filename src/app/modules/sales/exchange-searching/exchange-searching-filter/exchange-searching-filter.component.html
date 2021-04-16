@@ -1,0 +1,36 @@
+<div class="p-grid">
+    <div class="p-col-6">
+        <span class="font-sale-market">Tra cứu lập bù giao dịch</span>
+    </div>
+    <div class="p-col-6">
+        <p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+    </div>
+</div>
+<div class="p-grid" [formGroup]="exchangeSearchForm">
+    <div class="p-col-7">
+        <div class="p-fluid p-formgrid p-grid">
+            <div class="p-field p-col-12 p-md-5">
+                <label>Nhân viên</label>
+                <app-employee-selection (clickSearchBtn)="isOpenSearchEmplModal=true"></app-employee-selection>
+            </div>
+            <div class="p-field p-col-12 p-md-7">
+                <label>Ngày đấu nối</label>
+                <div class="ui-fluid p-formgrid p-grid">
+                    <p-calendar class="p-col" formControlName="fromDate" (keyup)="getFrDate($event)" (onClickOutside)="dateFrFormat()" [keepInvalid]="true" [showIcon]="true" [yearNavigator]="true" yearRange="2000:2050" [monthNavigator]="true" dateFormat="dd/mm/yy"></p-calendar>
+                    <p-calendar class="p-col" formControlName="toDate" (keyup)="getToDate($event)" (onClickOutside)="dateToFormat()" [keepInvalid]="true" [showIcon]="true" [yearNavigator]="true" yearRange="2000:2050" [monthNavigator]="true" dateFormat="dd/mm/yy"></p-calendar>
+                </div>
+            </div>
+            <div class="p-field p-col-12 p-md-5">
+                <label>Trạng thái</label>
+                <ng-select [items]="" formControlName="status">
+                </ng-select>
+            </div>
+            <div class="p-field p-md-5 p-d-flex">
+                <button pButton pRipple type="button" icon="pi pi-search" label="Tìm kiếm" class="p-mr-2"></button>
+                <button pButton pRipple type="button" icon="pi pi-file-excel" label="Xuất excel" class="p-mr-2"></button>
+                <button pButton pRipple type="button" icon="pi pi-upload" label="Import excel" class="p-mr-2"></button>
+            </div>
+        </div>
+    </div>
+</div>
+<app-employee-search-modal [isOpenModal]="isOpenSearchEmplModal" (onCloseModal)="isOpenSearchEmplModal=false"></app-employee-search-modal>

@@ -1,0 +1,23 @@
+{
+  "cells": [
+    { "id": 2, "attr": "", "name": "", "type": "", "width": 0, "isFrozen": true },
+    { "id": 3, "attr": "productCode", "name": "Mã chương trình", "type": "text", "width": 150, "isFrozen": false },
+    { "id": 5, "attr": "productName", "name": "Tên chương trình", "type": "text", "width": 200, "isFrozen": false },
+    { "id": 6, "attr": "productCodeCT", "name": "Code chương trình", "type": "text", "width": 150, "isFrozen": false },
+    { "id": 7, "attr": "note", "name": "Diễn giải", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 8, "attr": "type", "name": "Loại chương trình", "type": "text", "width": 150, "isFrozen": false },
+    { "id": 9, "attr": "dateStart", "name": "Hiệu lực từ", "type": "text", "width": 100, "isFrozen": false },
+    { "id": 10, "attr": "dateEnd", "name": "Hiệu lực đến", "type": "text", "width": 100, "isFrozen": false }
+  ],
+  "datas": [{
+    "id": 1,
+    "productCode": "1234",
+    "productName": "Tặng PMH phụ kiện 100k",
+    "productCodeCT": "214",
+    "note": "Tặng phiếu mua hàng",
+    "type": "-",
+    "dateStart": "01/03/2021",
+    "dateEnd": "31/12/2021"
+  }
+  ]
+}

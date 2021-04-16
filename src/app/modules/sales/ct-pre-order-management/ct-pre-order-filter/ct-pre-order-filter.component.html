@@ -1,0 +1,51 @@
+<div class="p-grid">
+    <div class="p-col-6">
+        <span class="font-sale-market">Quản lý chương trình đặt trước</span>
+    </div>
+    <div class="p-col-6">
+        <p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+    </div>
+</div>
+<div class="p-grid">
+    <div class="p-col-6">
+        <div class="p-fluid p-formgrid p-grid">
+            <div class="p-field p-col-12 p-md-8">
+                <label>Ngày yêu cầu</label>
+                <div class="ui-fluid p-formgrid p-grid">
+                    <p-calendar class="p-col" [keepInvalid]="true" [showIcon]="true" [yearNavigator]="true" yearRange="2000:2050" [monthNavigator]="true" dateFormat="dd/mm/yy"></p-calendar>
+                    <p-calendar class="p-col" [keepInvalid]="true" [showIcon]="true" [yearNavigator]="true" yearRange="2000:2050" [monthNavigator]="true" dateFormat="dd/mm/yy"></p-calendar>
+                </div>
+            </div>
+            <div class="p-field p-col-12 p-md-4">
+                <label>Kho</label>
+                <ng-select [items]="">
+                </ng-select>
+            </div>
+            <div class="p-field p-col-12 p-md-4">
+                <label>Model</label>
+                <span class="p-input-icon-right">
+                    <i class="pi pi-search" (click)="openModelModal=true"></i>
+                    <input type="text" pInputText placeholder="Search" />
+                </span>
+            </div>
+            <div class="p-field p-col-12 p-md-4">
+                <label>Sản phẩm</label>
+                <span class="p-input-icon-right">
+                    <i class="pi pi-search" (click)="openProductModal=true"></i>
+                    <input type="text" pInputText placeholder="Search" />
+                </span>
+            </div>
+            <div class="p-field p-col-12 p-md-4 p-d-flex p-file-no-lable">
+                <div class="p-field-checkbox p-field-checkbox p-mr-6">
+                    <p-checkbox name="" [binary]="true" [value]="true"></p-checkbox>
+                    <label class="p-ml-2">Đã hủy</label>
+                </div>
+                <div class="p-field-btn">
+                    <button pButton pRipple type="button" label="Tìm kiếm" class="p-mr-1"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-model-search-modal [isOpenModal]="openModelModal" (onCloseModal)="openModelModal=false"></app-model-search-modal>
+<app-product-search-modal [isOpenModal]="openProductModal" (onCloseModal)="openProductModal=false"></app-product-search-modal>

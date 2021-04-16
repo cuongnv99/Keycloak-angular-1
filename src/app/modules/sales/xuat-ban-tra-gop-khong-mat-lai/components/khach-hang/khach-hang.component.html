@@ -1,0 +1,93 @@
+<div class="p-fluid p-formgrid p-grid">
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Khách hàng thành viên</label>
+        <div class="p-input-icon-right">
+            <i class="pi pi-times" (click)="onClick($event)"></i>
+            <input type="text" pInputText>
+        </div>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <app-dialog-employee (openCusInfoViewModal)="isOpenCusInfoViewModal=true"></app-dialog-employee>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Điện thoại</label>
+        <div class="p-inputgroup">
+            <input type="text" pInputText>
+            <app-purchase-history></app-purchase-history>
+        </div>
+    </div>
+    <div class="p-field p-col-12 p-lg-3" style="display: flex;">
+        <div *ngFor="let item of gender" class="p-field-fix">
+            <p-radioButton  [inputId]="item.name" name="item" [value]="item" [(ngModel)]="selectedGender"></p-radioButton >
+            <label [for]="item.name">{{item.name}}</label>
+        </div>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Điạ chỷ liên hệ</label>
+        <input type="text" pInputText />
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Nơi giao</label>
+        <input type="text" pInputText />
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Điạ chỷ hoá đơn</label>
+        <input type="text" pInputText />
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Ngày sinh</label>
+        <p-calendar [showIcon]="true" inputId="icon" selectionMode="range" dateFormat="dd/mm/yy"
+            [monthNavigator]="true"></p-calendar>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Email</label>
+        <input type="text" pInputText />
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Tỉnh/Thành Phố</label>
+        <app-location-selection></app-location-selection>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Quận/Huyện</label>
+        <app-location-selection></app-location-selection>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Phường/Xã</label>
+        <app-location-selection></app-location-selection>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Mã số thuế</label>
+        <input type="number" pInputText />
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Chứng minh nhân dân</label>
+        <input type="text" pInputText />
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Điện thoại liên hệ</label>
+        <input type="text" pInputText />
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Người nhận</label>
+        <input type="text" pInputText />
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Chức vụ</label>
+        <input type="text" pInputText />
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Người mua</label>
+        <input type="text" pInputText />
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Tên tổ chức</label>
+        <input type="text" pInputText />
+    </div>
+    <div class="p-field-checkbox p-col-12 p-lg-3">
+        <p-checkbox inputId="ny"></p-checkbox>
+        <label for="ny">Khách hàng doanh nghiệp</label>
+    </div>
+    
+</div>
+
+<app-customer-info-view-modal [isOpenModal]="isOpenCusInfoViewModal" (onCloseModal)="isOpenCusInfoViewModal=false"></app-customer-info-view-modal>

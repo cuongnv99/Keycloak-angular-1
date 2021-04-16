@@ -1,0 +1,81 @@
+<!-- <i class="pi pi-search" (click)="showEmployeeSearch()" style="margin-top: 0.5rem;"></i> -->
+<!-- dialog -->
+<p-dialog header="Tìm kiếm nhân viên" [(visible)]="isOpenModal" (onHide)="onCloseModal.emit()" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
+    <div body class="p-col-12 modal-content">
+        <div class="p-grid">
+            <div class="row-employee-1" [formGroup]="employeeSearchForm">
+                <div class="p-fluid p-formgrid p-grid">
+                    <div class="p-field p-col-12 p-md-4">
+                        <label>Từ khóa</label>
+                        <input trim="blur" pInputText type="text" formControlName="searchKey">
+                    </div>
+                    <div class=" p-field p-col-12 p-md-8 p-jc-between p-d-flex" style="padding-top: 1.8rem;">
+                        <div class="p-field-checkbox  p-field-checkbox">
+                            <p-checkbox name="group1" formControlName="userLogin" [binary]="true" [value]="true"></p-checkbox>
+                            <label class="p-mr-3">Tên truy cập</label>
+                        </div>
+                        <div class="p-field-checkbox  p-field-checkbox">
+                            <p-checkbox name="group2" formControlName="fullName" [binary]="true" [value]="true"></p-checkbox>
+                            <label class="p-mr-3">Họ và tên</label>
+                        </div>
+                        <div class="p-field-checkbox  p-field-checkbox">
+                            <p-checkbox name="group3" formControlName="address" [binary]="true" [value]="true"></p-checkbox>
+                            <label class="p-mr-3">Địa chỉ</label>
+                        </div>
+                        <div class="p-field-checkbox  p-field-checkbox">
+                            <p-checkbox name="group4" formControlName="phoneNumber" [binary]="true" [value]="true"></p-checkbox>
+                            <label class="p-mr-3">Số ĐT</label>
+                        </div>
+                        <div class="p-field-checkbox p-field-checkbox">
+                            <p-checkbox name="group5" formControlName="email" [binary]="true" [value]="true"></p-checkbox>
+                            <label class="p-mr-3">Email</label>
+                        </div>
+                    </div>
+                    <div class="p-field p-col-12 p-md-4">
+                        <label>Giới tính</label>
+                        <ng-select [items]="genders" formControlName="gender" bindLabel="gender" bindValue="id" placeholder="--Tất cả--">
+                        </ng-select>
+                    </div>
+                    <div class="p-field p-col-12 p-md-4">
+                        <label>Năm sinh</label>
+                        <ng-select [items]="birthYears" formControlName="birthYear" bindLabel="birthYear" bindValue="id" placeholder="--Tất cả--">
+                        </ng-select>
+                    </div>
+                    <div class="p-field p-col-12 p-md-4">
+                        <label>Khu vực</label>
+                        <ng-select [items]="areas" formControlName="area" bindLabel="area" bindValue="id" placeholder="--Chọn khu vực--">
+                        </ng-select>
+                    </div>
+                    <div class="p-field p-col-12 p-md-4">
+                        <label>Phòng ban</label>
+                        <ng-select [items]="departments" formControlName="department" bindLabel="department" bindValue="id" placeholder="--Chọn phòng ban--">
+                        </ng-select>
+                    </div>
+                    <div class="p-field p-col-12 p-md-4">
+                        <label>Chức vụ</label>
+                        <ng-select [items]="positions" formControlName="position" bindLabel="position" bindValue="id" placeholder="--Chọn chức vụ--">
+                        </ng-select>
+                    </div>
+                    <div class="p-field p-col-12 p-md-1"></div>
+                    <div class="p-field p-col-12 p-md-2">
+                        <label style="opacity: 0;">a</label>
+                        <button pButton pRipple type="button" label="Tìm kiếm" icon="pi pi-search" (click)="searchEmployee()"></button>
+                    </div>
+                    <div class="p-field p-col-12 p-md-1"></div>
+                </div>
+            </div>
+            <div class="p-col-12">
+                <app-table-dynamic [data]="tableEmployeeSearch"></app-table-dynamic>
+            </div>
+
+        </div>
+    </div>
+    <div class="p-text-right modal-footer p-col-12" style="padding-top: 10px; margin-top: 30px;">
+        <div class="p-grid" style="justify-content: flex-end;">
+            <div>
+                <button pButton pRipple type="button" label="Chọn nhân viên" icon="pi pi-check-circle" class="p-mr-2 p-mb-2" (click)="selectEmployee()">
+            </button>
+            </div>
+        </div>
+    </div>
+</p-dialog>

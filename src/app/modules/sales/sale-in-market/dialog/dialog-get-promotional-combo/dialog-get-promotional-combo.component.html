@@ -1,0 +1,41 @@
+
+<p-dialog header="Khuyến Mãi Combo" [(visible)]="PromotinalComboDialog" (onHide)="onCloseModal.emit()" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000">
+    
+	<div class="p-grid">
+        Khuyến Mãi Combo content
+        <!-- <div class="p-col-12 p-lg-12">
+            <h5>{{code}}-{{title}}</h5>
+        </div>
+        <div class="p-col-12 p-lg-12">
+            <span>Khuyến mãi:{{code}}-{{title}}</span>
+        </div> -->
+        <!-- <div class="p-field p-col-12 p-lg-8 fix-checkbox p-jc-between">
+            <div *ngFor="let item of status" class="p-field-checkbox">
+                <p-checkbox [inputId]="item.name"></p-checkbox>
+                <label [for]="item.name">{{item.name}}</label>
+            </div>
+        </div> -->
+        <div class="p-col-4">
+            <div class="p-fluid p-grid p-formgrid">
+                <div class="p-field p-col-12 p-lg-12">
+                   
+                </div>
+            </div>
+        </div>
+        <div class="p-col-8">
+            <div class="p-fluid p-grid p-formgrid">
+                <div class="p-field p-col-12 p-lg-12">
+                   
+                </div>
+                <div class="p-field p-col-12 p-lg-12">
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+	<ng-template pTemplate="footer">
+        <p-button (click)="PromotinalComboDialog=false" label="Quay lại" styleClass="p-button-text" disabled></p-button>
+		<p-button (click)="PromotinalComboDialog=false" label="Tiếp tục" styleClass="p-button-text"></p-button>
+		<p-button (click)="PromotinalComboDialog=false" label="Huỷ"></p-button>
+	</ng-template>
+</p-dialog>

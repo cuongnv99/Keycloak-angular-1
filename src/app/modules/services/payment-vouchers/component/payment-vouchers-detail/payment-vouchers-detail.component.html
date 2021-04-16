@@ -1,0 +1,143 @@
+<!-- <div class="p-grid">
+    <div class="p-col-6">
+        <span style="font-weight: bold;">Thông tin phiếu</span>
+    </div>
+</div>
+
+<div class="p-fluid p-formgrid p-grid">
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Mã phiếu</label>
+        <input type="text" pInputText>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Ngày hoá đơn</label>
+        <p-calendar [showIcon]="true" inputId="icon" selectionMode="range" dateFormat="dd/mm/yy"
+            [monthNavigator]="true">
+        </p-calendar>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label style="border-bottom: 1px solid #1976d2; color: #1976d2;">CT liên quan</label>
+        <input type="text" pInputText>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Loại tiền</label>
+        <div class=" p-grid " style="margin-top: 0;">
+            <div class="p-col-5 p-lg-5" style="padding-right: 0;">
+                <p-dropdown [options]="list"></p-dropdown>
+            </div>
+            <div class="p-col-1 p-lg-1" style="padding: 0.5rem 0 0 0; text-align: center;">-</div>
+            <div class="p-col-6 p-lg-6" style="padding-left: 0;">
+                <p-inputNumber inputId="minmaxfraction" placeholder="0" mode="decimal"
+                    [maxFractionDigits]="5"></p-inputNumber>
+            </div>
+        </div>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Hình thức chi</label>
+        <div class="p-input-icon-right">
+            <i class="pi pi-search" title=" có mở ra popup"></i>
+            <input type="text" pInputText placeholder="--Chọn hình thức chi--">
+        </div>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Ngày hoá đơn</label>
+        <p-calendar [showIcon]="true" inputId="icon" selectionMode="range" dateFormat="dd/mm/yy"
+            [monthNavigator]="true">
+        </p-calendar>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Số tiền</label>
+        <p-inputNumber inputId="minmaxfraction" placeholder="0" mode="decimal"
+            [maxFractionDigits]="5"></p-inputNumber>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Hoá đơn</label>
+        <input type="text" pInputText>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Ký hiệu</label>
+        <input type="text" pInputText>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Giảm giá</label>
+        <p-inputNumber inputId="minmaxfraction"  placeholder="0" mode="decimal"
+            [maxFractionDigits]="5"></p-inputNumber>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Phải thanh toán</label>
+        <p-inputNumber inputId="minmaxfraction"  placeholder="0" mode="decimal"
+            [maxFractionDigits]="5"></p-inputNumber>
+    </div>
+</div> -->
+<div class="p-grid">
+    <div class="p-col-12">
+        <p-fieldset>
+            <ng-template pTemplate="header">Thông tin phiếu</ng-template>
+            <div class="p-fluid p-formgrid p-grid">
+                <div class="p-field p-col-12 p-lg-3">
+                    <label>Mã phiếu</label>
+                    <input type="text" pInputText>
+                </div>
+                <div class="p-field p-col-12 p-lg-3">
+                    <label>Ngày hoá đơn</label>
+                    <p-calendar [showIcon]="true" inputId="icon" selectionMode="range" dateFormat="dd/mm/yy"
+                        [monthNavigator]="true">
+                    </p-calendar>
+                </div>
+                <div class="p-field p-col-12 p-lg-3">
+                    <label style="border-bottom: 1px solid #1976d2; color: #1976d2;">CT liên quan</label>
+                    <input type="text" pInputText>
+                </div>
+                <div class="p-field p-col-12 p-lg-3">
+                    <label>Loại tiền</label>
+                    <div class=" p-grid " style="margin-top: 0;">
+                        <div class="p-col-5 p-lg-5" style="padding-right: 0;">
+                            <p-dropdown [options]="list"></p-dropdown>
+                        </div>
+                        <div class="p-col-1 p-lg-1" style="padding: 0.5rem 0 0 0; text-align: center;">-</div>
+                        <div class="p-col-6 p-lg-6" style="padding-left: 0;">
+                            <p-inputNumber inputId="minmaxfraction" placeholder="0" mode="decimal"
+                                [maxFractionDigits]="5"></p-inputNumber>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-field p-col-12 p-lg-3">
+                    <label>Hình thức chi</label>
+                    <div class="p-input-icon-right">
+                        <i class="pi pi-search" title=" có mở ra popup"></i>
+                        <input type="text" pInputText placeholder="--Chọn hình thức chi--">
+                    </div>
+                </div>
+                <div class="p-field p-col-12 p-lg-3">
+                    <label>Ngày hoá đơn</label>
+                    <p-calendar [showIcon]="true" inputId="icon" selectionMode="range" dateFormat="dd/mm/yy"
+                        [monthNavigator]="true">
+                    </p-calendar>
+                </div>
+                <div class="p-field p-col-12 p-lg-3">
+                    <label>Số tiền</label>
+                    <p-inputNumber inputId="minmaxfraction" placeholder="0" mode="decimal"
+                        [maxFractionDigits]="5"></p-inputNumber>
+                </div>
+                <div class="p-field p-col-12 p-lg-3">
+                    <label>Hoá đơn</label>
+                    <input type="text" pInputText>
+                </div>
+                <div class="p-field p-col-12 p-lg-3">
+                    <label>Ký hiệu</label>
+                    <input type="text" pInputText>
+                </div>
+                <div class="p-field p-col-12 p-lg-3">
+                    <label>Giảm giá</label>
+                    <p-inputNumber inputId="minmaxfraction"  placeholder="0" mode="decimal"
+                        [maxFractionDigits]="5"></p-inputNumber>
+                </div>
+                <div class="p-field p-col-12 p-lg-3">
+                    <label>Phải thanh toán</label>
+                    <p-inputNumber inputId="minmaxfraction"  placeholder="0" mode="decimal"
+                        [maxFractionDigits]="5"></p-inputNumber>
+                </div>
+            </div>
+        </p-fieldset>
+    </div>
+</div>

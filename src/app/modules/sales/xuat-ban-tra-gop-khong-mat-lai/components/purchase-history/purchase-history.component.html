@@ -1,0 +1,31 @@
+<button pButton type="button" icon="pi pi-check" (click)="showPurchaseHistory()" iconPos="left"></button>
+
+<p-dialog header="Lịch sử mua hàng" [(visible)]="PurchaseHistory" [style]="{width: '50vw'}" [baseZIndex]="10000">
+	<p-table [value]="" [scrollable]="true" scrollHeight="400px">
+		<ng-template pTemplate="header">
+			<tr>
+				<th>Xuất bán buôn</th>
+				<th>Loại đơn hàng</th>
+				<th>Ngày đặt hàng</th>
+				<th>Chi nhánh</th>
+				<th>Tổng tiền</th>
+				<th>Đã thanh toán</th>
+				<th>Còn nợ</th>
+				<th>Đã thu tiền</th>
+				<th>Đã giao hàng</th>
+			</tr>
+		</ng-template>
+		<ng-template pTemplate="body" let-customer>
+			<tr>
+				<td>{{customer.name}}</td>
+				<td>{{customer.country.name}}</td>
+				<td>{{customer.company}}</td>
+				<td>{{customer.representative.name}}</td>
+			</tr>
+		</ng-template>
+	</p-table>
+	<ng-template pTemplate="footer">
+		<p-button icon="pi pi-check" (click)="PurchaseHistory=false" label="Yes" styleClass="p-button-text"></p-button>
+		<p-button icon="pi pi-times" (click)="PurchaseHistory=false" label="No"></p-button>
+	</ng-template>
+</p-dialog>

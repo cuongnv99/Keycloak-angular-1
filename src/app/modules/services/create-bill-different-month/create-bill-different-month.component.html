@@ -1,0 +1,164 @@
+<div class="card">
+  <div class="p-grid">
+    <div class="p-col-6">
+      <span style="font-weight: bold;font-size: 1.5rem;">Yêu cầu quản lý xuất bán</span>
+    </div>
+    <div class="p-col-6">
+      <p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+    </div>
+  </div>
+  <div class="p-grid p-fluid">
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Chi nhánh: <span class="red-asterisks"> * </span> </label>
+      <input type="text" pInputText disabled>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Ngân hàng CN:</label>
+      <input type="text" pInputText disabled>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Loại nghiệp vụ: <span class="red-asterisks"> * </span></label>
+      <p-dropdown [options]="branch" placeholder="-- Chọn ngành hàng --" optionLabel="name" [filter]=true
+                  [showClear]=true>
+      </p-dropdown>
+    </div>
+  </div>
+  <div class="p-grid p-fluid">
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Mã số thuế CN: <span class="red-asterisks"> * </span></label>
+      <input type="text" pInputText disabled>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Số tài khoản CN: </label>
+      <input type="text" pInputText disabled>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Ngày tạo: <span class="red-asterisks"> * </span></label>
+      <input type="text" pInputText disabled>
+    </div>
+  </div>
+  <div class="p-grid p-fluid">
+    <div class="p-field p-col-12 p-lg-8">
+      <label>Địa chỉ CN: <span class="red-asterisks"> * </span></label>
+      <input type="text" pInputText disabled>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Mã hóa đơn: <span class="red-asterisks"> * </span></label>
+      <input type="text" pInputText disabled>
+    </div>
+  </div>
+  <div class="p-grid p-fluid">
+    <div class="p-field p-col-12 p-lg-4">
+      <label style="visibility:hidden">Hiden</label>
+      <div class="p-field-checkbox">
+        <p-checkbox binary="true" inputId="cancel"></p-checkbox>
+        <label for="cancel">Không lấy hóa đơn</label>
+      </div>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label style="visibility:hidden">Hiden</label>
+      <div class="p-field-checkbox">
+        <p-checkbox binary="true" inputId="cancel"></p-checkbox>
+        <label for="cancel">Người mua không cung cấp tên</label>
+      </div>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Mẫu số: <span class="red-asterisks"> * </span></label>
+      <input type="text" pInputText disabled>
+    </div>
+  </div>
+  <div class="p-grid p-fluid">
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Khách hàng: <span class="red-asterisks"> * </span></label>
+      <input type="text" pInputText>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Đơn vị KH: </label>
+      <input type="text" pInputText>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Ký hiệu: <span class="red-asterisks"> * </span></label>
+      <input type="text" pInputText disabled>
+    </div>
+  </div>
+  <div class="p-grid p-fluid">
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Mã số thuế KH: </label>
+      <input type="text" pInputText>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Điện thoại KH: </label>
+      <input type="text" pInputText>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Số hóa đơn: <span class="red-asterisks"> * </span></label>
+      <input type="text" pInputText disabled>
+    </div>
+  </div>
+  <div class="p-grid p-fluid">
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Ngân hàng KH: </label>
+      <p-dropdown placeholder="--Chọn ngân hàng--" optionLabel="name" [filter]=true [showClear]=true>
+      </p-dropdown>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Số tài khoản KH: </label>
+      <input type="text" pInputText>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Ngày hóa đơn: <span class="red-asterisks"> * </span></label>
+      <input type="text" pInputText disabled>
+    </div>
+  </div>
+  <div class="p-grid p-fluid">
+    <div class="p-field p-col-12 p-lg-8">
+      <label>Địa chỉ KH:</label>
+      <input type="text" pInputText disabled>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Nhân viên bán hàng: <span class="red-asterisks"> * </span></label>
+      <app-employee-selection (clickSearchBtn)="isOpenSearchModal=true"></app-employee-selection>
+    </div>
+  </div>
+  <div class="p-grid p-fluid">
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Người mua: </label>
+      <input type="text" pInputText>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Email: </label>
+      <input type="text" pInputText>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Hình thức thanh toán: <span class="red-asterisks"> * </span> </label>
+      <p-dropdown placeholder="--Chọn ngân hàng--" optionLabel="name" [filter]=true [showClear]=true>
+      </p-dropdown>
+    </div>
+  </div>
+  <div class="p-grid p-fluid">
+    <div class="p-field p-col-12 p-lg-8">
+      <label>Nội dung: </label>
+      <textarea [rows]="3" pInputTextarea></textarea>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Hạn thanh toán: <span class="red-asterisks"> * </span> </label>
+      <p-calendar placeholder="- Từ ngày -" [(ngModel)]="date3" [showIcon]="true" inputId="icon"></p-calendar>
+    </div>
+  </div>
+  <div class="p-grid p-fluid">
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Barcode:</label>
+      <div class="p-inputgroup">
+        <input type="text" pInputText>
+        <button type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-warn"
+                (click)="isOpenBarcodeModal=true"></button>
+      </div>
+    </div>
+  </div>
+</div>
+<app-table-dynamic [data]="tableData"></app-table-dynamic>
+<app-btn-group></app-btn-group>
+<app-employee-search-modal [isOpenModal]="isOpenSearchModal"
+                           (onCloseModal)="isOpenSearchModal=false"></app-employee-search-modal>
+<app-barcode-modal class="p-input-icon-right" [isOpenModal]="isOpenBarcodeModal"
+                   (onCloseModal)="isOpenBarcodeModal=false"></app-barcode-modal>

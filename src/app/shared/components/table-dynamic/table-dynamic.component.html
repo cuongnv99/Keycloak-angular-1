@@ -1,0 +1,70 @@
+<p-table [globalFilterFields]="['username','email','name','path']" #dt1 [columns]="tableCol" [value]="tableData" dataKey="id" editMode="row" [scrollable]="true" [scrollHeight]="scrollHeight" [frozenColumns]="frozenCol" [frozenWidth]="frozenWidth + 'px'"
+    [rowHover]="true" [styleClass]="(frozenCol && frozenCol.length > 0)?'':'mytable'">
+    <ng-template pTemplate="colgroup" let-columns>
+        <colgroup *ngIf="tableCol">
+            <col *ngFor="let col of columns" [style.width]="col.width + 'px'">
+            <!-- <col style="width:100px"> -->
+        </colgroup>
+    </ng-template>
+    <ng-template pTemplate="caption">
+        <div class="p-d-flex">
+            <span class="p-input-icon-left p-ml-auto">
+                <i class="pi pi-search"></i>
+                <input pInputText type="text" (input)="dt1.filterGlobal($event.target.value, 'contains')" placeholder="Search keyword" />
+            </span>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header" let-columns let-editing="editing">
+        <tr *ngIf="tableCol">
+            <!-- <th *ngIf="isShowTiredMenu"></th> -->
+            <th *ngFor="let col of columns">
+                <ng-container *ngIf="col.name==='checkbox';else tired_menu">
+                    <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                </ng-container>
+                <!-- <ng-container *ngIf="col.type==='checkbox';else tired_menu">
+                    <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                </ng-container> -->
+                <ng-template #tired_menu>
+                    <ng-container *ngIf="col.name==='tiredMenu';else col_name"></ng-container>
+                </ng-template>
+                <ng-template #col_name>
+                    {{col.name}}
+                </ng-template>
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-editing="editing" let-rowIdx="rowIndex" let-rowData let-columns="columns">
+        <tr [pEditableRow]="rowData">
+            <!-- <td *ngIf="isShowTiredMenu">
+                <i #btn class="pi pi-bars" (click)="menu.toggle($event)"></i>
+            </td>
+            <td>
+                <p-tableCheckbox [value]="rowData"></p-tableCheckbox>
+            </td> -->
+            <td *ngFor="let col of columns">
+                <div><i #btn *ngIf="col.name==='tiredMenu'" class="pi pi-bars" (click)="menu.toggle($event)"></i></div>
+                <p-tableCheckbox *ngIf="col.name==='checkbox'" [value]="rowData"></p-tableCheckbox>
+                <p-cellEditor *ngIf="col.type === 'text'">
+                    <ng-template pTemplate="input">
+                        <input pInputText type="text" [(ngModel)]="rowData[col.attr]">
+                    </ng-template>
+                    <ng-template pTemplate="output">
+                        <a [routerLink]="input_value" (click)="routerTo(rowData)" *ngIf="col.isHref">{{rowData[col.attr]}}</a>
+                        <p *ngIf="!col.isHref">{{rowData[col.attr]}}</p>
+                    </ng-template>
+                </p-cellEditor>
+                <p-checkbox name="" [binary]="true" *ngIf="col.type === 'checkbox'" [value]="rowData[col.attr]" [(ngModel)]="rowData[col.attr]" inputId="rowIdx" [disabled]="!editing && col.editable == false"></p-checkbox>
+                <div *ngIf="col.attr === 'action'" style="text-align:center">
+                    <button style="margin-left: -15px;" *ngIf="!editing" pButton pRipple type="button" (click)="onRowEditInit(rowData)" icon="pi pi-pencil" class="p-button-rounded p-button-text"></button>
+                    <button *ngIf="!editing" pButton pRipple type="button" (click)="onRowEditCancel(rowIdx)" icon="pi pi-times" class="p-button-rounded p-button-text p-button-danger"></button>
+                </div>
+                <!-- <div *ngIf="col.name === 'action'" style="text-align:center">
+                    <button *ngIf="!editing" pButton pRipple type="button" (click)="onRowEditInit(rowData)" pInitEditableRow icon="pi pi-pencil" class="p-button-rounded p-button-text"></button>
+                    <button *ngIf="editing" pButton pRipple type="button" (click)="onRowEditSave()" pSaveEditableRow icon="pi pi-check" class="p-button-rounded p-button-text p-button-success p-mr-2"></button>
+                    <button *ngIf="editing" pButton pRipple type="button" (click)="onRowEditCancel(rowIdx)" pCancelEditableRow icon="pi pi-times" class="p-button-rounded p-button-text p-button-danger"></button>
+                </div> -->
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+<p-tieredMenu styleClass="menucus" #menu [model]="items" [popup]="true"></p-tieredMenu>

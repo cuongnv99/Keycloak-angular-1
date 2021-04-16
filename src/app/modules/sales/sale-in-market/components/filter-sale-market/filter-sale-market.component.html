@@ -1,0 +1,99 @@
+<div class="p-grid">
+    <div class="p-col-6">
+        <span class="font-sale-market">Bán hàng siêu thị</span>
+    </div>
+    <div class="p-col-6">
+        <p-breadcrumb [model]="items"></p-breadcrumb>
+    </div>
+</div>
+<div class="p-grid" [formGroup]="saleMarketForm">
+    <div class="p-col-9">
+        <div class="p-fluid p-formgrid p-grid">
+            <div class="p-field p-col-12 p-lg-4">
+                <label>Thành viên <span class="erros">*</span></label>
+                <div class="p-input-icon-right">
+                    <i class="pi pi-times" (click)="clearMemeber()"></i>
+                    <input type="text" pInputText formControlName="member" (keyup)="onEnterMember($event)" (keydown.Tab)="onEnterMember($event)">
+                </div>
+            </div>
+            <div class="p-field p-col-12 p-lg-4">
+                <label (click)="isOpenCustomerInfoModal=true" style="border-bottom:1px solid #1976d2; color: #1976d2;">Khách hàng</label>
+                <div class="p-inputgroup">
+                    <input type="text" pInputText>
+                </div>
+            </div>
+            <div class="p-field p-col-12 p-lg-4">
+                <label>Điện thoại</label>
+                <p-inputMask mask="(999) 999-9999" formControlName="phoneNumber"></p-inputMask>
+            </div>
+            <div class="p-field p-col-12 p-lg-4">
+                <label>Tỉnh/Thành phố <span class="erros">*</span></label>
+                <app-location-selection></app-location-selection>
+            </div>
+            <div class="p-field p-col-12 p-lg-4">
+                <label>Quận/Huyện <span class="erros">*</span></label>
+                <app-location-selection></app-location-selection>
+            </div>
+            <div class="p-field p-col-12 p-lg-4">
+                <label>Phường/Xã <span class="erros">*</span></label>
+                <app-location-selection></app-location-selection>
+            </div>
+            <div class="p-field p-col-12 p-lg-4">
+                <label>Địa chỉ liên hệ <span class="erros">*</span></label>
+                <div class="p-inputgroup">
+                    <input type="text" pInputText formControlName="address">
+                </div>
+            </div>
+            <div class="p-field p-col-12 p-lg-4">
+                <label>Mã số thuế</label>
+                <div class="p-inputgroup">
+                    <input type="number" pInputText style="text-align: start;" formControlName="taxCode">
+                </div>
+            </div>
+            <div class="p-field p-col-12 p-lg-4">
+                <label>Nhân viên bán <span class="erros">*</span></label>
+                <app-employee-selection (clickSearchBtn)="isOpenSearchEmplModal=true" [employee]="employee"></app-employee-selection>
+            </div>
+            <div class="p-field p-col-12 p-lg-4">
+                <label>Barcode</label>
+                <div>
+                    <app-dialog-barcode class="p-input-icon-right" (openBarcodeModal)="isOpenBarcodeModal=true"></app-dialog-barcode>
+                    <input type="text" pInputText formControlName="barCode">
+                </div>
+            </div>
+            <div class="p-field p-col-12 p-lg-2">
+                <label style="opacity: 0;">Khuyến mãi combo</label>
+                <p-button label="Khuyến mãi combo" icon="pi pi-th-large" styleClass="p-button-secondary" (click)="isOpenPromotinalComboDialog=true"></p-button>
+            </div>
+
+            <div class="p-field p-col-12 p-lg-2">
+                <label style="opacity: 0;">Lấy khuyến mãi</label>
+                <p-button label="Lấy khuyến mãi" icon="pi pi-th-large" styleClass="p-button-secondary" (click)="isOpenPromotinalDialog=true"></p-button>
+            </div>
+
+            <div class="p-field p-col-12 p-lg-4">
+                <label>Coupon</label>
+                <input type="text" pInputText formControlName="coupon">
+            </div>
+        </div>
+    </div>
+    <div class="p-col-3">
+        <div class="p-fluid p-formgrid p-grid">
+            <div class="p-field p-col-12 p-lg-12">
+                <label>Kho xuất</label>
+                <input type="text" pInputText formControlName="exportStore">
+            </div>
+            <div class="p-field p-col-12 p-lg-12">
+                <label for="icon">Nội dung</label>
+                <textarea [rows]="7" [cols]="30" style="height: 100%;" pInputTextarea formControlName="content"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+<app-customer-info-modal [isOpenModal]="isOpenCustomerInfoModal" (onCloseModal)="isOpenCustomerInfoModal=false" (openSearchEmployeeModal)="isOpenSearchEmplModal=true"></app-customer-info-modal>
+<app-employee-search-modal [isOpenModal]="isOpenSearchEmplModal" (onCloseModal)="isOpenSearchEmplModal=false" (onSelectEmployee)="SelectEmployee($event)"></app-employee-search-modal>
+<app-customer-info-view-modal [isOpenModal]="isOpenCusInfoViewModal" (onCloseModal)="isOpenCusInfoViewModal=false"></app-customer-info-view-modal>
+<app-barcode-modal [isOpenModal]="isOpenBarcodeModal" (onCloseModal)="isOpenBarcodeModal=false"></app-barcode-modal>
+<app-notify-modal [isOpenModal]="openNotifyModal" [contentPopup]="notifyMess" (onCloseModal)="openNotifyModal=false"></app-notify-modal>
+<app-dialog-get-promotional [PromotinalDialog]="isOpenPromotinalDialog" (onCloseModal)="isOpenPromotinalDialog=false"></app-dialog-get-promotional>
+<app-dialog-get-promotional-combo [PromotinalComboDialog]="isOpenPromotinalComboDialog" (onCloseModal)="isOpenPromotinalComboDialog=false"></app-dialog-get-promotional-combo>

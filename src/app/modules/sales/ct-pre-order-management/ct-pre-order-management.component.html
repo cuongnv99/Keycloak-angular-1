@@ -1,0 +1,15 @@
+<div class="card">
+    <app-ct-pre-order-filter></app-ct-pre-order-filter>
+    <app-table-dynamic [data]="tableData" [scrollHeight]="'500px'"></app-table-dynamic>
+    <div class="p-mt-4 p-d-flex">
+        <div>
+            <button pButton pRipple type="button" icon="pi pi-file-excel" label="Xuất excel"></button>
+        </div>
+        <div class="p-ml-auto">
+            <button pButton pRipple type="button" icon="pi pi-pencil" label="Sửa" class="p-mr-2"></button>
+            <button pButton pRipple type="button" icon="pi pi-trash" label="Xóa" class="p-mr-2"></button>
+            <button pButton pRipple type="button" icon="pi pi-plus" label="Thêm"></button>
+        </div>
+    </div>
+
+</div>

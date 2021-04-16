@@ -1,0 +1,139 @@
+<div class="p-fluid p-formgrid p-grid" [formGroup]="DonHangForm">
+    <div class="p-field p-col-12 p-lg-3   p-ai-center" style="padding: 19px ;">
+        <span>Đơn hàng: <strong>{{maDH}}</strong> - Tạo ngày: 08/02/2021 11:33</span>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Kho xuất</label>
+        <input type="text" pInputText formControlName="warehouse">
+    </div>
+    <div class="p-field p-col-12 p-lg-6 p-d-flex p-jc-between" style="align-items: flex-end;">
+        <div class="p-field-checkbox">
+            <p-checkbox binary="true" inputId="binary"></p-checkbox>
+            <label for="binary" formControlName="binary" >Đã duyệt</label>
+        </div>
+        <div class="p-field-checkbox">
+            <p-checkbox binary1="true" inputId="binary1"></p-checkbox>
+            <label for="binary1" formControlName="binary1">Đã thanh toán</label>
+        </div>
+        <div class="p-field-checkbox">
+            <p-checkbox binary2="true" inputId="binary2"></p-checkbox>
+            <label for="binary2" formControlName="binary2">Đã xuất</label>
+        </div>
+        <div class="p-field-checkbox">
+            <p-checkbox binary3="true" inputId="binary3"></p-checkbox>
+            <label for="binary3" formControlName="binary3">Đã giao</label>
+        </div>
+        <div class="p-field-checkbox">
+            <p-checkbox binary4="true" inputId="binary4"></p-checkbox>
+            <label for="binary4" formControlName="binary4">Đã huỷ</label>
+        </div>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Loại trả góp</label>
+        <p-dropdown [options]="listTraGop" optionLabel="name" [showClear]=true formControlName="typeInstallment">
+        </p-dropdown>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>% Hưởng lương</label>
+        <p-dropdown [options]="listKho" optionLabel="name" [showClear]=true formControlName="salaryPercent">
+        </p-dropdown>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Chương trình trả góp</label>
+        <p-dropdown [options]="listTraGop" optionLabel="name" [showClear]=true></p-dropdown>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Hợp đồng tín dụng</label>
+        <input type="text" pInputText>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>% Trả trước</label>
+        <div class=" p-grid " style="margin-top: 0;">
+            <div class="p-col-5 p-lg-5" style="padding-right: 0;">
+                <p-inputNumber inputId="minmaxfraction" placeholder="0" mode="decimal"
+                    [maxFractionDigits]="5" formControlName="prepay1"></p-inputNumber>
+            </div>
+            <div class="p-col-1 p-lg-1" style="padding: 0.5rem 0 0 0; text-align: center;">-</div>
+            <div class="p-col-6 p-lg-6" style="padding-left: 0;">
+                <p-inputNumber suffix=% formControlName="prepay2"></p-inputNumber>
+            </div>
+        </div>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Tiền trả trước</label>
+        <div class=" p-grid " style="margin-top: 0;">
+            <div class="p-col-5 p-lg-5" style="padding-right: 0;">
+                <p-inputNumber inputId="minmaxfraction" placeholder="0" mode="decimal"
+                    [maxFractionDigits]="5"></p-inputNumber>
+            </div>
+            <div class="p-col-1 p-lg-1" style="padding: 0.5rem 0 0 0; text-align: center;">-</div>
+            <div class="p-col-6 p-lg-6" style="padding-left: 0;">
+                <p-inputNumber suffix=% formControlName="prepayment"></p-inputNumber>
+            </div>
+        </div>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Tổng tiền trả trước</label>
+        <p-inputNumber inputId="minmaxfraction" placeholder="0" mode="decimal"
+            [maxFractionDigits]="5" formControlName="totalPrepayment"></p-inputNumber>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Thanh toán</label>
+        <p-dropdown [options]="listTT" optionLabel="name" [showClear]=true></p-dropdown>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label style="text-decoration: underline; color: #1976D2;cursor:pointer;" (click)="isOpenPaymentDialog = true">Phí thu</label>
+        <input type="text" pInputText style="margin-top: 0.5rem;">
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Người làm hồ sơ</label>
+        <app-employee-selection (clickSearchBtn)="isOpenSearchEmplModal=true"></app-employee-selection>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Người giới thiệu</label>
+        <app-employee-selection (clickSearchBtn)="isOpenSearchEmplModal=true"></app-employee-selection>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Người duyệt</label>
+        <input type="text" pInputText formControlName="man">
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Nhân viên giao hàng</label>
+        <app-employee-selection (clickSearchBtn)="isOpenSearchEmplModal=true"></app-employee-selection>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label for="icon">Thời gian giao hàng {{text}}</label>
+        <!-- <p-calendar [showIcon]="true" inputId="icon" selectionMode="range" dateFormat="dd/mm/yy" [monthNavigator]="true">
+        </p-calendar> -->
+        <p-calendar formControlName="toDate" class="p-col" [keepInvalid]="true" (keyup)="isTDateFormat($event)"
+            (onClickOutside)="checkInventoryDate()" (onSelect)="checkInventoryDate()" [showIcon]="true"
+            [yearNavigator]="true" yearRange="2000:2050" [monthNavigator]="true" dateFormat="dd/mm/yy"></p-calendar>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Nhân viên lắp đặt</label>
+        <app-employee-selection (clickSearchBtn)="isOpenSearchEmplModal=true"></app-employee-selection>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label for="icon">Thời gian lắp đặt</label>
+        <p-calendar [showIcon]="true" inputId="icon" selectionMode="range" dateFormat="dd/mm/yy"
+            [monthNavigator]="true">
+        </p-calendar>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+        <label>Hình thức giao hàng</label>
+        <p-dropdown [options]="listKho" optionLabel="name" [showClear]=true formControlName="salaryPercent">
+        </p-dropdown>
+    </div>
+    <div class="p-field p-col-12 p-lg-9">
+        <label for="icon">Nội dung</label>
+        <textarea [rows]="1" [cols]="30" pInputTextarea formControlName="content"></textarea>
+    </div>
+</div>
+
+<app-customer-info-modal [isOpenModal]="isOpenCustomerInfoModal" (onCloseModal)="isOpenCustomerInfoModal=false"
+    (openSearchEmployeeModal)="isOpenSearchEmplModal=true"></app-customer-info-modal>
+<app-employee-search-modal [isOpenModal]="isOpenSearchEmplModal" (onCloseModal)="isOpenSearchEmplModal=false">
+</app-employee-search-modal>
+<app-barcode-modal [isOpenModal]="isOpenBarcodeModal" (onCloseModal)="isOpenBarcodeModal=false"></app-barcode-modal>
+<app-phi-thu-modal [paymentDialog]="isOpenPaymentDialog" (onCloseModal)="isOpenPaymentDialog=false">
+</app-phi-thu-modal>

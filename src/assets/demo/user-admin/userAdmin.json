@@ -1,0 +1,79 @@
+{
+    "cells": [{
+            "id": 1,
+            "attr": "id",
+            "name": "id",
+            "type": "text",
+            "width": 100,
+            "isFrozen": false,
+            "editable": true
+        },
+        {
+            "id": 2,
+            "attr": "username",
+            "name": "username",
+            "type": "text",
+            "width": 100,
+            "isFrozen": false,
+            "editable": true
+        },
+        {
+            "id": 3,
+            "attr": "firstName",
+            "name": "firstName",
+            "type": "text",
+            "width": 100,
+            "isFrozen": false,
+            "editable": true
+        },
+        {
+            "id": 4,
+            "attr": "email",
+            "name": "email",
+            "type": "text",
+            "width": 100,
+            "isFrozen": false,
+            "editable": true
+        },
+        {
+            "id": 5,
+            "attr": "action",
+            "name": "action",
+            "type": "text",
+            "width": 100,
+            "isFrozen": false
+        }
+    ],
+    "datas": [{
+            "id": "56c8b5da-331e-4b9b-8281-0110ae79d985",
+            "createdTimestamp": 1617958072699,
+            "username": "admin",
+            "enabled": true,
+            "totp": false,
+            "emailVerified": true,
+            "firstName": "Stephen",
+            "lastName": "Strange",
+            "email": "drstranger@marvel.com",
+            "disableableCredentialTypes": [],
+            "requiredActions": [],
+            "notBefore": 0,
+            "access": {
+                "manageGroupMembership": true,
+                "view": true,
+                "mapRoles": true,
+                "impersonate": true,
+                "manage": true
+            }
+        },
+        {
+            "id": "1",
+            "username": "1"
+        },
+        {
+            "id": "sfvcQwN"
+        },
+        {
+            "id": "MwE7DV3"
+        }
+    ]
+}

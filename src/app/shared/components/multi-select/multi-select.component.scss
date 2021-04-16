@@ -1,0 +1,31 @@
+@import "src/assets/color.scss";
+.ng-value-icon {
+    display: inline-block;
+    padding: 1px 5px;
+    border-right: 1px solid #b8dbff;
+    cursor: pointer;
+}
+
+.custom-ng-value {
+    font-size: .9em;
+    margin-bottom: 5px;
+    background-color: #ebf5ff;
+    border-radius: 2px;
+    margin-right: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ng-value-label {
+    padding: 1px 5px;
+}
+
+.required-field::after {
+    content: " *";
+    color: red;
+}
+
+.ng-select.custom ::ng-deep .ng-select-container {
+    border-radius: 4px 0px 0px 4px;
+}

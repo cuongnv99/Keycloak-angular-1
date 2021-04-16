@@ -1,0 +1,26 @@
+<p-dialog header="Thêm nhóm" [(visible)]="onOpenGroup" (onHide)="onCloseModal.emit()">
+    <div class="p-fluid p-formgrid p-grid">
+        <!-- <div class="p-field p-col-6">
+            <label>Id</label>
+            <input type="text" pInputText [(ngModel)]="dataObj.id">
+        </div> -->
+        <div class="p-field p-col-6">
+            <label>Name</label>
+            <input type="text" pInputText [(ngModel)]="GroupInfo.name">
+        </div>
+        <div class="p-field p-col-6">
+            <label>Path</label>
+            <input type="text" pInputText [(ngModel)]="GroupInfo.path">
+        </div>
+        <div class="p-field p-col-6">
+            <label>SubGroups</label>
+            <input type="text" pInputText [(ngModel)]="GroupInfo.subGroups">
+        </div>
+        <div class="p-field p-col-6">
+
+        </div>
+        <div style="margin-left:10px">
+            <p-button label="Lưu" (click)="onEditGroup()"></p-button>
+        </div>
+    </div>
+</p-dialog>

@@ -1,0 +1,34 @@
+{
+  "cells": [
+    { "id": 3, "attr": "customerName", "name": "Voucher ID", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 4, "attr": "phoneNumber", "name": "Voucher Concern", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 5, "attr": "taxCode", "name": "Voucher Type Name", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 6, "attr": "address", "name": "Store Name", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 7, "attr": "idNumber", "name": "Created Store Name", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 8, "attr": "providedDate", "name": "Voucher Date", "type": "text", "width": 150, "isFrozen": false },
+    { "id": 9, "attr": "providedPlace", "name": "Customer Name", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 10, "attr": "prodCode", "name": "Customer Phone", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 11, "attr": "prodName", "name": "VND Cash", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 12, "attr": "isNew", "name": "Payment Card Amount", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 13, "attr": "imei", "name": "Gift Voucher Amount", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 14, "attr": "price", "name": "Total Liqui Date", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 15, "attr": "adjusted", "name": "Debt", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 16, "attr": "lowestPrice", "name": "Invoice ID", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 17, "attr": "highestPrice", "name": "Invoice Symbol", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 18, "attr": "appraiser", "name": "Full Name", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 19, "attr": "valuationDate", "name": "Is Deleted", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 20, "attr": "pricingPlace", "name": "Content", "type": "text", "width": 250, "isFrozen": false }
+  ],
+  "datas": [{
+    "id": 1,
+    "customerName": "Duongvd5",
+    "phoneNumber": "0988686868",
+    "taxCode":  "123456",
+    "address": "Số 1 Việt Nam",
+    "idNumber": "123456789",
+    "providedDate": "10/01/2020",
+    "providedPlace": "Hải Phòng",
+    "prodCode": "123456"
+  }
+  ]
+}

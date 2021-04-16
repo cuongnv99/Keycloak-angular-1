@@ -1,0 +1,299 @@
+<p-dialog header="Thông tin khách hàng" [(visible)]="isOpenModal" (onHide)="onCloseModal.emit()" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000" [draggable]="false" [resizable]="false" [closable]="false">
+    <div body class="modal-content">
+        <div [formGroup]="viettelAccForm">
+            <p-fieldset legend="Thông tin Viettel ++" styleClass="myFieldset">
+                <p-tabView>
+                    <p-tabPanel header="Thông tin khách hàng VT++">
+                        <div class="p-fluid p-formgrid p-grid">
+                            <div class="p-field p-col-12 p-md-3">
+                                <label>Viettel++ ID</label>
+                                <input trim="blur" pInputText type="text" formControlName="viettelId">
+                            </div>
+                            <div class="p-field p-col-12 p-md-3">
+                                <label>Họ và tên khách hàng VT++<span class="text-danger">*</span></label>
+                                <input trim="blur" pInputText type="text" formControlName="cusFullName">
+                            </div>
+                            <div class="p-field p-col-12 p-md-3">
+                                <label>Giấy tờ pháp lý VT++</label>
+                                <input trim="blur" pInputText type="text" formControlName="cusIdentify">
+                            </div>
+                            <div class="p-field p-col-12 p-md-3">
+                                <label>Số điện thoại VT++</label>
+                                <input trim="blur" pInputText type="text" formControlName="phoneNumber">
+                            </div>
+                            <div class="p-field p-col-12 p-md-3">
+                                <label>Ngày sinh VT++ <span class="text-danger">*</span></label>
+                                <p-calendar class="p-col" formControlName="birthDate" [showIcon]="true" [yearNavigator]="true" yearRange="1900:2050" [monthNavigator]="true" dateFormat="dd/mm/yy"></p-calendar>
+                            </div>
+                            <div class="p-field p-col-12 p-md-6">
+                                <label>Địa chỉ VT++ <span class="text-danger">*</span></label>
+                                <input trim="blur" pInputText type="text" formControlName="address">
+                            </div>
+                            <div class="p-field p-col-12 p-md-3">
+                                <label>Tổng điểm tích lũy</label>
+                                <input trim="blur" pInputText type="text" formControlName="totalPoint">
+                            </div>
+                            <div class="p-field p-col-12 p-md-3">
+                                <label>OTP</label>
+                                <input trim="blur" pInputText type="text" formControlName="otpCode">
+                            </div>
+                            <div class="p-field p-col-12 p-md-9">
+                                <div class="p-fluid p-formgrid p-grid p-fluid-no-lable">
+                                    <div class="p-field-checkbox p-field-checkbox">
+                                        <button pButton pRipple type="button" label="Xác nhận OTP" class="p-mr-1"></button>
+                                    </div>
+                                    <div class="p-field-checkbox p-field-checkbox">
+                                        <button pButton pRipple type="button" label="Gửi lại OTP" class="p-mr-1"></button>
+                                    </div>
+                                    <div class="p-field-checkbox p-field-checkbox">
+                                        <button pButton pRipple type="button" icon="pi pi-plus" label="Thêm TK VT++" class="p-mr-4" [disabled]="true"></button>
+                                    </div>
+                                    <div class="p-field-checkbox p-field-checkbox">
+                                        <p-checkbox name="" [binary]="true" [value]="true"></p-checkbox>
+                                        <label class="p-mr-0">Khách hàng không cung cấp OTP</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </p-tabPanel>
+                    <p-tabPanel header="Lịch sử tích điểm ERP">
+                        <p-table [value]="" [scrollable]="true" scrollHeight="400px">
+                            <ng-template pTemplate="header">
+                                <tr>
+                                    <th>Mã khách hàng</th>
+                                    <th>Điểm</th>
+                                    <th>Ngày giao dịch</th>
+                                    <th>Mã giao dịch</th>
+                                    <th>Lý do</th>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="body" let-customer>
+                                <tr>
+                                    <td>{{customer.name}}</td>
+                                    <td>{{customer.country.name}}</td>
+                                    <td>{{customer.company}}</td>
+                                    <td>{{customer.representative.name}}</td>
+                                </tr>
+                            </ng-template>
+                        </p-table>
+                    </p-tabPanel>
+                    <p-tabPanel header="Lịch sử tiêu điểm ERP">
+                        <p-table [value]="" [scrollable]="true" scrollHeight="400px">
+                            <ng-template pTemplate="header">
+                                <tr>
+                                    <th>Mã khách hàng</th>
+                                    <th>Điểm</th>
+                                    <th>Ngày giao dịch</th>
+                                    <th>Mã giao dịch</th>
+                                    <th>Lý do</th>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="body" let-customer>
+                                <tr>
+                                    <td>{{customer.name}}</td>
+                                    <td>{{customer.country.name}}</td>
+                                    <td>{{customer.company}}</td>
+                                    <td>{{customer.representative.name}}</td>
+                                </tr>
+                            </ng-template>
+                        </p-table>
+                    </p-tabPanel>
+                    <p-tabPanel header="Lịch sử Hoàn/Hủy điểm">
+                        <p-table [value]="" [scrollable]="true" scrollHeight="400px">
+                            <ng-template pTemplate="header">
+                                <tr>
+                                    <th>Mã khách hàng</th>
+                                    <th>Điểm</th>
+                                    <th>Ngày giao dịch</th>
+                                    <th>Mã giao dịch</th>
+                                    <th>Lý do</th>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="body" let-customer>
+                                <tr>
+                                    <td>{{customer.name}}</td>
+                                    <td>{{customer.country.name}}</td>
+                                    <td>{{customer.company}}</td>
+                                    <td>{{customer.representative.name}}</td>
+                                </tr>
+                            </ng-template>
+                        </p-table>
+                    </p-tabPanel>
+                    <p-tabPanel header="Lịch sử điểm VT++">
+                        <p-table [value]="" [scrollable]="true" scrollHeight="400px">
+                            <ng-template pTemplate="header">
+                                <tr>
+                                    <th>Mã khách hàng</th>
+                                    <th>Điểm</th>
+                                    <th>Ngày giao dịch</th>
+                                    <th>Mã giao dịch</th>
+                                    <th>Lý do</th>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="body" let-customer>
+                                <tr>
+                                    <td>{{customer.name}}</td>
+                                    <td>{{customer.country.name}}</td>
+                                    <td>{{customer.company}}</td>
+                                    <td>{{customer.representative.name}}</td>
+                                </tr>
+                            </ng-template>
+                        </p-table>
+                    </p-tabPanel>
+                </p-tabView>
+            </p-fieldset>
+        </div>
+        <div class="d-fieldset">
+            <p-fieldset legend="Thông tin Viettel ERP" styleClass="myFieldset">
+                <div class="p-fluid p-formgrid p-grid" [formGroup]="erpAccForm">
+                    <div class="p-field p-col-12 p-md-8">
+                        <label>Khách hàng</label>
+                        <app-user-selection (clickSearchBtn)="isOpenSearchUserModal=true" [employee]="employee"></app-user-selection>
+                        <!-- <div class="p-inputgroup">
+                            <input id="employeeId" type="text" pInputText formControlName="customerId">
+                            <input id="employeeName" type="text" pInputText formControlName="customerName">
+                            <button type="button" pButton pRipple icon="pi pi-search" (click)="openSearchEmployeeModal.emit()" styleClass="p-button-warn"></button>
+                        </div> -->
+                    </div>
+                    <div class="p-field p-col-12 p-md-4">
+                        <label>Giới tính</label>
+                        <div class="p-fluid p-formgrid p-grid">
+                            <div class="p-field-checkbox p-col-12 p-md-4 p-field-checkbox">
+                                <p-radioButton name="gender" value="Nam" [(ngModel)]="gender" formControlName="gender" inputId="nam"></p-radioButton>
+                                <label>Nam</label>
+                            </div>
+                            <div class="p-field-checkbox p-col-12 p-md-4 p-field-checkbox">
+                                <p-radioButton name="gender" value="Nữ" [(ngModel)]="gender" formControlName="gender" inputId="nu"></p-radioButton>
+                                <label>Nữ</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-field p-col-12 p-md-4">
+                        <label>Giấy tờ pháp lý</label>
+                        <input trim="blur" pInputText type="text" formControlName="lawPaper">
+                    </div>
+                    <div class="p-field p-col-12 p-md-4">
+                        <label>Số điện thoại<span class="text-danger">*</span></label>
+                        <input trim="blur" pInputText type="text" formControlName="phoneNumber">
+                    </div>
+                    <div class="p-field p-col-12 p-md-4">
+                        <label>Ngày sinh<span class="text-danger">*</span></label>
+                        <p-calendar class="p-col" formControlName="birthDate" [showIcon]="true" [yearNavigator]="true" yearRange="1940:2050" [monthNavigator]="true" dateFormat="dd/mm/yy"></p-calendar>
+                    </div>
+                    <div class="p-field p-col-12 p-md-4">
+                        <label>Email</label>
+                        <input trim="blur" pInputText type="text" formControlName="email">
+                    </div>
+                    <div class="p-field p-col-12 p-md-4">
+                        <label>Mã số thuế</label>
+                        <input trim="blur" pInputText type="text" formControlName="taxCode">
+                    </div>
+                    <div class="p-field p-col-12 p-md-4">
+                        <label>CT Ngân Hàng</label>
+                        <input trim="blur" pInputText type="text" formControlName="ctBank">
+                    </div>
+                    <div class="p-field p-col-12 p-md-4">
+                        <label>Tỉnh/Thành Phố<span class="text-danger">*</span></label>
+                        <ng-select [searchFn]="" [items]="" [placeholder]="" formControlName="province">
+                            <ng-template ng-label-tmp let-item="item">
+                                <span>{{item.locationCode}} - {{item.locationName}}</span>
+                            </ng-template>
+                            <ng-template ng-option-tmp let-item="item" let-index="index">
+                                <span title="{{item.locationCode}} - {{item.locationName}}">{{item.locationCode}} - {{item.locationName}}</span>
+                            </ng-template>
+                        </ng-select>
+                    </div>
+                    <div class="p-field p-col-12 p-md-4">
+                        <label>Quận/Huyện<span class="text-danger">*</span></label>
+                        <ng-select [searchFn]="" [items]="" [placeholder]="" formControlName="district">
+                            <ng-template ng-label-tmp let-item="item">
+                                <span>{{item.locationCode}} - {{item.locationName}}</span>
+                            </ng-template>
+                            <ng-template ng-option-tmp let-item="item" let-index="index">
+                                <span title="{{item.locationCode}} - {{item.locationName}}">{{item.locationCode}} - {{item.locationName}}</span>
+                            </ng-template>
+                        </ng-select>
+                    </div>
+                    <div class="p-field p-col-12 p-md-4">
+                        <label>Phường/Xã<span class="text-danger">*</span></label>
+                        <ng-select [searchFn]="" [items]="" [placeholder]="" formControlName="commune">
+                            <ng-template ng-label-tmp let-item="item">
+                                <span>{{item.locationCode}} - {{item.locationName}}</span>
+                            </ng-template>
+                            <ng-template ng-option-tmp let-item="item" let-index="index">
+                                <span title="{{item.locationCode}} - {{item.locationName}}">{{item.locationCode}} - {{item.locationName}}</span>
+                            </ng-template>
+                        </ng-select>
+                    </div>
+                    <div class="p-field p-col-12 p-md-12">
+                        <label>Địa chỉ liên hệ</label>
+                        <input trim="blur" pInputText type="text" formControlName="addressContact">
+                    </div>
+                    <div class="p-field p-col-12 p-md-12">
+                        <label>Địa chỉ hóa đơn</label>
+                        <div class="p-inputgroup">
+                            <input trim="blur" type="text" pInputText formControlName="addressBill">
+                            <button type="button" pButton pRipple icon="pi pi-copy" styleClass="p-button-warn"></button>
+                        </div>
+                    </div>
+                    <div class="p-field p-col-12 p-md-12">
+                        <label>Địa chỉ giao hàng</label>
+                        <div class="p-inputgroup">
+                            <input trim="blur" type="text" pInputText formControlName="placeDeliver">
+                            <button type="button" pButton pRipple icon="pi pi-copy" styleClass="p-button-warn"></button>
+                        </div>
+                    </div>
+                    <div class="p-field p-col-12 p-md-4">
+                        <label>Người nhận</label>
+                        <input trim="blur" pInputText type="text" formControlName="receiver">
+                    </div>
+                    <div class="p-field p-col-12 p-md-4">
+                        <label>Số điện thoại người nhận</label>
+                        <input trim="blur" pInputText type="text" formControlName="receiverPhone">
+                    </div>
+                    <div class="p-field p-col-12 p-md-4">
+                        <label>Email người nhận</label>
+                        <input trim="blur" pInputText type="text" formControlName="revicerEmail">
+                    </div>
+                    <div class="p-field p-col-12 p-md-4">
+                        <label>Chức vụ</label>
+                        <input trim="blur" pInputText type="text" formControlName="position">
+                    </div>
+                    <div class="p-field p-col-12 p-md-4">
+                        <label>Tên tổ chức</label>
+                        <input trim="blur" pInputText type="text" formControlName="organizationName">
+                    </div>
+                    <div class="p-field p-col-12 p-md-4">
+                        <div class="p-field-checkbox p-field-checkbox p-file-no-lable">
+                            <p-checkbox name="" [binary]="true" [value]="true"></p-checkbox>
+                            <label class="p-mr-3">Khách hàng doanh nghiệp</label>
+                        </div>
+                    </div>
+                    <div class="p-field p-col-12 p-md-4">
+                        <label>Người mua</label>
+                        <input trim="blur" pInputText type="text" formControlName="buyer">
+                    </div>
+                    <div class="p-field p-col-12 p-md-4">
+                        <label>Ngân hàng</label>
+                        <ng-select [searchFn]="" [items]="" [placeholder]="" formControlName="bank">
+                            <ng-template ng-label-tmp let-item="item">
+                                <span>{{item.locationCode}} - {{item.locationName}}</span>
+                            </ng-template>
+                            <ng-template ng-option-tmp let-item="item" let-index="index">
+                                <span title="{{item.locationCode}} - {{item.locationName}}">{{item.locationCode}} - {{item.locationName}}</span>
+                            </ng-template>
+                        </ng-select>
+                    </div>
+                    <div class="p-field p-col-12 p-md-4">
+                        <label>Số tài khoản ngân hàng</label>
+                        <input trim="blur" pInputText type="text" formControlName="bankCode">
+                    </div>
+                </div>
+            </p-fieldset>
+        </div>
+    </div>
+    <div class="p-text-right modal-footer" style="padding-top: 10px; margin-right: 10px;">
+        <button pButton pRipple type="button" label="Cập nhật" icon="pi pi-check" class="p-mr-1 p-mb-1" (click)="update()"></button>
+    </div>
+</p-dialog>
+<app-user-search-modal [isOpenModal]="isOpenSearchUserModal" (onCloseModal)="isOpenSearchUserModal=false" (onSelectUser)="SelectUser($event)"></app-user-search-modal>

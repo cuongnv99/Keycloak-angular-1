@@ -1,0 +1,44 @@
+<div class="p-fluid p-formgrid p-grid">
+  <div class="p-field p-col-12 p-lg-4">
+    <label>Khách hàng thành viên</label>
+    <div class="p-input-icon-right">
+      <i class="pi pi-times" (click)="onClick($event)"></i>
+      <input type="text" pInputText>
+    </div>
+  </div>
+  <div class="p-field p-col-12 p-lg-4">
+    <app-dialog-employee></app-dialog-employee>
+  </div>
+  <div class="p-field p-col-12 p-lg-4">
+    <label>Điện thoại</label>
+    <input type="number" pInputText />
+  </div>
+  <div class="p-field p-col-12 p-lg-4">
+    <label>Mã số thuế</label>
+    <input type="number" pInputText />
+  </div>
+  <div class="p-field p-col-12 p-lg-4">
+    <label>Chứng minh nhân dân</label>
+    <input type="text" pInputText />
+  </div>
+  <div class="p-field p-col-12 p-lg-4">
+    <label>Email</label>
+    <input type="text" pInputText />
+  </div>
+  <div class="p-field p-col-12 p-lg-4">
+    <label>Tỉnh/TP</label>
+    <app-location-selection></app-location-selection>
+  </div>
+  <div class="p-field p-col-12 p-lg-4">
+    <label>Quận Huyện</label>
+    <app-location-selection></app-location-selection>
+  </div>
+  <div class="p-field p-col-12 p-lg-4">
+    <label>Phường Xã</label>
+    <app-location-selection></app-location-selection>
+  </div>
+  <div class="p-field p-col-12 p-lg-12">
+    <label>Điạ chỉ liên hệ</label>
+    <input type="text" pInputText/>
+  </div>
+</div>

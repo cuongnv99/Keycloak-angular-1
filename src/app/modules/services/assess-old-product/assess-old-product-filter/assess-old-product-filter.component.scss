@@ -1,0 +1,14 @@
+:host ::ng-deep .myFieldset {
+    .p-fieldset-legend {
+        border: none;
+        padding: 0px 5px;
+    }
+}
+
+.bellow-fieldset {
+    margin-top: 10px;
+}
+
+.custom-checkbox {
+    transform: translate(0px, 12px);
+}

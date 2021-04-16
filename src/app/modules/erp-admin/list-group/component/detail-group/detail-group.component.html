@@ -1,0 +1,30 @@
+<p-dialog header="Group > {{detailInfo.name}}" [(visible)]="openDetail" (onHide)="onCloseModal.emit()">
+    <p-tabView>
+        <p-tabPanel header="Chi tiết thông tin">
+            <div class="p-fluid p-formgrid p-grid" [formGroup]="frmGroup">
+                <div class="p-field p-col-6">
+                    <label>Name</label>
+                    <input type="text" pInputText formControlName="name">
+                </div>
+                <div class="p-field p-col-6">
+                    <label>Path</label>
+                    <input type="text" pInputText formControlName="path">
+                </div>
+            </div>
+        </p-tabPanel>
+        <p-tabPanel header="Role Mapping">
+            <p-pickList [source]="sourceRole" [target]="targetRole" sourceHeader="Available Roles" targetHeader="Assigned Roles" dragdrop="true" [responsive]="true" [sourceStyle]="{'height':'300px'}" [targetStyle]="{'height':'300px'}" filterBy="name" sourceFilterPlaceholder="Search by name"
+                targetFilterPlaceholder="Search by name">
+                <ng-template let-role pTemplate="item">
+                    <div>
+                        <span>{{role.name}}</span>
+                    </div>
+                </ng-template>
+            </p-pickList>
+            <button pButton type="button" label="Click" (click)="onSetRoleOfGroup()"></button>
+        </p-tabPanel>
+        <p-tabPanel header="Members">
+            Members List -> Tất cả các user thuộc group đó
+        </p-tabPanel>
+    </p-tabView>
+</p-dialog>

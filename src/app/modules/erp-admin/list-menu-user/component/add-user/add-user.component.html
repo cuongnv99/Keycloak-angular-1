@@ -1,0 +1,39 @@
+<p-dialog header="Thêm người dùng" [(visible)]="openDialog" (onHide)="onCloseModal.emit()">
+    <div class="p-fluid p-formgrid p-grid">
+        <!-- <div class="p-field p-col-6">
+            <label>Id</label>
+            <input type="text" pInputText [(ngModel)]="dataObj.id">
+        </div> -->
+        <div class="p-field p-col-6">
+            <label>Username</label>
+            <input type="text" pInputText [(ngModel)]="dataObj.username">
+        </div>
+        <div class="p-field p-col-6">
+            <label>Email</label>
+            <input type="text" pInputText [(ngModel)]="dataObj.email">
+        </div>
+        <div class="p-field p-col-6">
+            <label>First Name</label>
+            <input type="text" pInputText [(ngModel)]="dataObj.firstName">
+        </div>
+        <div class="p-field p-col-6">
+            <label>Last Name</label>
+            <input type="text" pInputText [(ngModel)]="dataObj.lastName">
+        </div>
+        <div class="p-field p-col-6">
+            <label>Required User Actions</label>
+            <input type="text" pInputText>
+        </div>
+        <div class="p-field p-col-3" style="padding-top: 20px;">
+            <label style="margin-right: 5px;">User Enabled</label>
+            <p-inputSwitch [(ngModel)]="dataObj.enabled"></p-inputSwitch>
+        </div>
+        <div class="p-field p-col-3" style="padding-top: 20px;">
+            <label style="margin-right: 5px;">Email Verifled</label>
+            <p-inputSwitch [(ngModel)]="dataObj.emailVerified"></p-inputSwitch>
+        </div>
+        <div style="margin-left:10px">
+            <p-button label="Lưu" (click)="onAddUser()"></p-button>
+        </div>
+    </div>
+</p-dialog>

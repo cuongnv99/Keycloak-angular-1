@@ -1,0 +1,26 @@
+<p-dialog header="Thêm nhóm" [(visible)]="openDialog" (onHide)="onCloseModal.emit()">
+    <div class="p-fluid p-formgrid p-grid">
+        <!-- <div class="p-field p-col-6">
+            <label>Id</label>
+            <input type="text" pInputText [(ngModel)]="dataObj.id">
+        </div> -->
+        <div class="p-field p-col-6">
+            <label>Name</label>
+            <input type="text" pInputText [(ngModel)]="dataObj.name">
+        </div>
+        <div class="p-field p-col-6">
+            <label>Description</label>
+            <input type="text" pInputText [(ngModel)]="dataObj.description">
+        </div>
+        <div class="p-field p-col-6">
+            <label>Composite</label>
+            <p-inputSwitch [(ngModel)]="dataObj.composite"></p-inputSwitch>
+        </div>
+        <div class="p-field p-col-6">
+
+        </div>
+        <div style="margin-left:10px">
+            <p-button label="Lưu" (click)="onAddRole()"></p-button>
+        </div>
+    </div>
+</p-dialog>

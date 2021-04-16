@@ -1,0 +1,67 @@
+<div class="card">
+    <div class="p-grid">
+        <div class="p-col-6">
+            <span class="font-sale-market">Báo cáo danh sách khách hàng</span>
+        </div>
+        <div class="p-col-6">
+            <p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+        </div>
+    </div>
+    <div class="p-grid p-col-9">
+        <div class="p-fluid p-formgrid p-grid">
+            <div class="p-field p-col-12 p-md-4">
+                <label>Ngày</label>
+                <div class="ui-fluid p-formgrid p-grid">
+                    <p-calendar class="p-col" [keepInvalid]="true" [showIcon]="true" [yearNavigator]="true" yearRange="2000:2050" [monthNavigator]="true" dateFormat="dd/mm/yy"></p-calendar>
+                    <p-calendar class="p-col" [keepInvalid]="true" [showIcon]="true" [yearNavigator]="true" yearRange="2000:2050" [monthNavigator]="true" dateFormat="dd/mm/yy"></p-calendar>
+                </div>
+            </div>
+            <div class="p-field p-col-12 p-md-4">
+                <label>Chi nhánh</label>
+                <app-multi-select [datas]=""></app-multi-select>
+            </div>
+            <div class="p-field p-col-12 p-md-4">
+                <label>Ngành hàng</label>
+                <app-multi-select [datas]=""></app-multi-select>
+            </div>
+            <div class="p-field p-col-12 p-md-4">
+                <label>Nhóm hàng</label>
+                <app-multi-select [datas]=""></app-multi-select>
+            </div>
+            <div class="p-field p-col-12 p-md-4">
+                <label>Nhà sản xuất</label>
+                <app-multi-select [datas]=""></app-multi-select>
+            </div>
+            <div class="p-field p-col-12 p-md-4">
+                <label>Sản phẩm</label>
+                <app-multi-select [datas]=""></app-multi-select>
+            </div>
+            <div class="p-field p-col-12 p-md-4">
+                <label>HT xuất</label>
+                <app-multi-select [datas]=""></app-multi-select>
+            </div>
+            <div class="p-field p-col-12 p-md-4">
+                <label>Loại khách hàng</label>
+                <ng-select [items]="">
+                </ng-select>
+            </div>
+            <div class="p-field p-col-12 p-md-2">
+                <label>Tình trạng</label>
+                <ng-select [items]="">
+                </ng-select>
+            </div>
+            <div class="p-field-checkbox p-col-12 p-md-2">
+                <p-checkbox name=""></p-checkbox>
+                <label for="la">Có trừ nhập trả</label>
+            </div>
+        </div>
+    </div>
+    <div>
+        <app-table-dynamic [data]="tableData" [scrollHeight]="'470px'"></app-table-dynamic>
+    </div>
+    <div class="p-mt-4 p-d-flex p-jc-center">
+        <label class="flex-lable">Tổng:</label>
+        <input class="input-number p-mr-4" type="text" value="" pInputText>
+        <input class="input-number" type="text" value="" pInputText>
+    </div>
+</div>

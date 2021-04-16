@@ -1,0 +1,78 @@
+<div class="card">
+  <div class="search-container" style="margin-bottom: 50px">
+  <div class="p-grid">
+    <div class="p-col-6">
+      <span style="font-weight: bold;font-size: 1.5rem;">Quản lý yêu cầu xuất bán</span>
+    </div>
+    <div class="p-col-6">
+      <p-breadcrumb [model]="items"></p-breadcrumb>
+    </div>
+  </div>
+  <div class="p-grid p-fluid">
+    <div class="p-field p-col-12 p-lg-3">
+      <label>Kho chứng từ: </label>
+      <p-dropdown [options]="saleList" placeholder="Tất cả" optionLabel="name" [filter]=true [showClear]=true>
+      </p-dropdown>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+      <label>Kho thu chi: </label>
+      <p-dropdown [options]="saleList" placeholder="Tất cả" optionLabel="name" [filter]=true [showClear]=true>
+      </p-dropdown>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+      <label>Hình thức: </label>
+      <p-dropdown [options]="saleList" placeholder="Tất cả" optionLabel="name" [filter]=true [showClear]=true>
+      </p-dropdown>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+      <label>Loại phiếu: </label>
+      <p-dropdown [options]="saleList" placeholder="Tất cả" optionLabel="name" [filter]=true [showClear]=true>
+      </p-dropdown>
+    </div>
+  </div>
+  <div class="p-grid p-fluid">
+    <div class="p-field p-col-12 p-lg-3">
+      <div class="p-grid p-fluid">
+        <div class="p-field p-col-12 p-lg-6">
+          <label for="startDate">Ngày yêu cầu</label>
+          <p-calendar placeholder="- Từ ngày -" [(ngModel)]="date3" [showIcon]="true" inputId="startDate"></p-calendar>
+        </div>
+        <div class="p-field p-col-12 p-lg-6">
+          <label style="visibility:hidden">Hiden</label>
+          <p-calendar placeholder="- Đến ngày -" [(ngModel)]="date4" [showIcon]="true" inputId="endDate"></p-calendar>
+        </div>
+      </div>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+      <label>Từ khóa</label>
+      <input type="text" pInputText>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+      <label>Tìm theo: </label>
+      <p-dropdown [options]="saleList" placeholder="Tất cả" optionLabel="name" [filter]=true [showClear]=true>
+      </p-dropdown>
+    </div>
+    <div class="p-col-fixed" style="width:200px;">
+      <label style="visibility:hidden">Hiden</label>
+      <div class="p-inputgroup">
+        <p style="padding-top:7px">HT tối đa (dòng):&nbsp;</p>
+        <input style="text-align: right;height: 30px;margin-top:5px" value="50" type="text" pInputText>
+      </div>
+    </div>
+    <div class="p-col-fixed" style="padding: 1.6rem;">
+      <label style="visibility:hidden">Hiden</label>
+      <div class="p-field-checkbox">
+        <p-checkbox  binary="true" inputId="cancel"></p-checkbox>
+        <label for="cancel">HT đã hủy&nbsp;&nbsp;</label>
+      </div>
+    </div>
+  </div>
+  <div class="p-d-flex p-jc-center">
+    <div class="btn-box">
+      <p-button label="Tìm kiếm" icon="pi pi-search" styleClass="p-button-secondary"></p-button>
+    </div>
+  </div>
+  </div>
+  <app-table-dynamic [data]="tableData" ></app-table-dynamic>
+</div>
+

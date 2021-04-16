@@ -1,0 +1,93 @@
+<div class="card">
+    <div class="p-grid">
+        <div class="p-col-6">
+            <span class="font-sale-market">Báo cáo danh sách khách hàng</span>
+        </div>
+        <div class="p-col-6">
+            <p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+        </div>
+    </div>
+    <div class="p-grid p-col-9">
+        <div class="p-fluid p-formgrid p-grid">
+            <div class="p-field p-col-12 p-md-4">
+                <label>Công ty</label>
+                <ng-select [items]="">
+                </ng-select>
+            </div>
+            <div class="p-field p-col-12 p-md-4">
+                <label>Chi nhánh</label>
+                <app-multi-select [datas]=""></app-multi-select>
+            </div>
+            <div class="p-field p-col-12 p-md-4">
+                <label>Kho</label>
+                <app-multi-select [datas]=""></app-multi-select>
+            </div>
+            <div class="p-field p-col-12 p-md-4">
+                <label>Ngày xuất</label>
+                <div class="ui-fluid p-formgrid p-grid">
+                    <p-calendar class="p-col" [keepInvalid]="true" [showIcon]="true" [yearNavigator]="true" yearRange="2000:2050" [monthNavigator]="true" dateFormat="dd/mm/yy"></p-calendar>
+                    <p-calendar class="p-col" [keepInvalid]="true" [showIcon]="true" [yearNavigator]="true" yearRange="2000:2050" [monthNavigator]="true" dateFormat="dd/mm/yy"></p-calendar>
+                </div>
+            </div>
+            <div class="p-field p-col-12 p-md-4">
+                <label>Khách hàng</label>
+                <app-multi-select [datas]=""></app-multi-select>
+            </div>
+            <div class="p-field p-col-12 p-md-4">
+                <label>Loại y/c xuất</label>
+                <app-multi-select [datas]=""></app-multi-select>
+            </div>
+            <div class="p-field p-col-12 p-md-4">
+                <div class="p-checkbox-custom ui-fluid p-formgrid p-grid">
+                    <p-checkbox name=""></p-checkbox>
+                    <label for="la">Ngày HĐ</label>
+                </div>
+                <div class="ui-fluid p-formgrid p-grid">
+                    <p-calendar class="p-col" [keepInvalid]="true" [showIcon]="true" [yearNavigator]="true" yearRange="2000:2050" [monthNavigator]="true" dateFormat="dd/mm/yy"></p-calendar>
+                    <p-calendar class="p-col" [keepInvalid]="true" [showIcon]="true" [yearNavigator]="true" yearRange="2000:2050" [monthNavigator]="true" dateFormat="dd/mm/yy"></p-calendar>
+                </div>
+            </div>
+            <div class="p-field p-col-12 p-md-4">
+                <label>Trạng thái HĐ</label>
+                <ng-select [items]="">
+                </ng-select>
+            </div>
+            <div class="p-field p-col-12 p-md-4">
+                <label>Hiển thị nhập trả</label>
+                <ng-select [items]="">
+                </ng-select>
+            </div>
+
+            <div class="p-field p-col-12 p-md-4">
+                <label>Từ khóa</label>
+                <input type="text" value="" pInputText>
+            </div>
+            <div class="p-field p-col-12 p-md-4">
+                <label>Tìm theo</label>
+                <ng-select [items]="">
+                </ng-select>
+            </div>
+            <div class="p-field p-col-12 p-md-4 p-mt-4 p-d-flex">
+                <button pButton pRipple type="button" label="Xem báo cáo" icon="pi pi-print" class="p-mr-4"></button>
+                <button pButton pRipple type="button" label="Xuất excel" icon="pi pi-file-excel"></button>
+            </div>
+        </div>
+    </div>
+    <div>
+        <app-table-dynamic [data]="tableData" [scrollHeight]="'380px'"></app-table-dynamic>
+    </div>
+    <div class="p-mt-4 p-d-flex p-jc-center">
+        <label class="flex-lable">Tổng:</label>
+        <input class="input-number p-mr-6" type="text" value="" pInputText>
+        <input class="input-number p-mr-2" type="text" value="" pInputText>
+        <input class="input-number p-mr-2" type="text" value="" pInputText>
+        <input class="input-number p-mr-2" type="text" value="" pInputText>
+        <input class="input-number p-mr-2" type="text" value="" pInputText>
+        <input class="input-number p-mr-6" type="text" value="" pInputText>
+        <input class="input-number p-mr-2" type="text" value="" pInputText>
+        <input class="input-number p-mr-2" type="text" value="" pInputText>
+        <input class="input-number p-mr-2" type="text" value="" pInputText>
+        <input class="input-number p-mr-2" type="text" value="" pInputText>
+        <input class="input-number" type="text" value="" pInputText>
+    </div>
+</div>

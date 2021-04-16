@@ -1,0 +1,10 @@
+<div class="card">
+    <p-button label="Thêm" (click)="openDialog = true"></p-button>
+    <app-table-dynamic [scrollHeight]="'500px'" [data]="tableData" class="tbl-dynamic" (editDynamicTable)="openEdit($event)" (deleteUser)="deleteUser($event)" (editUser)="editUser($event)" (routerToDo)="routerToDo($event)">
+    </app-table-dynamic>
+</div>
+<app-add-user [openDialog]="openDialog" (onCloseModal)="openDialog=false" (newDataAdd)="newDataAdd($event)">
+</app-add-user>
+<app-edit-user [openDialogEdit]="openDialogEdit" (onCloseModal)="openDialogEdit=false" [userInfo]="userInfo" *ngIf="userInfo" (newEditUserInfo)="newEditUserInfo($event)">
+</app-edit-user>
+<app-detail-user [openDetail]="openDetail" (onCloseModal)="openDetail=false" [detailInfo]="detailInfo" *ngIf="detailInfo"></app-detail-user>

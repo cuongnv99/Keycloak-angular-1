@@ -1,0 +1,62 @@
+<p-dialog header="User > {{detailInfo.username}}" [(visible)]="openDetail" (onHide)="onCloseModal.emit()">
+    <p-tabView>
+        <p-tabPanel header="Info">
+            <div class="p-fluid p-formgrid p-grid" [formGroup]="frmGroup">
+                <div class="p-field p-col-6">
+                    <label>Username</label>
+                    <input type="text" pInputText formControlName="username">
+                </div>
+                <div class="p-field p-col-6">
+                    <label>Email</label>
+                    <input type="text" pInputText formControlName="email">
+                </div>
+                <div class="p-field p-col-6">
+                    <label>First Name</label>
+                    <input type="text" pInputText formControlName="firstName">
+                </div>
+                <div class="p-field p-col-6">
+                    <label>Last Name</label>
+                    <input type="text" pInputText formControlName="lastName">
+                </div>
+                <div class="p-field p-col-6">
+                    <label>Required User Actions</label>
+                    <input type="text" pInputText>
+                </div>
+                <div class="p-field p-col-3" style="padding-top: 20px;">
+                    <label style="margin-right: 5px;">User Enabled</label>
+                    <p-inputSwitch formControlName="enabled"></p-inputSwitch>
+                </div>
+                <div class="p-field p-col-3" style="padding-top: 20px;">
+                    <label style="margin-right: 5px;">Email Verifled</label>
+                    <p-inputSwitch formControlName="emailVerified"></p-inputSwitch>
+                </div>
+            </div>
+        </p-tabPanel>
+        <p-tabPanel header="Role Mapping">
+            <p-pickList [source]="sourceRole" [target]="targetRole" sourceHeader="Available Roles" targetHeader="Assigned Roles" dragdrop="true" [responsive]="true" [sourceStyle]="{'height':'300px'}" [targetStyle]="{'height':'300px'}" filterBy="name" sourceFilterPlaceholder="Search by name"
+                targetFilterPlaceholder="Search by name">
+                <ng-template let-role pTemplate="item">
+                    <div>
+                        <span>{{role.name}}</span>
+                    </div>
+                </ng-template>
+            </p-pickList>
+            <button pButton type="button" label="Click" (click)="onSetRoleOfUser()"></button>
+        </p-tabPanel>
+        <p-tabPanel header="Group">
+            <p-pickList [source]="sourceGroup" [target]="targetGroup" sourceHeader="Available Groups" targetHeader="Assigned Groups" dragdrop="true" [responsive]="true" [sourceStyle]="{'height':'300px'}" [targetStyle]="{'height':'300px'}" filterBy="name" sourceFilterPlaceholder="Search by name"
+                targetFilterPlaceholder="Search by name">
+                <ng-template let-group pTemplate="item">
+                    <div>
+                        <span>{{group.name}}</span>
+                    </div>
+                </ng-template>
+            </p-pickList>
+            <button pButton type="button" label="Click" (click)="onSetGroupOfUser()"></button>
+        </p-tabPanel>
+    </p-tabView>
+
+    <!-- <div>
+        tab: Info ( thông tin cơ bản) | Role Mappings ( Có thể assign role) | Groups (danh sách user này thuộc group nào)
+    </div> -->
+</p-dialog>

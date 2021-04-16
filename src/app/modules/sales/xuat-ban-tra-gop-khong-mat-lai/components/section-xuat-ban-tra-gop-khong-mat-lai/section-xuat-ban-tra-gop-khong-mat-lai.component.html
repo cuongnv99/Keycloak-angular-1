@@ -1,0 +1,29 @@
+<div class="container" style="margin-top: 20px;">
+    <div class="p-fluid p-formgrid p-grid" [formGroup]="XuatBanForm">
+        <div class="p-field p-col-12 p-lg-3">
+            <label>Tổng số lượng</label>
+            <p-inputNumber inputId="minmaxfraction" placeholder="0" mode="decimal" 
+                [maxFractionDigits]="5" formControlName="total" ></p-inputNumber>
+        </div>
+        <div class="p-field p-col-12 p-lg-3">
+            <label>Tổng tiền</label>
+            <p-inputNumber inputId="minmaxfraction" placeholder="0" mode="decimal" 
+                [maxFractionDigits]="5" formControlName="totalPrice"></p-inputNumber>
+        </div>
+        <div class="p-field p-col-12 p-lg-3">
+            <label>Phải thu</label>
+            <p-inputNumber inputId="minmaxfraction" placeholder="0" mode="decimal" 
+                [maxFractionDigits]="5" formControlName="receivable"></p-inputNumber>
+        </div>
+        <div class="p-field p-col-12 p-lg-3">
+            <label style="opacity: 0;">Phải thu</label>
+            <div class=" p-grid " style="margin-top: 0; justify-content: space-around;">
+                <p-button label="Cập nhật" icon="pi pi-user" styleClass="p-button-secondary">
+                </p-button>
+                <p-button label="Giao" icon="pi pi-save" styleClass="p-button-secondary"></p-button>
+                <p-button label="Nhật ký" icon="pi pi-undo" styleClass="p-button-secondary">
+                </p-button>
+            </div>
+        </div>
+    </div>
+</div>

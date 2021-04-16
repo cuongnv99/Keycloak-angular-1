@@ -1,0 +1,124 @@
+<div class="card">
+    <div class="p-grid">
+        <div class="p-col-6">
+            <span class="font-sale-market">Báo cáo VNPay</span>
+        </div>
+        <div class="p-col-6">
+            <p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+        </div>
+    </div>
+    <div class="p-grid p-col-6">
+        <div class="p-fluid p-formgrid p-grid">
+            <div class="p-field p-col-12 p-md-6">
+                <label>Loại báo cáo</label>
+                <ng-select [items]="reportTypes" bindValue="code" bindLabel="name" placeholder="- Chọn báo cáo -">
+                </ng-select>
+            </div>
+            <div class="p-field p-col-12 p-md-6">
+                <label>Ngày xuất hàng</label>
+                <div class="ui-fluid p-formgrid p-grid">
+                    <p-calendar class="p-col" [keepInvalid]="true" [showIcon]="true" [yearNavigator]="true" yearRange="2000:2050" [monthNavigator]="true" dateFormat="dd/mm/yy"></p-calendar>
+                    <p-calendar class="p-col" [keepInvalid]="true" [showIcon]="true" [yearNavigator]="true" yearRange="2000:2050" [monthNavigator]="true" dateFormat="dd/mm/yy"></p-calendar>
+                </div>
+            </div>
+            <div class="p-field p-col-12 p-md-6">
+                <label>Ngành hàng</label>
+                <app-multi-select [datas]=""></app-multi-select>
+            </div>
+            <div class="p-field p-col-12 p-md-6">
+                <label>Nhóm hàng</label>
+                <app-multi-select [datas]=""></app-multi-select>
+            </div>
+            <div class="p-field p-col-12 p-md-6">
+                <label>Nhà cung cấp</label>
+                <app-multi-select [datas]=""></app-multi-select>
+            </div>
+            <div class="p-field p-col-12 p-md-6">
+                <label>Nhà sản xuất</label>
+                <app-multi-select [datas]=""></app-multi-select>
+            </div>
+            <div class="p-field p-col-12 p-md-6">
+                <label>Khách hàng</label>
+                <app-multi-select [datas]=""></app-multi-select>
+            </div>
+            <div class="p-field p-col-12 p-md-6">
+                <label>Sản phẩm</label>
+                <app-multi-select [datas]="" [searchable]="true" (onClkSearch)="openProductSearchModal=true"></app-multi-select>
+            </div>
+            <div class="p-field p-col-12 p-md-6">
+                <label>Công ty</label>
+                <ng-select [items]="">
+                </ng-select>
+            </div>
+            <div class="p-field p-col-12 p-md-6">
+                <label>Mới cũ</label>
+                <ng-select [items]="">
+                </ng-select>
+            </div>
+            <div class="p-field p-col-12 p-md-6">
+                <label>Chi nhánh</label>
+                <app-multi-select [datas]=""></app-multi-select>
+            </div>
+            <div class="p-field p-col-12 p-md-6">
+                <label>Hàng chưng bày</label>
+                <ng-select [items]="">
+                </ng-select>
+            </div>
+            <div class="p-field p-col-12 p-md-6">
+                <label>Khu vực</label>
+                <app-multi-select [datas]=""></app-multi-select>
+            </div>
+            <div class="p-field p-col-12 p-md-6">
+                <label>Loại hàng hóa</label>
+                <app-multi-select [datas]=""></app-multi-select>
+            </div>
+            <div class="p-field p-col-12 p-md-6">
+                <label>Kho</label>
+                <app-multi-select [datas]=""></app-multi-select>
+            </div>
+            <div class="p-field p-col-12 p-md-6">
+                <label>Nhóm dữ liệu</label>
+                <app-multi-select [datas]=""></app-multi-select>
+            </div>
+            <div class="p-field p-col-12 p-md-6">
+                <label>NV xuất/nhập</label>
+                <app-employee-selection (clickSearchBtn)="openEmployeeSearchModal=true"></app-employee-selection>
+            </div>
+            <div class="p-field p-col-12 p-md-6">
+                <label>Hình thức xuất nhập</label>
+                <app-multi-select [datas]=""></app-multi-select>
+            </div>
+            <div class="p-field p-col-12 p-md-6">
+                <label>NV bán/cài đặt</label>
+                <app-employee-selection (clickSearchBtn)="openEmployeeSearchModal=true"></app-employee-selection>
+            </div>
+            <div class="p-field p-col-12 p-md-6">
+                <label>Hình thức nhập</label>
+                <app-multi-select [datas]=""></app-multi-select>
+            </div>
+            <div class="p-field p-col-12 p-md-6">
+                <label>Yêu cầu nhập trả hàng</label>
+                <ng-select [items]="">
+                </ng-select>
+            </div>
+            <div class="p-field-checkbox p-col-12 p-md-4">
+                <p-checkbox name=""></p-checkbox>
+                <label for="la">Có giá VAT</label>
+            </div>
+            <div class="p-field-checkbox p-col-12 p-md-4">
+                <p-checkbox name=""></p-checkbox>
+                <label for="la">Chỉ hiển thị hình thức xuất bán</label>
+            </div>
+            <div class="p-field-checkbox p-col-12 p-md-4">
+                <p-checkbox name=""></p-checkbox>
+                <label for="la">Bao gồm xuất khuyến mãi</label>
+            </div>
+            <div class="p-mt-4 p-d-flex">
+                <button pButton pRipple type="button" label="Xuất excel" icon="pi pi-file-excel" class="p-mr-4"></button>
+                <button pButton pRipple type="button" label="Xem báo cáo" icon="pi pi-print"></button>
+            </div>
+        </div>
+    </div>
+</div>
+<app-employee-search-modal [isOpenModal]="openEmployeeSearchModal" (onCloseModal)="openEmployeeSearchModal=false"></app-employee-search-modal>
+<app-product-search-modal [isOpenModal]="openProductSearchModal" (onCloseModal)="openProductSearchModal=false"></app-product-search-modal>

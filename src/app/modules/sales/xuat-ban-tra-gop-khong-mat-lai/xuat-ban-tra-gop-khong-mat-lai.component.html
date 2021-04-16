@@ -1,0 +1,71 @@
+<div class="card sale-by-instalments">
+    <div class="p-grid">
+        <div class="p-col-6">
+            <span class="font-fix">Bán hàng trả góp</span>
+        </div>
+        <div class="p-col-6">
+            <p-breadcrumb [model]="items"></p-breadcrumb>
+        </div>
+    </div>
+    <p-tabView>
+        <p-tabPanel header="Đơn hàng">
+            <app-don-hang class="don-hang"></app-don-hang>
+        </p-tabPanel>
+        <p-tabPanel header="Khách hàng">
+            <app-khach-hang class="khach-hang"></app-khach-hang>
+        </p-tabPanel>
+        <p-tabPanel header="Duyệt">
+            Content 3
+        </p-tabPanel>
+        <p-tabPanel header="Tệp đính kèm">
+            Content 3
+        </p-tabPanel>
+    </p-tabView>
+
+    <div class="p-fluid p-formgrid p-grid" style="margin-left: 0px; margin-bottom: 5px;">
+        <div class="p-field p-col-12 p-lg-3">
+            <label>Barcode</label>
+            <div>
+                <app-dialog-barcode class="p-input-icon-right" (openBarcodeModal)="isOpenBarcodeModal=true">
+                </app-dialog-barcode>
+                <input type="text" pInputText >
+            </div>
+        </div>
+        <div class="p-field p-col-12 p-lg-3">
+            <div class="p-grid">
+                <div class="p-field p-col-12 p-lg-6">
+                    <label style="opacity: 0; margin-bottom: 1.5rem;">Khuyến mãi combo</label>
+                    <p-button label="Khuyến mãi combo" icon="pi pi-th-large" styleClass="p-button-secondary" (click)="isOpenPromotinalComboDialog=true"></p-button>
+                </div>
+                <div class="p-field p-col-12 p-lg-6">
+                    <label style="opacity: 0;margin-bottom: 1.5rem;">Lấy khuyến mãi</label>
+                    <p-button label="Lấy khuyến mãi" icon="pi pi-th-large" styleClass="p-button-secondary" (click)="isOpenPromotinalDialog=true"></p-button>
+                </div>
+            </div>
+        </div>
+        <div class="p-field p-col-12 p-lg-3">
+            <label>Coupon</label>
+            <input type="text" pInputText >
+        </div>
+        <div class="p-field p-col-12 p-lg-3">
+            <label style="text-decoration: underline; color: #1976D2;cursor:pointer;" (click)="isOpenSaleDialog= true">Giảm giá</label>
+            <div class=" p-grid " style="margin-top: 0;">
+                <div class="p-col-7 p-lg-7" style="padding-right: 0;">
+                    <p-dropdown [options]="detailsales" optionLabel="name" [showClear]=true placeholder="Chọn lý do giảm">
+                    </p-dropdown>
+                </div>
+                <div class="p-col-1 p-lg-1" style="padding: 0.5rem 0 0 0; text-align: center;"></div>
+                <div class="p-col-4 p-lg-4" style="padding-left: 0;">
+                    <p-inputNumber inputId="minmaxfraction"  placeholder="0" mode="decimal" [maxFractionDigits]="5" disabled="true"></p-inputNumber>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <app-table-dynamic [data]="tableDataXuatBan" class="tbl-dynamic"></app-table-dynamic>
+    <app-section-xuat-ban-tra-gop-khong-mat-lai></app-section-xuat-ban-tra-gop-khong-mat-lai>
+</div>
+<app-barcode-modal [isOpenModal]="isOpenBarcodeModal" (onCloseModal)="isOpenBarcodeModal=false"></app-barcode-modal>
+<app-detail-sale [saleDialog]="isOpenSaleDialog" (onCloseModal)="isOpenSaleDialog=false"></app-detail-sale>
+<app-dialog-get-promotional [PromotinalDialog]="isOpenPromotinalDialog" (onCloseModal)="isOpenPromotinalDialog=false" ></app-dialog-get-promotional>
+<app-dialog-get-promotional-combo [PromotinalComboDialog]="isOpenPromotinalComboDialog" (onCloseModal)="isOpenPromotinalComboDialog=false"></app-dialog-get-promotional-combo>

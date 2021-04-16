@@ -1,0 +1,112 @@
+<div class="card">
+  <div class="p-grid">
+    <div class="p-col-6">
+      <span style="font-weight: bold;font-size: 1.5rem;">Yêu cầu quản lý xuất bán</span>
+    </div>
+    <div class="p-col-6">
+      <p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+    </div>
+  </div>
+  <div class="p-grid p-fluid">
+    <div class="p-field p-col-12 p-lg-4">
+      <div class="p-grid p-fluid">
+        <div class="p-field p-col-12 p-lg-6">
+          <label for="icon">Ngày yêu cầu</label>
+          <p-calendar placeholder="- Từ ngày -" [(ngModel)]="date3" [showIcon]="true" inputId="icon"></p-calendar>
+        </div>
+        <div class="p-field p-col-12 p-lg-6">
+          <label style="visibility:hidden">Hiden</label>
+          <p-calendar placeholder="- Đến ngày -" [(ngModel)]="date3" [showIcon]="true" inputId="icon"></p-calendar>
+        </div>
+      </div>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+      <label>Ngành hàng:</label>
+      <p-dropdown [options]="branch" placeholder="-- Chọn ngành hàng --" optionLabel="name" [filter]=true [showClear]=true>
+      </p-dropdown>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+      <label>IMEI:</label>
+      <input type="text" pInputText>
+    </div>
+  </div>
+  <div class="p-grid p-fluid">
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Công ty:</label>
+      <p-dropdown [options]="branch" placeholder="-- Chọn ngành hàng --" optionLabel="name" [filter]=true [showClear]=true>
+      </p-dropdown>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+      <label>Nhóm hàng:</label>
+      <p-dropdown [options]="branch" placeholder="-- Chọn ngành hàng --" optionLabel="name" [filter]=true [showClear]=true>
+      </p-dropdown>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+      <label>Trạng thái duyệt:</label>
+      <p-dropdown [options]="branch" placeholder="-- Chọn ngành hàng --" optionLabel="name" [filter]=true [showClear]=true>
+      </p-dropdown>
+    </div>
+  </div>
+  <div class="p-grid p-fluid">
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Chi nhánh:</label>
+      <p-dropdown [options]="branch" placeholder="-- Chọn ngành hàng --" optionLabel="name" [filter]=true [showClear]=true>
+      </p-dropdown>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+      <label>Nhà sản xuất:</label>
+      <p-dropdown [options]="branch" placeholder="-- Chọn ngành hàng --" optionLabel="name" [filter]=true [showClear]=true>
+      </p-dropdown>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+      <label>Trạng thái nhập:</label>
+      <p-dropdown [options]="branch" placeholder="-- Chọn ngành hàng --" optionLabel="name" [filter]=true [showClear]=true>
+      </p-dropdown>
+    </div>
+  </div>
+  <div class="p-grid p-fluid">
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Nhân viên:</label>
+      <app-employee-selection (clickSearchBtn)="isOpenSearchModal=true"></app-employee-selection>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+      <label>Sản phẩm:</label>
+      <div class="p-inputgroup">
+        <input type="text" pInputText>
+        <button type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-warn" (click)="isOpenSearchProductModal=true"></button>
+      </div>
+    </div>
+  </div>
+  <div class="p-grid p-fluid">
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Loại định giá:</label>
+      <p-dropdown placeholder="Cũ" optionLabel="name" [filter]=true [showClear]=true [disabled]="true">
+      </p-dropdown>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+      <label>Chính sách:</label>
+      <p-dropdown placeholder="-- Chọn --" optionLabel="name" [filter]=true [showClear]=true [disabled]="true">
+      </p-dropdown>
+    </div>
+  </div>
+  <div class="p-grid p-jc-end">
+    <div class="p-col-fixed">
+      <div class="btn-box">
+        <p-button label="Tìm kiếm" icon="pi pi-search" styleClass="p-button-secondary"></p-button>
+      </div>
+    </div>
+    <div class="p-col-fixed">
+      <div class="btn-box">
+        <p-button label="Duyệt định giá" icon="pi pi-file" styleClass="p-button-secondary"></p-button>
+      </div>
+    </div>
+    <div class="p-col-fixed">
+      <div class="btn-box">
+        <p-button label="Xuất excel" icon="pi pi-download" styleClass="p-button-secondary"></p-button>
+      </div>
+    </div>
+  </div>
+</div>
+<app-table-dynamic [data]="tableData" ></app-table-dynamic>
+<app-employee-search-modal [isOpenModal]="isOpenSearchModal" (onCloseModal)="isOpenSearchModal=false"></app-employee-search-modal>
+<app-product-search-modal [isOpenModal]="isOpenSearchProductModal" (onCloseModal)="isOpenSearchProductModal=false"></app-product-search-modal>

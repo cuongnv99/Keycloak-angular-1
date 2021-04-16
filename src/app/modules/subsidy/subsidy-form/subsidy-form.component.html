@@ -1,0 +1,61 @@
+<div class="card">
+  <h5>Thông tin kiểm tra</h5>
+  <div class="p-fluid">
+    <div class="p-field p-grid">
+      <label for="firstname4" class="p-col-3 p-mb-2 p-md-2 p-mb-md-0">Kho tạo: </label>
+      <div class="p-col-3 p-md-3">
+        <input id="firstname4" type="text" pInputText>
+      </div>
+    </div>
+    <div class="p-field p-grid">
+      <label class="p-col-3 p-mb-2 p-md-2 p-mb-md-0">Loại giấy tờ: <span class="red-asterisks"> * </span> </label>
+      <div class="p-col-3 p-md-3">
+        <p-dropdown placeholder="Tất cả" optionLabel="name" [filter]=true [showClear]=true>
+        </p-dropdown>
+      </div>
+    </div>
+    <div class="p-field p-grid">
+      <label for="firstname4" class="p-col-3 p-mb-2 p-md-2 p-mb-md-0">Số giấy tờ: <span class="red-asterisks"> * </span> </label>
+      <div class="p-col-3 p-md-3">
+        <input type="text" pInputText>
+      </div>
+    </div>
+    <div class="p-field p-grid">
+      <label class="p-col-3 p-mb-2 p-md-2 p-mb-md-0">Số thuê bao: <span class="red-asterisks"> * </span> </label>
+      <div class="p-col-3 p-md-3">
+        <input type="text" pInputText>
+      </div>
+    </div>
+    <div class="p-field p-grid">
+      <label class="p-col-3 p-mb-2 p-md-2 p-mb-md-0">Trả góp: <span class="red-asterisks"> * </span> </label>
+      <div class="p-col-3 p-md-3">
+        <p-dropdown placeholder="Tất cả" optionLabel="name" [filter]=true [showClear]=true>
+        </p-dropdown>
+      </div>
+    </div>
+    <div class="p-field-checkbox">
+      <p-checkbox binary="true" inputId="binary"></p-checkbox>
+      <label for="binary" style="color: #0b7ad1">Đơn hàng Online Subsidy</label>
+    </div>
+    <div class="p-field p-grid">
+      <label for="order-online" class="p-col-3 p-mb-2 p-md-2 p-mb-md-0">Mã đơn hàng online: </label>
+      <div class="p-col-3 p-md-3">
+        <input id="order-online" type="text" pInputText>
+      </div>
+    </div>
+    <div class="p-field p-grid">
+      <label class="p-col-3 p-mb-2 p-md-2 p-mb-md-0">Barcode: <span class="red-asterisks"> * </span> </label>
+      <div class="p-inputgroup p-col-3 p-md-3">
+        <input type="text" pInputText>
+        <button type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-warn" (click)="isOpenBarcodeModal=true"></button>
+      </div>
+    </div>
+    <div class="p-field p-grid">
+      <label class="p-col-3 p-mb-2 p-md-2 p-mb-md-0">Thông tin sản phẩm:</label>
+      <div class="p-col-3 p-md-3">
+        <textarea pInputTextarea [rows]="4" [cols]="30" style="height: 84%;"></textarea>
+      </div>
+    </div>
+  </div>
+</div>
+<app-barcode-modal class="p-input-icon-right" [isOpenModal]="isOpenBarcodeModal" (onCloseModal)="isOpenBarcodeModal=false"></app-barcode-modal>

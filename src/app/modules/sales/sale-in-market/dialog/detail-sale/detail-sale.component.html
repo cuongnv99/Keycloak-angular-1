@@ -1,0 +1,35 @@
+<!-- <p-button label="Giảm giá"  styleClass="p-button-secondary" (click)="showDialog()"></p-button> -->
+
+<p-dialog header="Thông tin giảm giá" [(visible)]="saleDialog" (onHide)="onCloseModal.emit()" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000">
+
+    <div class="p-fluid p-grid p-formgrid" [formGroup]="DetailSaleForm">
+        <div class="p-field p-col-12 p-lg-4">
+            <label>Barcode</label>
+            <div>
+                <app-dialog-barcode class="p-input-icon-right" (openBarcodeModal)="isOpenBarcodeModal=true"></app-dialog-barcode>
+                <input type="text" pInputText formControlName="barCode">
+            </div>
+        </div>
+        <div class="p-field p-col-12 p-lg-4">
+            <label>Tổng số tiền</label>
+            <p-inputNumber inputId="minmaxfraction" formControlName="totalPrice" placeholder="0" mode="decimal" [maxFractionDigits]="5"></p-inputNumber>
+        </div>
+        <div class="p-field p-col-12 p-lg-4">
+            <label>Tổng điểm VT++</label>
+            <p-inputNumber inputId="minmaxfraction" formControlName="totalViettel" placeholder="0" mode="decimal" [maxFractionDigits]="5"></p-inputNumber>
+        </div>
+    </div>
+    <div class="p-field p-col-12 p-lg-12" style="text-align: end;">
+        <button pButton type="button" icon="pi pi-minus" iconPos="left"></button>
+    </div>
+    <div class="p-field p-col-12 p-lg-12" style="text-align: end;">
+        <app-table-dynamic [data]="tableDetailSaleData"></app-table-dynamic>
+    </div>
+
+    
+    <ng-template pTemplate="footer">
+        <p-button icon="pi pi-check" (click)="saleDialog=false" label="Đồng ý" styleClass="p-button-text"></p-button>
+        <p-button icon="pi pi-times" (click)="saleDialog=false" label="Bỏ qua"></p-button>
+    </ng-template>
+</p-dialog>
+<app-barcode-modal [isOpenModal]="isOpenBarcodeModal" (onCloseModal)="isOpenBarcodeModal=false"></app-barcode-modal>

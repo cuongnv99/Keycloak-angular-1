@@ -1,0 +1,134 @@
+<div class="container" style="margin-top: 20px;">
+    <div class="p-grid">
+        <div class="p-col-12">
+            <div class="p-grid" [formGroup]="sumarySaleForm">
+                <div class="p-col-1"></div>
+                <div class="p-col-5">
+                    <div class="p-fluid p-formgrid p-grid">
+                        <div class="p-field p-col-12 p-lg-12">
+                            <div class=" p-grid " style="margin-top: 0;">
+                                <div class="p-col-3 p-lg-3"></div>
+                                <div class="p-col-9 p-lg-9">
+                                    <ng-select [items]="money" [(ngModel)]="selectedItem" bindLabel="name" bindValue="key" formControlName="isCash">
+                                    </ng-select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-field p-col-12 p-lg-12">
+                            <div class=" p-grid " style="margin-top: 0;">
+                                <div class="p-col-3 p-lg-3"></div>
+                                <div class="p-col-4 p-lg-4">
+                                    <div class="border-lable">
+                                        <label>Tổng số lượng</label>
+                                    </div>
+                                </div>
+                                <div class="p-col-5 p-lg-5">
+                                    <p-inputNumber inputId="minmaxfraction" formControlName="totalAmount" placeholder="0" mode="decimal" [maxFractionDigits]="5"></p-inputNumber>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-field p-col-12 p-lg-12">
+                            <div class=" p-grid " style="margin-top: 0;">
+                                <div class="p-col-3 p-lg-3"></div>
+                                <div class="p-col-4 p-lg-4">
+                                    <div class="border-lable">
+                                        <label>Thành tiền</label>
+                                    </div>
+                                </div>
+                                <div class="p-col-5 p-lg-5">
+                                    <p-inputNumber inputId="minmaxfraction" formControlName="paymentCost" placeholder="0" mode="decimal" [maxFractionDigits]="5"></p-inputNumber>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-field p-col-12 p-lg-12">
+                            <div class=" p-grid " style="margin-top: 0;">
+                                <div class="p-col-3 p-lg-3">
+                                    <!-- <app-detail-sale ></app-detail-sale> -->
+                                    <button pButton class="p-button-secondary" type="button" [disabled]="!sumarySaleForm.get('saleType').value" label="Giảm giá" style="text-align: center;" (click)="isOpenSaleDialog=true"></button>
+                                    <!-- <button pButton class="p-button-secondary" type="button" [disabled]="!sumarySaleForm.get('saleType').value" label="Giảm giá" style="text-align: center;" (click)="onGetSales()"></button> -->
+                                </div>
+                                <div class="p-col-4 p-lg-4">
+                                    <ng-select [items]="listGiam" bindLabel="name" bindValue="key" formControlName="saleType" placeholder="--Chọn lý do giảm--" >
+                                    </ng-select>
+                                </div>
+                                <div class="p-col-5 p-lg-5">
+                                    <p-inputNumber inputId="minmaxfraction" formControlName="saleValue" placeholder="0" mode="decimal"  [maxFractionDigits]="5"></p-inputNumber>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-field p-col-12 p-lg-12">
+                            <div class=" p-grid " style="margin-top: 0;">
+                                <div class="p-col-3 p-lg-3"></div>
+                                <div class="p-col-4 p-lg-4">
+                                    <div class="border-lable">
+                                        <label style="font-weight: bold;">Phải thanh toán</label>
+                                    </div>
+                                </div>
+                                <div class="p-col-5 p-lg-5">
+                                    <p-inputNumber inputStyleClass="input-color" formControlName="price" inputId="minmaxfraction" placeholder="0" mode="decimal"  [maxFractionDigits]="5"></p-inputNumber>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-col-5">
+                    <div class="p-fluid p-formgrid p-grid">
+                        <div class="p-field p-col-12 p-lg-12">
+                            <div class=" p-grid " style="margin-top: 0;">
+                                <div class="p-col-4 p-lg-4">
+                                    <div class="border-lable">
+                                        <span style="text-decoration: underline; color: #1976D2;cursor:pointer;" (click)="isOpenPaymentDialog = true">Tiền thanh toán</span>
+                                    </div>
+                                </div>
+                                <div class="p-col-5 p-lg-5">
+                                    <p-inputNumber inputId="minmaxfraction" formControlName="paymentCost" placeholder="0" mode="decimal" [maxFractionDigits]="5"></p-inputNumber>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-field p-col-12 p-lg-12">
+                            <div class=" p-grid " style="margin-top: 0;">
+                                <div class="p-col-4 p-lg-4">
+                                    <div class="border-lable">
+                                        <label>Còn nợ lại</label>
+                                    </div>
+                                </div>
+                                <div class="p-col-5 p-lg-5">
+                                    <p-inputNumber inputId="minmaxfraction" formControlName="debt" placeholder="0" mode="decimal"  [maxFractionDigits]="5"></p-inputNumber>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-field p-col-12 p-lg-12">
+                            <div class=" p-grid " style="margin-top: 0;">
+                                <div class="p-col-4 p-lg-4">
+                                    <div class="border-lable">
+                                        <label>Tiền thừa</label>
+                                    </div>
+                                </div>
+                                <div class="p-col-5 p-lg-5">
+                                    <p-inputNumber inputId="minmaxfraction" formControlName="redundantCost" placeholder="0" mode="decimal" [maxFractionDigits]="5"></p-inputNumber>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-field p-col-12 p-lg-12">
+                            <div class=" p-grid " style="margin-top: 29px;">
+                                <div class="p-col-3 p-lg-3 p-sm-4">
+                                    <p-button label="Cập nhật" icon="pi pi-user" styleClass="p-button-secondary p-height"></p-button>
+                                </div>
+                                <div class="p-col-3 p-lg-3 p-sm-4">
+                                    <p-button label="Lưu tạm" icon="pi pi-save" styleClass="p-button-secondary p-height"></p-button>
+                                </div>
+                                <div class="p-col-3 p-lg-3 p-sm-4">
+                                    <p-button label="Tạo mới" icon="pi pi-undo" styleClass="p-button-secondary p-height"></p-button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-col-1"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-notify-modal [isOpenModal]="openNotifyModal" [contentPopup]="notifyMess" (onCloseModal)="openNotifyModal=false"></app-notify-modal>
+<app-detail-sale [saleDialog]="isOpenSaleDialog" (onCloseModal)="isOpenSaleDialog=false"></app-detail-sale>
+<app-payment-detail [paymentDialog]="isOpenPaymentDialog" (onCloseModal)="isOpenPaymentDialog=false"></app-payment-detail>

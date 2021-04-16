@@ -1,0 +1,20 @@
+{
+    "cells": [
+        { "id": 2, "attr": "", "name": "", "type": "", "width": 0, "isFrozen": true },
+        { "id": 3, "attr": "checkbox", "name": "checkbox", "type": "", "width": 50, "isFrozen": false },
+        { "id": 6, "attr": "giftVoucher", "name": "Phiếu quà tặng", "type": "text", "width": 200, "isFrozen": false },
+        { "id": 7, "attr": "serial", "name": "Serial", "type": "text", "width": 100, "isFrozen": false },
+        { "id": 8, "attr": "price", "name": "Mệnh giá", "type": "text", "width": 100, "isFrozen": false },
+        { "id": 9, "attr": "true", "name": "Hợp lệ", "type": "checkbox", "width": 50, "isFrozen": false },
+        { "id": 10, "attr": "note", "name": "Ghi chú", "type": "text", "width": 100, "isFrozen": false }
+    ],
+    "datas": [{
+            "id": 1, 
+            "giftVoucher": "10100100000061 Tiêu điểm V++",
+            "serial": "45678",
+            "price": "0",
+            "hople": 1,
+            "note": "Tiêu điểm V++"
+        }
+    ]
+}

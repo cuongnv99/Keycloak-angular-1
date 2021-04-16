@@ -1,0 +1,21 @@
+{
+  "cells": [
+    { "id": 2, "attr": "", "name": "", "type": "", "width": 0, "isFrozen": true },
+    { "id": 5, "attr": "productName", "name": "Sản phẩm", "type": "text", "width": 100, "isFrozen": false },
+    { "id": 6, "attr": "soluong", "name": "Số lượng", "type": "text", "width": 100, "isFrozen": false },
+    { "id": 7, "attr": "productCombo", "name": "Bộ sản phẩm", "type": "checkbox", "width": 100, "isFrozen": false },
+    { "id": 8, "attr": "soluongton", "name": "Số lượng tồn", "type": "text", "width": 100, "isFrozen": false },
+    { "id": 9, "attr": "IEMI", "name": "Yêu cầu IEMI", "type": "text", "width": 100, "isFrozen": false },
+    { "id": 10, "attr": "km", "name": "Giá khuyến mãi", "type": "text", "width": 150, "isFrozen": false }
+  ],
+  "datas": [{
+    "id": 1,
+    "productName": "Sạc dự phòng",
+    "soluong": "1",
+    "productCombo": 0,
+    "soluongton": "99",
+    "IEMI": "123456",
+    "km": "200,000"
+  }
+  ]
+}

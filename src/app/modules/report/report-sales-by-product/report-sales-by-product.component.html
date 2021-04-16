@@ -1,0 +1,106 @@
+<div class="card">
+  <div class="p-grid p-fluid">
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Công ty:</label>
+      <p-dropdown [options]="listWarehouse" placeholder="--Chọn công ty--" optionLabel="name" [filter]=true
+                  [showClear]=true>
+      </p-dropdown>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Khu vực:</label>
+      <p-multiSelect [options]="listWarehouse" optionLabel="name"></p-multiSelect>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Chi nhánh:</label>
+      <p-multiSelect [options]="listWarehouse" optionLabel="name"></p-multiSelect>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Kho:</label>
+      <p-multiSelect [options]="listWarehouse" optionLabel="name"></p-multiSelect>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Nhà sản xuất:</label>
+      <p-multiSelect [options]="listWarehouse" optionLabel="name"></p-multiSelect>
+    </div>
+    <div class="p-field p-col-12 p-lg-2">
+      <label>Loại hàng:</label>
+      <p-dropdown [options]="listWarehouse" placeholder="--Tất cả--" optionLabel="name" [filter]=true
+                  [showClear]=true>
+      </p-dropdown>
+    </div>
+    <div class="p-field p-col-12 p-lg-2">
+      <label style="visibility: hidden">Hiden</label>
+      <p-dropdown [options]="listWarehouse" placeholder="--Tất cả--" optionLabel="name" [filter]=true
+                  [showClear]=true>
+      </p-dropdown>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Ngành hàng:</label>
+      <p-multiSelect [options]="listWarehouse" optionLabel="name"></p-multiSelect>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Nhóm hàng:</label>
+      <p-multiSelect [options]="listWarehouse" optionLabel="name"></p-multiSelect>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Sản phẩm:</label>
+      <div class="p-inputgroup">
+        <input type="text" pInputText placeholder="Keyword">
+        <button type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-warn"
+                (click)="isOpenBarcodeModal=true"></button>
+      </div>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Loại hàng:</label>
+      <p-dropdown [options]="listWarehouse" placeholder="--Tất cả--" optionLabel="name" [filter]=true
+                  [showClear]=true>
+      </p-dropdown>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>HT xuất:</label>
+      <p-multiSelect [options]="listWarehouse" optionLabel="name"></p-multiSelect>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <div class="p-grid p-fluid">
+        <div class="p-field p-col-12 p-lg-6">
+          <label for="startDate">Từ ngày</label>
+          <p-calendar placeholder="- Từ ngày -" [(ngModel)]="startDate" [showIcon]="true"
+                      inputId="startDate"></p-calendar>
+        </div>
+        <div class="p-field p-col-12 p-lg-6">
+          <label for="endDate">Đến ngày</label>
+          <p-calendar placeholder="- Đến ngày -" [(ngModel)]="startDate" [showIcon]="true"
+                      inputId="endDate"></p-calendar>
+        </div>
+      </div>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Nhóm dữ liệu:</label>
+      <p-multiSelect [options]="listWarehouse" optionLabel="name"></p-multiSelect>
+    </div>
+    <div class="p-field p-col-12 p-lg-2">
+      <label style="visibility:hidden">Hiden</label>
+      <div class="p-field-checkbox">
+        <p-checkbox  binary="true" inputId="checkbox-1"></p-checkbox>
+        <label for="checkbox-1">Trừ doanh thu nhập trả</label>
+      </div>
+    </div>
+    <div class="p-field p-col-12 p-lg-2">
+      <label style="visibility:hidden">Hiden</label>
+      <div class="p-field-checkbox">
+        <p-checkbox  binary="true" inputId="checkbox-1"></p-checkbox>
+        <label for="checkbox-1">Giá có VAT</label>
+      </div>
+    </div>
+    <div class="p-field p-col-12 p-lg-4 p-d-flex p-file-no-label">
+      <div class="p-mr-2 p-field-btn">
+        <button pButton pRipple type="button" icon="pi pi-file-excel" label="Xuất excel" class="p-mr-1"></button>
+      </div>
+      <div class="p-field-btn">
+        <button pButton pRipple type="button" icon="pi pi-search" label="Xem báo cáo" class="p-mr-1"></button>
+      </div>
+    </div>
+  </div>
+  <app-table-dynamic [data]="tableData"></app-table-dynamic>
+</div>
+<app-barcode-modal [isOpenModal]="isOpenBarcodeModal" (onCloseModal)="isOpenBarcodeModal=false"></app-barcode-modal>

@@ -1,0 +1,123 @@
+{
+    "cells": [    
+        { "id": 0, "attr": "", "name": "", "type": "text", "width": 0, "isFrozen": true },
+        { "id": 1, "attr": "fileName", "name": "Tên tập tin", "type": "text", "width": 100, "isFrozen": false },
+        { "id": 2, "attr": "startDate", "name": "Thời gian tạo", "type": "text", "width": 100, "isFrozen": false },
+        { "id": 3, "attr": "employee", "name": "Nhân viên tạo", "type": "text", "width": 100, "isFrozen": false },
+        { "id": 4, "attr": "download", "name": "Tải", "type": "text", "width": 50, "isFrozen": false },
+        { "id": 5, "attr": "view", "name": "Xem", "type": "text", "width": 50, "isFrozen": false }
+    ],
+    "datas": [{
+            "id": 1,
+            "fileName": "Siêu thị 1",
+            "startDate": "3/4/2021",
+            "employee": "Nguyễn Minh Tiến",
+            "download": "",
+            "view": ""
+        },
+        {
+            "id": 2,
+            "fileName": "Siêu thị 1",
+            "startDate": "3/4/2021",
+            "employee": "Nguyễn Minh Tiến",
+            "download": "",
+            "view": ""
+        },
+        {
+            "id": 3,
+            "fileName": "Siêu thị 1",
+            "startDate": "3/4/2021",
+            "employee": "Nguyễn Minh Tiến",
+            "download": "",
+            "view": ""
+        },
+        {
+            "id":4,
+            "fileName": "Siêu thị 1",
+            "startDate": "3/4/2021",
+            "employee": "Nguyễn Minh Tiến",
+            "download": "",
+            "view": ""
+        },
+        {
+            "id": 5,
+            "fileName": "Siêu thị 1",
+            "startDate": "3/4/2021",
+            "employee": "Nguyễn Minh Tiến",
+            "download": "",
+            "view": ""
+        },
+        {
+            "id": 6,
+            "fileName": "Siêu thị 1",
+            "startDate": "3/4/2021",
+            "employee": "Nguyễn Minh Tiến",
+            "download": "",
+            "view": ""
+        },
+        {
+            "id": 7,
+            "fileName": "Siêu thị 1",
+            "startDate": "3/4/2021",
+            "employee": "Nguyễn Minh Tiến",
+            "download": "",
+            "view": ""
+        },
+        {
+            "id": 8,
+            "fileName": "Siêu thị 1",
+            "startDate": "3/4/2021",
+            "employee": "Nguyễn Minh Tiến",
+            "download": "",
+            "view": ""
+        },
+        {
+            "id": 9,
+            "fileName": "Siêu thị 1",
+            "startDate": "3/4/2021",
+            "employee": "Nguyễn Minh Tiến",
+            "download": "",
+            "view": ""
+        },
+        {
+            "id": 10,
+            "fileName": "Siêu thị 1",
+            "startDate": "3/4/2021",
+            "employee": "Nguyễn Minh Tiến",
+            "download": "",
+            "view": ""
+        },
+        {
+            "id": 11,
+            "fileName": "Siêu thị 1",
+            "startDate": "3/4/2021",
+            "employee": "Nguyễn Minh Tiến",
+            "download": "",
+            "view": ""
+        },
+        {
+            "id": 12,
+            "fileName": "Siêu thị 1",
+            "startDate": "3/4/2021",
+            "employee": "Nguyễn Minh Tiến",
+            "download": "",
+            "view": ""
+        },
+        {
+            "id": 13,
+            "fileName": "Siêu thị 1",
+            "startDate": "3/4/2021",
+            "employee": "Nguyễn Minh Tiến",
+            "download": "",
+            "view": ""
+        },
+        {
+            "id": 14,
+            "fileName": "Siêu thị 1",
+            "startDate": "3/4/2021",
+            "employee": "Nguyễn Minh Tiến",
+            "download": "",
+            "view": ""
+        }
+    ]
+}

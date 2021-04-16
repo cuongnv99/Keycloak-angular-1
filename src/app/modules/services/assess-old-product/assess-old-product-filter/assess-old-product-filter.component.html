@@ -1,0 +1,99 @@
+<div class="p-grid">
+    <div class="p-col-6">
+        <span class="font-sale-market">Định giá máy cũ</span>
+    </div>
+    <div class="p-col-6">
+        <p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+    </div>
+</div>
+<div class="p-grid">
+    <div class="p-col-12">
+        <div class="top-fieldset">
+            <p-fieldset styleClass="myFieldset">
+                <p-header>Thông tin khách hàng</p-header>
+                <div class="p-fluid p-formgrid p-grid">
+                    <div class="p-field p-col-12 p-lg-2">
+                        <label>KH thành viên <span class="erros">*</span></label>
+                        <div class="p-input-icon-right">
+                            <i class="pi pi-times"></i>
+                            <input type="text" pInputText>
+                        </div>
+                    </div>
+                    <div class="p-field p-col-12 p-lg-2">
+                        <label style="border-bottom:1px solid #1976d2; color: #1976d2;" (click)="isOpenCustomerInfoModal=true">Khách hàng</label>
+                        <div class="p-inputgroup">
+                            <input type="text" pInputText>
+                        </div>
+                    </div>
+                    <div class="p-field p-col-12 p-lg-2">
+                        <label>Điện thoại</label>
+                        <input type="text" pInputText>
+                    </div>
+                    <div class="p-field p-col-12 p-lg-2">
+                        <label>Email</label>
+                        <input type="text" pInputText>
+                    </div>
+                    <div class="p-field p-col-12 p-lg-2">
+                        <label>CMND</label>
+                        <input type="text" pInputText>
+                    </div>
+                    <div class="p-field p-col-12 p-lg-2">
+                        <label>Mã số thuế</label>
+                        <input type="text" pInputText>
+                    </div>
+                    <div class="p-field p-col-12 p-lg-4">
+                        <label>Ngày cấp</label>
+                        <div class="ui-fluid p-formgrid p-grid">
+                            <p-calendar class="p-col" [keepInvalid]="true" [showIcon]="true" [yearNavigator]="true" yearRange="2000:2050" [monthNavigator]="true" dateFormat="dd/mm/yy"></p-calendar>
+                        </div>
+                    </div>
+                    <div class="p-field p-col-12 p-lg-4">
+                        <label>Địa chỉ</label>
+                        <input type="text" pInputText>
+                    </div>
+                    <div class="p-field p-col-12 p-lg-4">
+                        <label>Nơi cấp</label>
+                        <input type="text" pInputText>
+                    </div>
+                </div>
+            </p-fieldset>
+        </div>
+        <div class="bellow-fieldset">
+            <p-fieldset legend="Thông tin định giá" styleClass="myFieldset" class="below-fieldset">
+                <div class="p-fluid p-formgrid p-grid">
+                    <div class="p-field p-col-12 p-lg-4">
+                        <label>Nhân viên</label>
+                        <app-employee-selection (clickSearchBtn)="isOpenSearchEmplModal=true"></app-employee-selection>
+                    </div>
+                    <div class="p-field p-col-12 p-lg-4">
+                        <label>Sản phẩm</label>
+                        <div class="p-inputgroup">
+                            <input type="text" pInputText placeholder="Keyword">
+                            <button type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-warn" (click)="isOpenBarcodeModal=true"></button>
+                        </div>
+                    </div>
+                    <div class="p-field p-col-12 p-lg-4">
+                        <label>IMEI mua</label>
+                        <input type="text" pInputText>
+                    </div>
+                    <div class="p-field p-col-12 p-lg-4">
+                        <label>IMEI bán</label>
+                        <input type="text" pInputText>
+                    </div>
+                    <div class="p-field p-col-12 p-lg-4">
+                        <label>Danh sách</label>
+                        <ng-select [items]="" placeholder="--Chọn danh sách--">
+                        </ng-select>
+                    </div>
+                    <div class="p-field-checkbox p-col-12 p-lg-4 custom-checkbox">
+                        <p-checkbox name=""></p-checkbox>
+                        <label>Áp dụng chính sách</label>
+                    </div>
+                </div>
+            </p-fieldset>
+        </div>
+    </div>
+</div>
+<app-customer-info-modal [isOpenModal]="isOpenCustomerInfoModal" (onCloseModal)="isOpenCustomerInfoModal=false" (openSearchEmployeeModal)="isOpenSearchEmplModal=true"></app-customer-info-modal>
+<app-employee-search-modal [isOpenModal]="isOpenSearchEmplModal" (onCloseModal)="isOpenSearchEmplModal=false"></app-employee-search-modal>
+<app-barcode-modal [isOpenModal]="isOpenBarcodeModal"></app-barcode-modal>

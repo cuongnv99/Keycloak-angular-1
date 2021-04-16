@@ -1,0 +1,29 @@
+<div class="container-login">
+    <div class="form-login">
+        <form [formGroup]="eventChangeForm">
+            <h3 style="text-align: center">Đăng Nhập Hệ Thống</h3>
+            <div class="p-fluid p-formgrid p-grid">
+                <div class="p-field p-col-12 ">
+                    <label>Tên người dùng</label>
+                    <input type="text" pInputText placeholder="Username" formControlName="username" [ngClass]="{ 'border-valid': submitted && eventChangeForm.controls.username.errors}" >
+                    <div *ngIf="submitted && eventChangeForm.controls.username.errors" style="color: red;">
+                        <div *ngIf="eventChangeForm.controls['username'].errors.required" >Tên không được bỏ trống</div>
+                        <!-- <div *ngIf="eventChangeForm.controls['Username'].errors.minlength" >Tài khoản tối thiểu 5 ký tự trở lên</div> -->
+                    </div>
+
+                </div>
+                <div class="p-field p-col-12 ">
+                    <label>Mật Khẩu</label>
+                    <input type="password" pInputText placeholder="Password" formControlName="password" [ngClass]="{ 'border-valid': submitted && eventChangeForm.controls.password.errors}">
+                    <div *ngIf="submitted && eventChangeForm.controls.password.errors" style="color: red;">
+                        <div *ngIf="eventChangeForm.controls['password'].errors.required" >Mật khẩu không được bỏ trống</div>
+                        <!-- <div *ngIf="eventChangeForm.controls['Password'].errors.pattern" >Mật khẩu không đúng định dạng(9 ký tự, chữ hoa, chữ thường, ký tự đặc biệt)</div> -->
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="form-button">
+            <p-button (onClick)="onSubmit()" label="Đăng Nhập" ></p-button>
+        </div>
+    </div>
+</div>

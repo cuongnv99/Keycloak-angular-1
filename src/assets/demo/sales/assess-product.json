@@ -1,0 +1,62 @@
+{
+    "cells": [
+        { "id": 3, "attr": "productInfo", "name": "Thông tin sản phẩm", "type": "text", "width": 450, "isFrozen": true },
+        { "id": 4, "attr": "status", "name": "Trạng thái", "type": "text", "width": 350, "isFrozen": false },
+        { "id": 5, "attr": "desc", "name": "Description", "type": "text", "width": 450, "isFrozen": false }
+    ],
+    "datas": [{
+            "id": 1,
+            "productInfo": "Sản phẩm điện thoại samsumg cũ",
+            "status": "Cũ",
+            "desc": "Sản phẩm đổi trả từ khách hàng"
+        },
+        {
+            "id": 2,
+            "productInfo": "Sản phẩm điện thoại samsumg cũ",
+            "status": "Mới",
+            "desc": "Sản phẩm đổi trả từ khách hàng"
+        },
+        {
+            "id": 3,
+            "productInfo": "Sản phẩm điện thoại samsumg cũ",
+            "status": "Mới",
+            "desc": "Sản phẩm đổi trả từ khách hàng"
+        },
+        {
+            "id": 4,
+            "productInfo": "Sản phẩm điện thoại samsumg cũ",
+            "status": "Cũ",
+            "desc": "Sản phẩm đổi trả từ khách hàng"
+        },
+        {
+            "id": 5,
+            "productInfo": "Sản phẩm điện thoại samsumg cũ",
+            "status": "Cũ",
+            "desc": "Sản phẩm đổi trả từ khách hàng"
+        },
+        {
+            "id": 6,
+            "productInfo": "Sản phẩm điện thoại samsumg cũ",
+            "status": "Mới",
+            "desc": "Sản phẩm đổi trả từ khách hàng"
+        },
+        {
+            "id": 7,
+            "productInfo": "Sản phẩm điện thoại samsumg cũ",
+            "status": "Cũ",
+            "desc": "Sản phẩm đổi trả từ khách hàng"
+        },
+        {
+            "id": 8,
+            "productInfo": "Sản phẩm điện thoại samsumg cũ",
+            "status": "Cũ",
+            "desc": "Sản phẩm đổi trả từ khách hàng"
+        },
+        {
+            "id": 9,
+            "productInfo": "Sản phẩm điện thoại samsumg cũ",
+            "status": "Cũ",
+            "desc": "Sản phẩm đổi trả từ khách hàng"
+        }
+    ]
+}

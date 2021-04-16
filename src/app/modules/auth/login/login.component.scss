@@ -1,0 +1,29 @@
+.container-login{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-bottom: 60px;
+  padding-top: 76px;
+}
+.form-login{
+  width: 400px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  float: left;
+  padding: 100px 30px;
+}
+.border-valid{
+  border-color: #f44336;
+}
+.form-button{
+  text-align: center;
+  margin-top: 5px;
+}

@@ -1,0 +1,70 @@
+<div class="p-grid">
+    <div class="p-col-12 bellow-fieldset">
+        <div class="p-fluid p-formgrid p-grid p-col-8">
+            <div class="p-field-checkbox custom-checkbox p-md-3">
+                <p-checkbox name=""></p-checkbox>
+                <label>Bảo hành chính hãng</label>
+            </div>
+            <!-- <div class="p-md-6">
+                <div class="p-inputgroup row">
+                    <label>Ngày hết hạn bảo hành</label>
+                    <div class="ui-fluid p-formgrid p-grid">
+                        <p-calendar class="p-col" [keepInvalid]="true" [showIcon]="true" [yearNavigator]="true" yearRange="2000:2050" [monthNavigator]="true" dateFormat="dd/mm/yy"></p-calendar>
+                    </div>
+                </div>
+            </div> -->
+            <div class="p-md-6">
+                <div class="p-inputgroup row">
+                    <label>Ngày hết hạn bảo hành</label>
+                    <p-calendar class="p-col" [keepInvalid]="true" [showIcon]="true" [yearNavigator]="true" yearRange="2000:2050" [monthNavigator]="true" dateFormat="dd/mm/yy"></p-calendar>       
+                </div>
+            </div>
+            <div class="p-field-checkbox custom-checkbox p-md-3">
+                <p-checkbox name=""></p-checkbox>
+                <label>Máy mới</label>
+            </div>
+        </div>
+        <p-fieldset styleClass="myFieldset">
+            <p-header>Giá thu mua sản phầm</p-header>
+            <div class="p-fluid p-formgrid p-grid p-col-8">
+                <div class="p-md-6">
+                    <div class="p-inputgroup row">
+                        <label>Giá gợi ý</label>
+                        <input type="text" pInputText>       
+                    </div>
+                </div>
+                <div class="p-md-6">
+                    <div class="p-inputgroup row">
+                        <label>Giá mua</label>
+                        <input type="text" pInputText>       
+                    </div>
+                </div>
+                <div class="p-md-6">
+                    <div class="p-inputgroup row">
+                        <label>Giá thấp nhất</label>
+                        <input type="text" pInputText>       
+                    </div>
+                </div>
+                <div class="p-md-6">
+                    <div class="p-inputgroup row">
+                        <label>Giá cao nhất</label>
+                        <input type="text" pInputText>       
+                    </div>
+                </div>
+                <div class="p-md-12">
+                    <div class="p-inputgroup row">
+                        <label>Cảnh báo</label>
+                        <input type="text" pInputText>       
+                    </div>
+                </div>
+            </div>
+            <div class="p-fluid p-formgrid p-grid">
+                <div class="p-field p-col-12 p-lg-4 p-ml-auto pull-right">
+                    <button pButton pRipple type="button" icon="pi pi-search" label="Tìm kiếm" class="p-mr-2"></button>
+                    <button pButton pRipple type="button" icon="pi pi-file-excel" label="Xuất excel" class="p-mr-2"></button>
+                    <button pButton pRipple type="button" icon="pi pi-upload" label="Import excel" class="p-mr-2"></button>
+                </div>
+            </div>
+        </p-fieldset>
+    </div>
+</div>

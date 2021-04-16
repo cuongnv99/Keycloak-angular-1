@@ -1,0 +1,9 @@
+<p-dialog header="Thông báo" [(visible)]="isOpenModal" (onHide)="onCloseModal.emit()" [modal]="true" [style]="{width: 'auto'}" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
+    <div body class="p-col-12 modal-content">
+        <p>{{contentPopup}}</p>
+    </div>
+    <div class="p-text-right modal-footer" style="padding-top: 10px">
+        <button pButton pRipple type="button" label="OK" class="p-mr-2 p-mb-2" (click)="confirm()">
+    </button>
+    </div>
+</p-dialog>

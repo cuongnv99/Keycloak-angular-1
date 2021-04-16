@@ -1,0 +1,22 @@
+<div class="card">
+    <div class="p-grid">
+        <div class="p-col-6">
+            <h5>Tạo chứng từ huỷ Care+</h5>
+        </div>
+        <div class="p-col-6">
+            <p-breadcrumb [model]="items"></p-breadcrumb>
+        </div>
+    </div>
+    <div class="p-grid">
+        <div class="p-col-12 ">
+            <app-care-filter></app-care-filter>
+        </div>
+        <div class="p-col-12">
+            <h6>Danh sách Care+ đề xuất huỷ</h6>
+            <app-table-dynamic [data]="tableDataVouchersCare"></app-table-dynamic>
+        </div>
+        <div class="p-col-12">
+            <app-care-footer></app-care-footer>
+        </div>
+    </div>
+</div>

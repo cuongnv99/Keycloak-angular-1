@@ -1,0 +1,65 @@
+<div class="p-grid">
+    <div class="p-col-6">
+        <span class="font-sale-market">Quản lý yêu cầu đặt trước</span>
+    </div>
+    <div class="p-col-6">
+        <p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+    </div>
+</div>
+<div class="p-grid" [formGroup]="preFilterForm">
+    <div class="p-col-12">
+        <div class="p-fluid p-formgrid p-grid">
+            <div class="p-field p-col-12 p-md-4">
+                <label>Ngày yêu cầu</label>
+                <div class="ui-fluid p-formgrid p-grid">
+                    <p-calendar formControlName="requirmentDateFr" class="p-col" [keepInvalid]="true" [showIcon]="true" [yearNavigator]="true" yearRange="2000:2050" [monthNavigator]="true" dateFormat="dd/mm/yy"></p-calendar>
+                    <p-calendar formControlName="requirmentDateTo" class="p-col" [keepInvalid]="true" [showIcon]="true" [yearNavigator]="true" yearRange="2000:2050" [monthNavigator]="true" dateFormat="dd/mm/yy"></p-calendar>
+                </div>
+            </div>
+            <div class="p-field p-col-12 p-md-2">
+                <label>Kho xuất</label>
+                <app-multi-select [datas]=""></app-multi-select>
+            </div>
+            <div class="p-field p-col-12 p-md-2">
+                <label>Nhân viên yêu cầu</label>
+                <app-multi-select [datas]="employee" [searchable]="true" (onClkSearch)="openSearchEmployee=true"></app-multi-select>
+            </div>
+            <div class="p-field p-col-12 p-md-2">
+                <label>Chương trình đặt trước</label>
+                <app-multi-select [datas]=""></app-multi-select>
+            </div>
+            <div class="p-field p-col-12 p-md-2"></div>
+            <div class="p-field p-col-12 p-md-2">
+                <label>Loại yêu cầu</label>
+                <ng-select [items]="" formControlName="exportType">
+                </ng-select>
+            </div>
+            <div class="p-field p-col-12 p-md-2">
+                <label>Trạng thái</label>
+                <app-multi-select [datas]=""></app-multi-select>
+            </div>
+            <div class="p-field p-col-12 p-md-2">
+                <label>Từ khóa</label>
+                <input type="text" pInputText formControlName="keyWord">
+            </div>
+            <div class="p-field p-col-12 p-md-2">
+                <label>Tìm theo</label>
+                <ng-select [items]="" formControlName="filterBy">
+                </ng-select>
+            </div>
+            <div class="p-field p-col-12 p-md-4 p-d-flex p-file-no-lable">
+                <div class="p-field-checkbox p-field-checkbox p-mr-6">
+                    <p-checkbox name="" [binary]="true" [value]="true"></p-checkbox>
+                    <label class="p-ml-2">Đã hủy</label>
+                </div>
+                <div class="p-mr-2 p-field-btn">
+                    <button pButton pRipple type="button" label="Tìm kiếm" class="p-mr-1"></button>
+                </div>
+                <div class="p-field-btn">
+                    <button pButton pRipple type="button" label="Xuất excel"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-employee-search-modal [isOpenModal]="openSearchEmployee" (onCloseModal)="openSearchEmployee=false" (onSelectEmployee)="selectEmployee($event)" [selectAll]="true"></app-employee-search-modal>

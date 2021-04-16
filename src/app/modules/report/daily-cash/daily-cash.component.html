@@ -1,0 +1,77 @@
+<div class="card">
+  <div class="p-grid p-fluid">
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Loại báo cáo:</label>
+      <p-dropdown [options]="listWarehouse" placeholder="--Chọn công ty--" optionLabel="name" [filter]=true
+                  [showClear]=true>
+      </p-dropdown>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <div class="p-grid p-fluid">
+        <div class="p-field p-col-12 p-lg-6">
+          <label for="startDate">Từ ngày</label>
+          <p-calendar placeholder="- Từ ngày -" [(ngModel)]="startDate" [showIcon]="true"
+                      inputId="startDate"></p-calendar>
+        </div>
+        <div class="p-field p-col-12 p-lg-6">
+          <label for="endDate">Đến ngày</label>
+          <p-calendar placeholder="- Đến ngày -" [(ngModel)]="startDate" [showIcon]="true"
+                      inputId="endDate"></p-calendar>
+        </div>
+      </div>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Công ty:</label>
+      <p-dropdown [options]="listWarehouse" placeholder="--Chọn công ty--" optionLabel="name" [filter]=true
+                  [showClear]=true>
+      </p-dropdown>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Loại thẻ:</label>
+      <p-multiSelect [options]="listWarehouse" optionLabel="name"></p-multiSelect>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Khu vực:</label>
+      <p-multiSelect [options]="listWarehouse" optionLabel="name"></p-multiSelect>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>HT thu chi:</label>
+      <p-multiSelect [options]="listWarehouse" optionLabel="name"></p-multiSelect>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Kho:</label>
+      <p-multiSelect [options]="listWarehouse" optionLabel="name"></p-multiSelect>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Thu ngân:</label>
+      <app-employee-selection (clickSearchBtn)="openEmployeeSearchModal=true"></app-employee-selection>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>VAT:</label>
+      <p-dropdown [options]="listWarehouse" placeholder="--Tất cả--" optionLabel="name" [filter]=true
+                  [showClear]=true>
+      </p-dropdown>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Thu/Chi:</label>
+      <p-dropdown [options]="listWarehouse" placeholder="--Tất cả--" optionLabel="name" [filter]=true
+                  [showClear]=true>
+      </p-dropdown>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+      <label>Loại tiền:</label>
+      <p-dropdown [options]="listWarehouse" placeholder="--Tất cả--" optionLabel="name" [filter]=true
+                  [showClear]=true>
+      </p-dropdown>
+    </div>
+    <div class="p-field p-col-12 p-lg-3">
+      <label>Tỷ giá:</label>
+      <input type="text" pInputText disabled>
+    </div>
+    <div class="p-field p-col-12 p-lg-2">
+      <label style="visibility:hidden">Hiden</label>
+      <button pButton pRipple type="button" icon="pi pi-search" label="Xem báo cáo" class="p-mr-1"></button>
+    </div>
+  </div>
+</div>
+<app-employee-search-modal [isOpenModal]="openEmployeeSearchModal" (onCloseModal)="openEmployeeSearchModal=false"></app-employee-search-modal>

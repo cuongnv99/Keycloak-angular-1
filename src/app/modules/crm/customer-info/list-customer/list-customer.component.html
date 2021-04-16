@@ -1,0 +1,40 @@
+<div class="card">
+  <div class="p-grid p-fluid">
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Từ khóa:</label>
+      <input type="text" pInputText>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Tìm theo:</label>
+      <p-dropdown [options]="listWarehouse" placeholder="--Chọn công ty--" optionLabel="name" [filter]=true
+                  [showClear]=true>
+      </p-dropdown>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Loại khách hàng:</label>
+      <p-dropdown [options]="listWarehouse" placeholder="--Chọn công ty--" optionLabel="name" [filter]=true
+                  [showClear]=true>
+      </p-dropdown>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Tỉnh/tp:</label>
+      <app-location-selection></app-location-selection>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Quận/huyện:</label>
+      <app-location-selection></app-location-selection>
+    </div>
+    <div class="p-field p-col-12 p-lg-4">
+      <label>Phường/xã:</label>
+      <app-location-selection></app-location-selection>
+    </div>
+    <div class="p-field p-col-12 p-d-flex p-jc-end">
+      <div>
+        <label style="visibility:hidden">Hiden</label>
+        <button pButton pRipple type="button" icon="pi pi-search" label="Tìm kiếm" class="p-mr-1"></button>
+      </div>
+    </div>
+  </div>
+  <app-table-dynamic [data]="tableData"></app-table-dynamic>
+  <app-btn-group></app-btn-group>
+</div>

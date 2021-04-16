@@ -1,0 +1,6 @@
+<!-- <label>{{label}}</label> -->
+<div class="p-inputgroup">
+    <input id="employeeId" type="text" (keypress)="enterSearch($event)" (focusout)="getEmployee()" [(ngModel)]="employeeId" [value]="employee?employee.employeeId:''" pInputText>
+    <input id="employeeName" type="text" (keypress)="enterEm($event)" [(ngModel)]="employeeName" [value]="employee?employee.employeeName:''" disabled pInputText>
+    <button type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-warn" (click)="clickSearchBtn.emit()"></button>
+</div>

@@ -1,0 +1,14 @@
+<div class="card">
+    <div class="p-grid">
+        <div class="p-col-6">
+            <h5>Phiếu chi</h5>
+        </div>
+        <div class="p-col-6">
+            <p-breadcrumb [model]="items"></p-breadcrumb>
+        </div>
+    </div>
+    <app-payment-vouchers-employee></app-payment-vouchers-employee>
+    <app-payment-vouchers-detail></app-payment-vouchers-detail>
+    <app-table-dynamic [data]="tableDataPaymentVouchers"></app-table-dynamic>
+    <app-payment-vouchers-pay></app-payment-vouchers-pay>
+</div>

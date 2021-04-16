@@ -1,0 +1,44 @@
+{
+  "cells": [
+    { "id": 3, "attr": "customerName", "name": "Tên khách hàng", "type": "text", "width": 250, "isFrozen": true },
+    { "id": 3, "attr": "customerName", "name": "Tên khách hàng", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 4, "attr": "phoneNumber", "name": "Số điện thoại", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 5, "attr": "taxCode", "name": "Mã số thuế", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 6, "attr": "address", "name": "Địa chỉ", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 7, "attr": "idNumber", "name": "Số CMND", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 8, "attr": "providedDate", "name": "Ngày cấp", "type": "text", "width": 150, "isFrozen": false },
+    { "id": 9, "attr": "providedPlace", "name": "Nơi cấp", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 10, "attr": "prodCode", "name": "Mã sản phẩm", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 11, "attr": "prodName", "name": "Tên sản phẩm", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 12, "attr": "isNew", "name": "Máy mới", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 13, "attr": "imei", "name": "IMEI", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 14, "attr": "price", "name": "Giá mua", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 15, "attr": "adjusted", "name": "Điều chỉnh", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 15, "attr": "lowestPrice", "name": "Giá mua thấp nhất", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 15, "attr": "highestPrice", "name": "Giá mua cao nhất", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 15, "attr": "appraiser", "name": "Người định giá", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 15, "attr": "valuationDate", "name": "Ngày định giá", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 15, "attr": "pricingPlace", "name": "Nơi định giá", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 15, "attr": "approved", "name": "Đã duyệt", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 15, "attr": "approvedBy", "name": "Người duyệt", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 15, "attr": "approvedDate", "name": "Ngày duyệt", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 15, "attr": "imported", "name": "Đã nhập", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 15, "attr": "importer", "name": "Người nhập", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 15, "attr": "importedDate", "name": "Ngày nhập", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 15, "attr": "importedCode", "name": "Mã phiếu nhập", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 15, "attr": "guarantee", "name": "Bảo hành chính hãng", "type": "text", "width": 250, "isFrozen": false },
+    { "id": 15, "attr": "guaranteeExpired", "name": "Ngày hết hạn BH", "type": "text", "width": 250, "isFrozen": false }
+  ],
+  "datas": [{
+    "id": 1,
+    "customerName": "Duongvd5",
+    "phoneNumber": "0988686868",
+    "taxCode":  "123456",
+    "address": "Số 1 Việt Nam",
+    "idNumber": "123456789",
+    "providedDate": "10/01/2020",
+    "providedPlace": "Hải Phòng",
+    "prodCode": "123456"
+  }
+  ]
+}

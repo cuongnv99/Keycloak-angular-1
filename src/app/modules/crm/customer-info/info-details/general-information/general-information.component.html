@@ -1,0 +1,148 @@
+<div class="card">
+  <div class="p-grid">
+    <div class="p-col-9">
+      <div class="p-grid p-fluid">
+        <div class="p-field p-col-12 p-lg-3">
+          <label>Mã khách hàng:</label>
+          <input type="text" pInputText disabled>
+        </div>
+        <div class="p-field p-col-12 p-lg-3">
+          <label>Tên khách hàng:</label>
+          <input type="text" pInputText>
+        </div>
+        <div class="p-field p-col-12 p-lg-3">
+          <label>Giới tính:</label>
+          <p-dropdown [options]="listGender" optionLabel="name" [filter]=true
+                      [showClear]=true>
+          </p-dropdown>
+        </div>
+        <div class="p-field p-col-12 p-lg-3">
+          <label>Độ tuổi:</label>
+          <p-dropdown [options]="listGender" optionLabel="name" [filter]=true
+                      [showClear]=true>
+          </p-dropdown>
+        </div>
+        <div class="p-field p-col-12 p-lg-3">
+          <label>Loại khách hàng CRM:</label>
+          <p-dropdown [options]="listGender" optionLabel="name" [filter]=true
+                      [showClear]=true>
+          </p-dropdown>
+        </div>
+        <div class="p-field p-col-12 p-lg-3">
+          <label>Tỉnh/TP:</label>
+          <app-location-selection></app-location-selection>
+        </div>
+        <div class="p-field p-col-12 p-lg-3">
+          <label>Quận/Huyện:</label>
+          <app-location-selection></app-location-selection>
+        </div>
+        <div class="p-field p-col-12 p-lg-3">
+          <label>Phường/Xã:</label>
+          <app-location-selection></app-location-selection>
+        </div>
+        <div class="p-field p-col-12 p-lg-3">
+          <label>Khách hàng CRM cha:</label>
+          <app-user-selection (clickSearchBtn)="isOpenSearchCrmCustomer=true"></app-user-selection>
+        </div>
+        <div class="p-field p-col-12 p-lg-3">
+          <label>Khách hàng ERP:</label>
+          <app-user-selection (clickSearchBtn)="isOpenSearchErpCustomer=true"></app-user-selection>
+        </div>
+        <div class="p-field p-col-12 p-lg-3">
+          <label>Địa chỉ:</label>
+          <input type="text" pInputText>
+        </div>
+        <div class="p-field p-col-12 p-lg-3">
+          <label>Số nhân viên:</label>
+          <p-inputNumber inputId="minmaxfraction" formControlName="redundantCost" placeholder="0" mode="decimal"
+                         [maxFractionDigits]="5"></p-inputNumber>
+        </div>
+        <div class="p-field p-col-12 p-lg-3">
+          <label>Mã số thuế:</label>
+          <input type="text" pInputText>
+        </div>
+        <div class="p-field p-col-12 p-lg-3">
+          <label>Ngành nghề kinh doanh:</label>
+          <p-dropdown [options]="listGender" optionLabel="name" [filter]=true
+                      [showClear]=true>
+          </p-dropdown>
+        </div>
+        <div class="p-field p-col-12 p-lg-3">
+          <label>Số điện thoại:</label>
+          <p-inputMask mask="(+99) 999-999-999" placeholder="(+84) 976-387-968"></p-inputMask>
+        </div>
+        <div class="p-field p-col-12 p-lg-3">
+          <label>Ngày thành lập công ty:</label>
+          <p-calendar [(ngModel)]="date3" [showIcon]="true" inputId="icon"></p-calendar>
+        </div>
+        <div class="p-field p-col-12 p-lg-3">
+          <label>Số fax:</label>
+          <input type="text" pInputText>
+        </div>
+        <div class="p-field p-col-12 p-lg-3">
+          <label>Hạng thành viên:</label>
+          <p-dropdown [options]="listGender" optionLabel="name" [filter]=true
+                      [showClear]=true>
+          </p-dropdown>
+        </div>
+        <div class="p-field p-col-12 p-lg-3">
+          <label>Địa chỉ email:</label>
+          <input type="text" pInputText>
+        </div>
+        <div class="p-field p-col-12 p-lg-3">
+          <label>Số thẻ thành viên:</label>
+          <input type="text" pInputText>
+        </div>
+        <div class="p-field p-col-12 p-lg-3">
+          <label>Website:</label>
+          <input type="text" pInputText>
+        </div>
+        <div class="p-field p-col-12 p-lg-3">
+          <label>Ngày sinh:</label>
+          <p-calendar [(ngModel)]="date3" [showIcon]="true" inputId="icon"></p-calendar>
+        </div>
+        <div class="p-field p-col-12 p-lg-3">
+          <label>CMND:</label>
+          <input type="text" pInputText>
+        </div>
+        <div class="p-field p-col-12 p-lg-12 p-d-flex p-jc-between" style="align-items: flex-end;">
+          <div class="p-field-checkbox">
+            <p-checkbox binary="true" inputId="binary"></p-checkbox>
+            <label for="binary" formControlName="binary">Có thể nhận điện thoại/SMS quảng cáo</label>
+          </div>
+          <div class="p-field-checkbox">
+            <p-checkbox binary1="true" inputId="binary1"></p-checkbox>
+            <label for="binary1" formControlName="binary1">Có thể nhận email quảng cáo</label>
+          </div>
+          <div class="p-field-checkbox">
+            <p-checkbox binary2="true" inputId="binary2"></p-checkbox>
+            <label for="binary2" formControlName="binary2">Kích hoạt</label>
+          </div>
+          <div class="p-field-checkbox">
+            <p-checkbox binary3="true" inputId="binary3"></p-checkbox>
+            <label for="binary3" formControlName="binary3">Hệ thống</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="p-col-3">
+      <div class="p-grid p-fluid">
+        <div class="p-field p-col-12 p-lg-12">
+          <img src="http://lovedia.vn/wp-content/uploads/2013/10/Girl-Car-Wallpaper.jpg" alt="Girl in a jacket" width="235" height="235">
+        </div>
+        <div class="p-field p-col-12 p-lg-12">
+          <p-fileUpload mode="basic" name="demo[]" url="./upload.php" accept="image/*" maxFileSize="1000000"
+                        chooseLabel="Tải lên ảnh"></p-fileUpload>
+        </div>
+        <div class="p-field p-col-12 p-lg-12">
+          <label>Mô tả:</label>
+          <textarea [rows]="5" pInputTextarea></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-user-search-modal [isOpenModal]="isOpenSearchCrmCustomer"
+                       (onCloseModal)="isOpenSearchCrmCustomer=false"></app-user-search-modal>
+<app-user-search-modal [isOpenModal]="isOpenSearchErpCustomer"
+                       (onCloseModal)="isOpenSearchErpCustomer=false"></app-user-search-modal>

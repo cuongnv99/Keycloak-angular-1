@@ -1,0 +1,23 @@
+:host ::ng-deep .myFieldset {
+    .p-fieldset-legend {
+        border: none;
+        padding: 0px 5px;
+    }
+}
+
+.d-fieldset {
+    margin-top: 10px;
+}
+
+#employeeName {
+    width: 40%;
+}
+
+.p-file-no-lable {
+    transform: translate(0px, 25px);
+}
+
+.p-fluid-no-lable {
+    transform: translate(0px, 20px);
+    padding-left: 14px;
+}

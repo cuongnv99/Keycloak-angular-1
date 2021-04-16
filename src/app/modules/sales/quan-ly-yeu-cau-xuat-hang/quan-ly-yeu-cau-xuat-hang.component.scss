@@ -1,0 +1,17 @@
+.tbl-dynamic{
+    ::ng-deep p-table{
+        .p-datatable{
+            border: 2px solid #bdbcbc;
+
+            .p-datatable-thead > tr > th{
+                background-color: #ee0033;
+                color: #FFFFFF;
+            }
+
+            .p-datatable-tbody{
+                font-size: 15px;
+            }
+        }
+
+    }
+}

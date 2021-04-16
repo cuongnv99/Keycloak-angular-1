@@ -1,0 +1,40 @@
+.bellow-fieldset {
+    margin-top: 10px;
+}
+
+.custom-checkbox {
+    transform: translate(0px, 6px);
+    width: fit-content;
+}
+
+.p-grid {
+    padding-top: 0px;
+}
+
+.row {
+    label {
+        margin: auto;
+        min-width: 100px;
+        padding-right: 15px;
+    }
+    input {
+        border-radius: 4px;
+    }
+}
+
+.pull-right {
+    text-align: end;
+    button {
+        width: fit-content;
+    }
+}
+
+:host ::ng-deep .myFieldset {
+    .p-fieldset-content {
+        padding: 0px ;
+    }
+}
+
+.bellow-fieldset {
+    font-size: 13px;
+}

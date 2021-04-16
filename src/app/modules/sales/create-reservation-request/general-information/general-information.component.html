@@ -1,0 +1,60 @@
+<div class="p-grid">
+  <div class="p-col-9">
+    <div class="p-fluid p-formgrid p-grid">
+      <div class="p-field p-col-12 p-lg-6">
+        <label>Mã yêu cầu đặt trước</label>
+        <input type="text" disabled pInputText value="XXX-69">
+      </div>
+      <div class="p-field p-col-12 p-lg-6">
+        <label>Ngày yêu cầu đặt trước</label>
+        <p-calendar placeholder="- Chọn ngày -" [showIcon]="true" inputId="icon"></p-calendar>
+      </div>
+      <div class="p-field p-col-12 p-lg-6">
+        <label>Chương trình đặt trước</label>
+        <p-dropdown [options]="listOrderingProgram" optionLabel="name" [showClear]=true></p-dropdown>
+      </div>
+      <div class="p-field p-col-12 p-lg-6">
+        <label>Loại yêu cầu xuất</label>
+        <p-dropdown [options]="listRequestType" optionLabel="name" [showClear]=true></p-dropdown>
+      </div>
+      <div class="p-field p-col-12 p-lg-12">
+        <label>Nội dung</label>
+        <textarea pInputTextarea [rows]="4" [cols]="30" style="height: 84%;"></textarea>
+      </div>
+      <div class="p-field p-col-12 p-lg-6">
+        <label>Barcode</label>
+        <div>
+          <app-dialog-barcode class="p-input-icon-right" (openBarcodeModal)="isOpenBarcodeModal=true"></app-dialog-barcode>
+          <input type="text" pInputText>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="p-col-3">
+    <div class="p-fluid p-formgrid p-grid">
+      <div class="p-field p-col-12 p-lg-12 ">
+        <label>Kho xuất</label>
+        <input type="text" disabled pInputText value="Kho HN - XXX">
+      </div>
+      <div class="p-field p-col-12 p-lg-12">
+        <label>Người yêu cầu</label>
+        <app-employee-selection (clickSearchBtn)="isOpenPersonRequestModal=true" [employee]="personRequest"></app-employee-selection>
+      </div>
+      <div class="p-field p-col-12 p-lg-12">
+        <label>Nhân viên online</label>
+        <app-employee-selection (clickSearchBtn)="isOpenOnlineEmplModal=true" [employee]="onlineEmpl"></app-employee-selection>
+      </div>
+      <div class="p-field p-col-12 p-lg-12">
+        <label>Trạng thái</label>
+        <p-dropdown [options]="listStatus" optionLabel="name" [showClear]=true></p-dropdown>
+      </div>
+    </div>
+  </div>
+</div>
+<app-table-dynamic [data]="tableDataXuatBan"></app-table-dynamic>
+<app-count-bill></app-count-bill>
+<app-barcode-modal [isOpenModal]="isOpenBarcodeModal" (onCloseModal)="isOpenBarcodeModal=false"></app-barcode-modal>
+<app-employee-search-modal [isOpenModal]="isOpenPersonRequestModal" (onCloseModal)="isOpenPersonRequestModal=false" (onSelectEmployee)="SelectPersonRequest($event)">
+</app-employee-search-modal>
+<app-employee-search-modal [isOpenModal]="isOpenOnlineEmplModal" (onCloseModal)="isOpenOnlineEmplModal=false" (onSelectEmployee)="SelectOnlineEmpl($event)">
+</app-employee-search-modal>

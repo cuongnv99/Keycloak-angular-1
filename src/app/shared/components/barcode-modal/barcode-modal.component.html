@@ -1,0 +1,52 @@
+<p-dialog header="Tìm kiếm sản phẩm" [(visible)]="isOpenModal" (onHide)="onCloseModal.emit()" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
+    <div body class="p-col-12 modal-content">
+        <div class="p-grid">
+            <div class="row-employee-1" [formGroup]="productForm">
+                <div class="p-fluid p-formgrid p-grid">
+                    <div class="p-field p-col-12 p-md-4">
+                        <label>Từ khóa</label>
+                        <input trim="blur" pInputText type="text" formControlName="keySearch">
+                    </div>
+                    <div class="p-field p-col-12 p-md-5">
+                        <label>Kho xuất</label>
+                        <input type="text" pInputText formControlName="store" bindLabel="department" bindValue="id">
+                    </div>
+                    <div class="p-field p-col-12 p-md-3" style="padding-top: 0.5rem;">
+                        <div class="p-field-checkbox p-field-checkbox p-file-no-lable">
+                            <p-checkbox name="" [binary]="true" [value]="true"></p-checkbox>
+                            <label class="p-mr-3">Chỉ lấy còn tồn</label>
+                        </div>
+                    </div>
+                    <div class="p-field p-col-12 p-md-4">
+                        <label>Ngành hàng</label>
+                        <ng-select [items]="" formControlName="product" bindLabel="" bindValue="id" placeholder="--Tất cả--">
+                        </ng-select>
+                    </div>
+                    <div class="p-field p-col-12 p-md-4">
+                        <label>Nhóm hàng</label>
+                        <ng-select [items]="" formControlName="productGroup" bindLabel="birthYear" bindValue="id" placeholder="--Tất cả--">
+                        </ng-select>
+                    </div>
+                    <div class="p-field p-col-12 p-md-4">
+                        <label>Nhà sản xuất</label>
+                        <ng-select [items]="" formControlName="productor" bindLabel="area" bindValue="id" placeholder="--Tất cả--">
+                        </ng-select>
+                    </div>
+                    <div class="p-field p-col-10 p-md-10"></div>
+
+                    <div class="p-col-2 p-md-2">
+                        <button pButton pRipple type="button" label="Tìm kiếm" icon="pi pi-search"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="p-col-12">
+                <app-table-dynamic [data]="tableBarcodeData"></app-table-dynamic>
+            </div>
+
+        </div>
+    </div>
+    <div class="p-text-right modal-footer" style="padding-top: 10px">
+        <button pButton pRipple type="button" label="Chọn sản phẩm" icon="pi pi-check-circle" class="p-mr-2 p-mb-2" (click)="selectProduct()">
+        </button>
+    </div>
+</p-dialog>
